@@ -1,0 +1,52 @@
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 860M  (ID=0x1392)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.186 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI.Hid> Failed to create device file:
+ 2 The system cannot find the file specified.
+
+ 
+(Filename:  Line: 54)
+
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.1_Data\Managed\System.dll (this message is harmless)
+SwitchToProtocol: Udp PhotonNetwork.connected: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 2534 -> priority: 1 
+  Thread -> id: 35a4 -> priority: 1 
+Operation failed: OperationResponse 225: ReturnCode: 32760 (No match found). Parameters: {}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Can't join random room!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Your ID: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
