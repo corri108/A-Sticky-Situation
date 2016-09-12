@@ -1,12 +1,19 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 using Photon;
 
 public class NetworkingObject : Photon.PunBehaviour {
 
+	//for spawns
+	public Transform[] spawnPoints;
+	//to make sure we dont double occupy a spawn
+	[HideInInspector]
+	public bool[] spawnsOccupied;
 	// Use this for initialization
 	void Start () 
 	{
+		spawnsOccupied = new bool[spawnPoints.Length];
 		PhotonNetwork.ConnectUsingSettings("Alpha v0.1");
 	}
 
@@ -28,21 +35,58 @@ public class NetworkingObject : Photon.PunBehaviour {
 	{
 		int yourPlayerID = -1;
 		//get how many players there are first to figure out which player you are
-		GameObject[] allPlayers = GameObject.FindGameObjectsWithTag ("Player");
+		PhotonPlayer[] allPlayers = PhotonNetwork.playerList;
 		if(allPlayers.Length > 0)
 		{
 			yourPlayerID = allPlayers.Length;
 		}
-		else yourPlayerID = 1;
+		else 
+		{
+			yourPlayerID = 1;
+		}
 
 		Debug.Log ("Your ID: " + yourPlayerID);
 
-		GameObject monster = PhotonNetwork.Instantiate ("TestPlayer", Vector3.zero, Quaternion.identity, 0);
-		PlayerController controller = monster.GetComponent<PlayerController> ();
+		GameObject myPlayer = PhotonNetwork.Instantiate ("TestPlayer", Vector3.zero, Quaternion.identity, 0);
+		PlayerController controller = myPlayer.GetComponent<PlayerController> ();
 		controller.enabled = true;
-		controller.SetPlayerNumber (yourPlayerID);
-		Rigidbody2D myBody = monster.GetComponent<Rigidbody2D> ();
+		controller.GetComponent<PhotonView>().RPC("SetPlayerNumber", PhotonTargets.AllBuffered, yourPlayerID);
+		Rigidbody2D myBody = myPlayer.GetComponent<Rigidbody2D> ();
 		myBody.gravityScale = GlobalProperties.GravityScale;
+
+		if(controller.GetComponent<PhotonView>().owner.isMasterClient)
+		{
+			//spawn a crate if we are master
+			GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", new Vector3(6,2.5f, 0), Quaternion.identity, 0);
+
+			//also, use a spawn point, but only if we are master.
+			int r = Random.Range(0, spawnPoints.Length);
+			controller.transform.position = spawnPoints[r].position;
+			spawnsOccupied[r] = true;
+		}
+	}
+
+	public override void OnPhotonPlayerConnected (PhotonPlayer newPlayer)
+	{
+		if(PhotonNetwork.isMasterClient)
+		{
+			//use a spawn point to tell other player where to go
+			int r = Random.Range(0, spawnPoints.Length);
+			PlayerController correctPlayer = null;
+			PlayerController[] allPlayers = GameObject.FindObjectsOfType<PlayerController>();
+
+			foreach(var p in allPlayers)
+			{
+				if(PhotonPlayer.Find(p.GetComponent<PhotonView>().ownerId) != null)
+				{
+					correctPlayer = p;
+				}
+
+			}
+
+			correctPlayer.transform.position = spawnPoints[r].position;
+			spawnsOccupied[r] = true;
+		}
 	}
 	
 	// Update is called once per frame

@@ -3188,7 +3188,11 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
         // Don't remove GOs that are owned by others (unless this is the master and the remote player left)
         if (!localOnly)
         {
-            if (!viewZero.isMine)
+			if(viewZero.owner.isMasterClient)
+			{
+
+			}
+            else if (!viewZero.isMine)
             {
                 Debug.LogError("Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: " + viewZero);
                 return;
