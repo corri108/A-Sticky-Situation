@@ -295,6 +295,7 @@ public class PlayerController : MonoBehaviour {
 			theSticky.GetComponent<Rigidbody2D>().isKinematic = true;
 			theSticky.isStuck = true;
 		}
+		GameObject.Find ("Main Camera").GetComponent<GameCamera> ().BombStuck ();
 	}
 
 	int walkingTimer = 0;

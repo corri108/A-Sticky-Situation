@@ -9,7 +9,9 @@ public class GameCamera : MonoBehaviour {
 	public float onPlayerJoinedSize = 5.5f;
 	private bool _playerJoined = false;
 	private bool _gameStarted = false;
-	
+	private bool playerStuck = false;
+	public int bombTime = 10;
+	int timer;
 	// Use this for initialization
 	void Start () 
 	{
@@ -17,6 +19,7 @@ public class GameCamera : MonoBehaviour {
 		thisText = transform.GetChild (0).GetComponent<TextMesh> ();
 		thisText.text = "Joining...";
 		startSize = thisCamera.orthographicSize;
+		timer = bombTime * 60;
 	}
 	
 	// Update is called once per frame
@@ -39,6 +42,19 @@ public class GameCamera : MonoBehaviour {
 		{
 
 		}
+		if (playerStuck) 
+		{
+			if (timer > 0) 
+			{
+				timer--;
+				thisText.text = (timer / 60).ToString ();
+			} 
+			else 
+			{
+				timer = bombTime * 60;
+				playerStuck = false;
+			}
+		}
 	}
 
 	public void BeginGame()
@@ -54,6 +70,10 @@ public class GameCamera : MonoBehaviour {
 		_gameStarted = true;
 	}
 
+	public void BombStuck()
+	{
+		playerStuck = true;
+	}
 	public void MyPlayerHasJoined()
 	{
 		_playerJoined = true;
