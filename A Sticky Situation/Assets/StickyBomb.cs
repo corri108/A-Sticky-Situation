@@ -6,6 +6,8 @@ public class StickyBomb : MonoBehaviour {
 	[HideInInspector]
 	public int ownerID;
 	[HideInInspector]
+	public int stuckID;
+	[HideInInspector]
 	public bool isStuck = false;
 	// Use this for initialization
 	void Start () {

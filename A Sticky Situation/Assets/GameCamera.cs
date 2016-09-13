@@ -34,6 +34,10 @@ public class GameCamera : MonoBehaviour {
 					BeginGame();
 				}
 			}
+			else if(_gameStarted)
+			{
+				thisText.transform.localScale *= .95f;
+			}
 		}
 		else
 		{

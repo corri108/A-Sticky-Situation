@@ -1,0 +1,102 @@
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 860M  (ID=0x1392)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.220 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.2_Data\Managed\System.dll (this message is harmless)
+SwitchToProtocol: Udp PhotonNetwork.connected: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: a7c -> priority: 1 
+  Thread -> id: 3078 -> priority: 1 
+Operation failed: OperationResponse 225: ReturnCode: 32760 (No match found). Parameters: {}
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Can't join random room!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Your ID: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Picked up Sticky
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Threw a bomb
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sucess!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Got stuck
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Current stuck: StickyBomb(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1003 on StickyBomb(Clone) 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+

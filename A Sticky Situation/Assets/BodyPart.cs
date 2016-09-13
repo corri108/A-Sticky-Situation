@@ -31,6 +31,19 @@ public class BodyPart : MonoBehaviour {
 					//this transform, scale, stickyID
 					pc.GetComponent<PhotonView> ().RPC ("GetStuck", PhotonTargets.All, sb.transform.position, scale, sb.GetComponent<PhotonView>().viewID);
 				}
+
+				//for switching owners
+				else if(sb.isStuck && !sb.GetComponent<NetworkStickyBomb>().justTransfered && 
+				        !pc.playerID.Equals(sb.stuckID))
+				{
+					Debug.Log("Sucess!");
+					Vector3 scale = new Vector3(c.gameObject.transform.localScale.x,c.gameObject.transform.localScale.y,c.gameObject.transform.localScale.z);
+					//this transform, scale, stickyID
+					pc.GetComponent<PhotonView> ().RPC ("SwitchOwners", PhotonTargets.All, sb.transform.position, sb.GetComponent<PhotonView>().viewID);
+
+					//call first on master client so transfer doesnt occur multiple times
+					sb.GetComponent<NetworkStickyBomb>().TransferBomb();
+				}
 			}
 		}
 	}

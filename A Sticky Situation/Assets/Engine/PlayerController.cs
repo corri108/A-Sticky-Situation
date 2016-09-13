@@ -282,18 +282,57 @@ public class PlayerController : MonoBehaviour {
 			theSticky.transform.position = stuckPos;
 			theSticky.GetComponent<Rigidbody2D>().isKinematic = true;
 			theSticky.isStuck = true;
-			nametag.text += " STUCK";
+			theSticky.GetComponent<StickyBomb>().stuckID = playerID;
+			PopText.Create("STUCK!", Color.white, 120, this.transform.position + Vector3.up * .5f);
 			Debug.Log("Current stuck: " + currentStuck.name);
 		}
-		else 
+	}
+
+	[PunRPC]
+	void SwitchOwners(Vector3 stuckPos, int stickyID)
+	{
+		isStuck = true;
+		stuckPosition = stuckPos;
+		
+		StickyBomb[] stickys = GameObject.FindObjectsOfType<StickyBomb> ();
+		StickyBomb theSticky = null;
+		
+		foreach(var s in stickys)
 		{
-			theSticky = GameObject.FindObjectOfType<StickyBomb>();
+			if(s.GetComponent<PhotonView>().viewID == stickyID)
+			{
+				theSticky = s;
+				break;
+			}
+		}
+		
+		if(theSticky != null)
+		{
 			currentStuck = theSticky.GetComponent<StickyBomb>();
 			theSticky.transform.SetParent(this.transform);
-			theSticky.transform.localScale = scale * 9;
 			theSticky.transform.position = stuckPos;
 			theSticky.GetComponent<Rigidbody2D>().isKinematic = true;
 			theSticky.isStuck = true;
+			//the person that ran into you is now the potential killer
+			theSticky.GetComponent<StickyBomb>().ownerID = theSticky.GetComponent<StickyBomb>().stuckID;
+			theSticky.GetComponent<StickyBomb>().stuckID = playerID;
+			theSticky.GetComponent<NetworkStickyBomb>().TransferBomb();
+			PopText.Create("STUCK!", Color.white, 120, this.transform.position + Vector3.up * .5f);
+			//get the new owner and tell him he isnt stuck anymore
+
+			PlayerController newOwner = null;
+			PlayerController[] players = GameObject.FindObjectsOfType<PlayerController>();
+			
+			foreach(var p in players)
+			{
+				if(p.playerID == theSticky.ownerID)
+				{
+					newOwner = p;
+				}
+			}
+
+			newOwner.isStuck = false;
+			newOwner.currentStuck = null;
 		}
 	}
 
