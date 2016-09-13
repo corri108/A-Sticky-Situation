@@ -334,6 +334,7 @@ public class PlayerController : MonoBehaviour {
 			newOwner.isStuck = false;
 			newOwner.currentStuck = null;
 		}
+		GameObject.Find ("Main Camera").GetComponent<GameCamera> ().BombStuck ();
 	}
 
 	int walkingTimer = 0;
