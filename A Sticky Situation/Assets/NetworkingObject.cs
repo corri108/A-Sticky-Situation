@@ -5,6 +5,7 @@ using Photon;
 
 public class NetworkingObject : Photon.PunBehaviour {
 
+	public bool debugMode = false;
 	//for spawns
 	public Transform[] spawnPoints;
 	//to make sure we dont double occupy a spawn
@@ -14,24 +15,39 @@ public class NetworkingObject : Photon.PunBehaviour {
 	void Start () 
 	{
 		spawnsOccupied = new bool[spawnPoints.Length];
-		PhotonNetwork.ConnectUsingSettings("Alpha v0.1");
+		if(debugMode)
+			PhotonNetwork.ConnectUsingSettings(GlobalProperties.VERSION);
+		else
+		{
+			//you already have joined the room. init player now
+			InitializePlayer();
+			PhotonNetwork.isMessageQueueRunning = true;
+		}
 	}
 
 	public override void OnJoinedLobby()
 	{
-		PhotonNetwork.JoinRandomRoom();
+		if(debugMode)
+			PhotonNetwork.JoinRandomRoom();
+		else
+		{
+
+		}
 	}
 
 	//for joining random room
 	void OnPhotonRandomJoinFailed()
 	{
-		Debug.Log("Can't join random room!");
-		RoomOptions ro = new RoomOptions ();
-		ro.MaxPlayers = 2;
-		PhotonNetwork.CreateRoom("Dev Test Room" , ro, null);
+		if(debugMode)
+		{
+			Debug.Log("Can't join random room!");
+			RoomOptions ro = new RoomOptions ();
+			ro.MaxPlayers = 2;
+			PhotonNetwork.CreateRoom("Dev Test Room" , ro, null);
+		}
 	}
 
-	public override void OnJoinedRoom ()
+	private void InitializePlayer()
 	{
 		int yourPlayerID = -1;
 		//get how many players there are first to figure out which player you are
@@ -44,25 +60,33 @@ public class NetworkingObject : Photon.PunBehaviour {
 		{
 			yourPlayerID = 1;
 		}
-
+		
 		Debug.Log ("Your ID: " + yourPlayerID);
-
+		
 		GameObject myPlayer = PhotonNetwork.Instantiate ("TestPlayer", Vector3.zero, Quaternion.identity, 0);
 		PlayerController controller = myPlayer.GetComponent<PlayerController> ();
 		controller.enabled = true;
 		controller.GetComponent<PhotonView>().RPC("SetPlayerNumber", PhotonTargets.AllBuffered, yourPlayerID);
 		Rigidbody2D myBody = myPlayer.GetComponent<Rigidbody2D> ();
 		myBody.gravityScale = GlobalProperties.GravityScale;
-
+		
 		if(controller.GetComponent<PhotonView>().owner.isMasterClient)
 		{
 			//spawn a crate if we are master
 			GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", new Vector3(6,2.5f, 0), Quaternion.identity, 0);
-
+			
 			//also, use a spawn point, but only if we are master.
 			int r = Random.Range(0, spawnPoints.Length);
 			controller.transform.position = spawnPoints[r].position;
 			spawnsOccupied[r] = true;
+		}
+	}
+
+	public override void OnJoinedRoom ()
+	{
+		if(debugMode)
+		{
+			InitializePlayer ();
 		}
 	}
 

@@ -1,0 +1,103 @@
+﻿
+using UnityEngine;
+using System.Collections;
+using Photon;
+using Button = UnityEngine.UI.Button;
+using TextBox = UnityEngine.UI.InputField;
+
+public class NetworkingObjectMenu : Photon.PunBehaviour {
+
+	public AudioClip click;
+	public AudioClip clickBack;
+	public Button connect;
+	public Button quit;
+	public Button join;
+	public Button create;
+	public TextBox roomName;
+	public TextBox maxPlayers;
+	// Use this for initialization
+	void Start () 
+	{
+
+	}
+	
+	public override void OnJoinedLobby()
+	{
+		//turn off old options
+		connect.gameObject.active = false;
+		quit.gameObject.active = false;
+		//turn on new options
+		join.gameObject.active = true;
+		create.gameObject.active = true;
+		roomName.gameObject.active = true;
+		maxPlayers.gameObject.active = true;
+
+		AudioSource.PlayClipAtPoint (click, this.transform.position);
+		PopText.Create ("Connected to game server.", Color.black, 150, this.transform.position);
+	}
+	
+	//for joining random room
+	void OnPhotonRandomJoinFailed()
+	{
+
+	}
+	
+	public override void OnJoinedRoom ()
+	{
+		PhotonNetwork.isMessageQueueRunning = false;
+		Application.LoadLevel ("TestScene");
+	}
+	
+	public override void OnPhotonPlayerConnected (PhotonPlayer newPlayer)
+	{
+
+	}
+	
+	// Update is called once per frame
+	void Update () 
+	{
+		
+	}
+
+	public void ClickConnect()
+	{
+		AudioSource.PlayClipAtPoint (click, this.transform.position);
+		PhotonNetwork.ConnectUsingSettings (GlobalProperties.VERSION);
+		PopText.Create ("Connecting...", Color.black, 80, this.transform.position);
+	}
+
+	public void ClickJoin()
+	{
+		AudioSource.PlayClipAtPoint (click, this.transform.position);
+		PhotonNetwork.JoinRoom (roomName.text);
+		PopText.Create ("Joining room \"" + roomName.text + "\"...", Color.black, 200, this.transform.position);
+	}
+	
+	public void ClickCreate()
+	{
+		RoomOptions ro = new RoomOptions ();
+		ro.MaxPlayers = byte.Parse(maxPlayers.text);
+		AudioSource.PlayClipAtPoint (click, this.transform.position);
+		PhotonNetwork.JoinOrCreateRoom (roomName.text, ro, TypedLobby.Default);
+		PopText.Create ("Creating and joining room \"" + roomName.text + "\"...", Color.black, 200, this.transform.position);
+	}
+	
+	public void ClickQuit()
+	{
+		AudioSource.PlayClipAtPoint (clickBack, this.transform.position);
+		Application.Quit ();
+	}
+	
+	void OnGUI()
+	{
+		if(Diagnostics.ShowNetworkStats)
+		{
+			GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+			
+			if(PhotonNetwork.room != null)
+			{
+				GUILayout.Label(PhotonNetwork.room.ToString());
+			}
+		}
+	}
+}
