@@ -19,6 +19,7 @@ public class GameCamera : MonoBehaviour {
 	private GameObject scoreboard;
 	private TextMesh scoreboardText;
 
+	public AudioClip countdownNoise;
 	public Transform[] spawnPoints;
 	//to make sure we dont double occupy a spawn
 	[HideInInspector]
@@ -43,6 +44,11 @@ public class GameCamera : MonoBehaviour {
 		startSize = thisCamera.orthographicSize;
 		scoreboard = transform.FindChild ("Scoreboard").gameObject;
 		scoreboardText = scoreboard.transform.GetChild (0).GetComponent<TextMesh> ();
+	}
+
+	public void JoinedButNoPlayerPicked()
+	{
+		thisText.text = "";
 	}
 
 	void Update()
@@ -84,7 +90,8 @@ public class GameCamera : MonoBehaviour {
 
 			if(!_gameStarted && PhotonNetwork.room != null && !_initTimer)
 			{
-				if(PhotonNetwork.playerList.Length == PhotonNetwork.room.maxPlayers)
+				if(PhotonNetwork.playerList.Length == PhotonNetwork.room.maxPlayers && 
+				   PhotonNetwork.playerList.Length == playerList.Count)
 				{
 					//start countdown
 					_initTimer = true;
@@ -95,8 +102,14 @@ public class GameCamera : MonoBehaviour {
 				gameStartCountdown--;
 				thisText.text = ( (gameStartCountdown / 60) + 1).ToString() + "...";
 
+				if(gameStartCountdown % 60 == 0)
+				{
+					AudioSource.PlayClipAtPoint(countdownNoise, this.transform.position);
+				}
+
 				if(gameStartCountdown == 0)
 				{
+					AudioSource.PlayClipAtPoint(countdownNoise, this.transform.position);
 					BeginGame();
 					origScale = thisText.transform.localScale;
 					thisText.text = "";

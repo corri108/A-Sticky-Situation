@@ -1,0 +1,994 @@
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 860M  (ID=0x1392)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.211 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 2be4 -> priority: 1 
+  Thread -> id: 4864 -> priority: 1 
+SwitchToProtocol: Udp PhotonNetwork.connected: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 860M  (ID=0x1392)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.051 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+<RI> Initializing input.
+<RI> Input initialized.
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 860M  (ID=0x1392)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.051 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 4824 -> priority: 1 
+  Thread -> id: 3208 -> priority: 1 
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.6_Data\Managed\System.dll (this message is harmless)
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.324516 ms
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 747.
+Total: 0.530426 ms (FindLiveObjects: 0.040644 ms CreateObjectMapping: 0.026685 ms MarkObjects: 0.437643 ms  DeleteObjects: 0.025043 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1adc -> priority: 1 
+  Thread -> id: 3654 -> priority: 1 
+SwitchToProtocol: Udp PhotonNetwork.connected: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+SwitchToProtocol: Udp PhotonNetwork.connected: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.562223 ms
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 747.
+Total: 1.720602 ms (FindLiveObjects: 0.214716 ms CreateObjectMapping: 0.201578 ms MarkObjects: 1.212755 ms  DeleteObjects: 0.087446 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.347096 ms
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 747.
+Total: 0.648664 ms (FindLiveObjects: 0.045981 ms CreateObjectMapping: 0.042696 ms MarkObjects: 0.529195 ms  DeleteObjects: 0.030380 ms)
+
+Your ID: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkPlayer.OnPhotonSerializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.SerializeComponent (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.SerializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeWrite (.PhotonView view) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.RunViewUpdate () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Your ID: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkPlayer.OnPhotonSerializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeComponent (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeRead (System.Object[] data, .PhotonPlayer sender, Int32 networkTime, Int16 correctPrefix) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkPlayer.OnPhotonSerializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeComponent (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeRead (System.Object[] data, .PhotonPlayer sender, Int32 networkTime, Int16 correctPrefix) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Your ID: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkPlayer.OnPhotonSerializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeComponent (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeRead (System.Object[] data, .PhotonPlayer sender, Int32 networkTime, Int16 correctPrefix) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkPlayer.OnPhotonSerializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeComponent (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeRead (System.Object[] data, .PhotonPlayer sender, Int32 networkTime, Int16 correctPrefix) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to anNinstance of annobjectc
+  ion: Obat N eefeorkPe notlaye tr an in.OnPhe of otonSeriaan object(.Photo
+nSat retworaPm streanPm, PnhotoalMessageInfo hinfo) [0x00000] mn <filenaMeesunknown>a0 In
+  at (worapper managen -fio-natiae)e SyknoemwRe>:0 f
+ ecat ion.appeoMetanaged-to-nnlInvoke (stem.Roflject,obeect[],System.Exception&)
+  at Systcmtion.lonction.etonoodMInternalInvok e (object,oect obj, SBisnem.Exception&)o
+ ket Sr,stem.ReflectiSyst.Monoeetlection.oindkr biSysdertemy.Oebjecbjeobtj] paramet,r , SydingFsagsem. libavolizatr,tSyitem.RelturfInfo ion.ltnde) [bx00000d]eir ,f System.Objnowct[] p
+arametersa, STstem.alrbglitaIion.CultureInfo culture) [0x0000n] in <tionException: nE>cepti
+on hrs bweas TargetInvocationException: Exception hasrget of an i by tvhcatitona
+  aget of an insocaem.Reflectiot.Moon.o
+  hot dys.Invoke (Systetem.Reflection.Monomethodect obj, Bintem.Object obj, BindingnlagFlags invo iAnvrokSestem.Reflectionr, SyBinstrebm.Reef Sytion.Binder binder, Sytsmem.bbjectt[] para]ete parameters, SysGem.Globaaitioion.CulrtureInfol crle)re)0x000000]0 in in <enilme unknownnk>own>:0
+  
+  ysatem.ystem.Reiole.Meiohn.MethodBase.Invoke em.Obj(ct obem.Objecj obSy, SystemsObjeect[j] par paamertmeters) [0x00000000] 0] in <filename unknown>:0
+ 
+  Photo View.EaecuteoomponeintOnxeceriealmpone(UniOnSyeriali.ze (UnintyEnmpgnent, omPponenSt reamonstream,hoton trehotostream, PhotonMinsfo)e [0ox00f000[] i0n <f in <fie unleoname unk
+nown>P:0ot
+o at nhoieonView.DeslizeColizeComponent Eng(UnityEnginet component component, .PhotonStream PshoetonMPessanMessaggenfoIinfo info)00[00] x0 <00filinname unknown>:0 own
+>:0 Ph
+ otonView.DeserialsizeVliew i(.PhothonStrteeam steaem, PhotonMMessageInfo iinffo)[ [000x000i00] i < <fienamaee unknownunk0 
+  a0  N
+etwtorktingkPeePr.O.nSeerialiizeeRea(d (SeysObjtctm.Object, .PatoaonPlahoer sendet, InPlaner32 senderkTimr, Int16 cor3ec nettPrefix)  I0xnt160] in < iorrnameP ufnknown>0000
+  at NeftworkingPnkn.OnnEvent 
+ (ExiteGwmeki.Cleer.t.Photnon.EventDaesta phot.Photoo.Evvent) [0x00000]Eve <tf [ile000name unknlename  nk
+  awt Exit
+Games.Cliente.Photenn.PeerBaseP.Deseri.DleseMriaageAizeMallback (Systebam. (Syste i.BynBuffi)Buf0x000x00000]0i0] in <filename uwn>:0 own
+>:0 
+  at ExitCGames.Photon.Enethoteon.EneattPenr.DispctcomingConmmanman (s () [0x000 in] i  <filenamee unknownn>:0 
+
+  a t ExGatGemes.Client.Photoon.hototoneerPeerp.DispnatmhIncCommands ma)ndsx00 00] in <fi0] in e uinknown >:0 
+  at Ph
+ otonHhandlear.Uprdate () [)0x0x00000] inn< ilfilamea unknonwn>::0 
+ 
+
+(F
+ilename:  LiLine: -11)
+
+)
+
+Picked up Sticky
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Pickei uped Sp Stickic
+ y
+ 
+ilenanaemeC:C//buildsllae/enity/buind/artifacts/generats/gceneora/tundtcome/Un/runtime/UnityEnginegs.Den.cpp Linendi:g .6en.c
+
+pp Line: 64)
+
+Threw a bomb
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Threhra  a bbmo
+ 
+(
+ 
+(Filename:e:  ::/buildslave/unity/build/ad/arfaifactseneneratedraoedmcomn/ruon/runnimime/UnityEngineDeeugBnintyEngideDegb.ugnBcpp Line: 64)
+
+en.cpp Line: 64)
+
+Sticky : 2, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sucess!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Got stuck
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Current stuck: StickyBomb(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Got stuck
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/Goomon/tucr
+ 
+(Fiimea/eUnit/EbguildebuvegBnindingty/builpp Lainif 64)
+
+enerated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Current stuck: StickyBomb(Clone)
+ 
+(Filename: C:/buildslave/uni stutk: Suild/attickfacts/Cleneratone)
+ 
+(n/ruentime/UnityEnainme:bugC:indi/gs.gednlave/uLineni64)t
+y
+/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sucess!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sucess!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 3, Owner: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sucess!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Failed to 'network-remove' GameObject. Client is neither owner nor masterClient taking over for owner who left: View (0)2002 on StickyBomb(Clone) 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Picked up Sticky
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Picked ui Stickedy 
+ 
+(FStleiamke:
+ 
+(:/Fuiidslavme/: ity/builldslatife/unityacts/generated/commoeran/runtimoe/UnnityE/UnityEnginegebugebugBiindings.genndin Lgne.gen.cpp:Lin64e
+
+ 64)
+
+Picked up Sticky
+ 
+(Filename: C:/buildslave/unity/build/artifacts/genePaticd/cd umm Sticky
+ n/runt
+(Filenaieme/:/buildslave/uUinityEngineDtifaetbugBindated/common/ingtimgen./ppULnit:EngineD 64)
+
+ndings.gen.cpp Line: 64)
+
+Evv DDestroy Faaled. Couldlenot find Pdo. Could not find PhotonView with insenat iyatioorNr: nI
+  1
+(3.iSeename: Cn/bt ldslby acniorNr: 1
+ 
+(Fitenyme: Cuild/artifave/unctys/gener/buildommon/runticts/gen/UnieyEngineated/coDmon/gBirdiugs.gen.nti Lime: 6/U
+n
+ityEngineDebugBindings.gen.cpp Line: 64)
+
+Pickid kep d up St
+ 
+(y
+i
+(eilename:C:C:/buildslve/e/nnitty/build/ariild/ta/gtifacats//cenmon/runtimmon/UnityEneinenitybnginndeDebuggin.dip nins.gen.cpe :i 64)
+
+)
+
+Ev DestrEy Faisted. Cooy Fauled. C uldnnt findoPt find Ph wiotoinisw antiwtith i 1003stantia StntonId 10b03. Seny actocNr: 2
+ or
+(: 2
+ 
+(Fname:iC:/buildename: C:/ty/uiluislale//unity/btsild/art/faener/gted/common/runtimeeUneratyEngineDetugd/Bomiondi/rsugnn.cpp Lninty Engi
+
+neDebugBindings.gen.cpp Line: 64)
+
+Picked up Sticky
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+EvPDeitcoy kaed dupCou Sticky
+in
+( iPehaoe: C:/bu ldslaithviestunitya/build/artif Sent by ctsagetnrNr: 3
+e
+rated/com: on/r:untime/UanityEngyineDebuarBindiifagsts/gen.raen.cedp Line: 64un)im
+
+UnityEnEin DeDegBirodi Failengs.gen.cpot Lin : 64)
+
+nd PhotonView with instantiationId 1003. Sent by actorNr: 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Threw a bomb
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+ThrTw a bomb
+a 
+(Fibenmb
+ 
+(aile: C:/buileslavame: e:/uniuiy/build/slave/uairtifacts/a/tifactsggennerated/commonmmo//ruuntime/U/UnytyEngEnegDebDugugBiBdingsignd.cpp nLi.gen.cpp nine 64)
+
+: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sucess!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Got stuck
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Current stuck: StickyBomb(Clone)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Got sttusck
+ 
+ 
+(Fiieename: ame: C:/buildslave/uniti/ty/buiuild/adrartiftctfacgeneraeted/c/mmoon/rnuntimie/UnityEnngineDebggBieDebings.uen.cppgLBindi64)
+
+ngs.gen.cpp Line: 64)
+
+CuCrurrent stucktickyB:mb(tiloce)
+ 
+(FiClonle)am
+e:
+ C:/buaild C:sbuile/unity/build/arave/utitfacts/ld/eneratadrtifmoa/ructis/e/eUnityEngineDeburuntime/Un.gen.cpp LtyEnginenebugB4)
+
+ings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 1, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sucess!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Sticky : 2, Owner: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Had to lookup view that wasn't in photonViewList: View (0)1004 on StickyBomb(Clone) 
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Hadato lo lookkup vup  iew hat taha't in pht oin phLoton View Vie)List1004ew (0)10ick0B4 on StickyB
+o
+(F(Cloni) en
+a
+(ei: C:/ebuC:/iuildslavldunitv/bu/unitrt/build/cts/gecnerateds/generatentimom/mon/yEnruntimeugBindyEngi.neDecbugLBne:din4gs
+.
+gen.cpp Line: 64)
+
+IndexOutOfRangeException: Array index is out of range.
+  at PlayerController.SetRandomSpawn (Int32 pID) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.ExecuteRpc (ExitGames.Client.Photon.Hashtable rpcData, .PhotonPlayer sender) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.RPC (.PhotonView view, System.String methodName, PhotonTargets target, .PhotonPlayer player, Boolean encrypt, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonNetwork.RPC (.PhotonView view, System.String methodName, PhotonTargets target, Boolean encrypt, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.RPC (System.String methodName, PhotonTargets target, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at GameCamera.EndRound () [0x00000] in <filename unknown>:0 
+  at GameCamera.FixedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeExceptionn: Ar:ay inray iendex ist of or range.
+  agt P
+  ayarCoPltayerero.SetRanr.oSSpawan (IotmSpawn (Int32 00] inp<fiDen [0x00000] i>:0 
+n  t <wrailenamenunkndown>:0 
+e) Systwm.Rappertion Moanagethod:InativnalInyvoks tobjeem,object[tioSysonom.ethod:Inter)n
+alIn Soke em.Rejlect,objecono],Sysodem.Exckept(Sonst)
+.Obj Syseem.tReflection.MgFnoMgs itnvokeAvtr, Systom.e (Systlm.Obctiot on.Bbnjer, Bindin Sysagem.invjeket[] r,aramSeters, Systecm.GionbalizationinCultureynfo ctem.urbj) [0[x00aram0ters, System.Gme ulobalizati
+RethurowlatureIgeto nvuocare)on[0xc00pt00]n: n <cepleion h us bnoen >:0row
+Re by tw as arget oI avocationEtioepti
+on: Excetem.Rtion has been onhoMerhown by the target Objecn  obj, Btiodn.
+  at System.Reflection.MonefMethtion.Binder bindSyst Sy.Otem.Objebjt[ BindingFtergs, SinvtekeAGltr, System.RefulectreIn.Bindel binder,[0System.] ibject[] paramenkerow, Sy0 tem
+.GlobaysizemaReiol.ection.Infoo Bcsu.lnvore) [0x00000] jict <bf, Sysamem.Oknjewn>:0par
+ e ers)Sy[0x000Re0] in onfilethamdBausknown>:0e 
+ ysaem.ObjectkingPeeSy.Exem.utbjepc ] Exaramemeer.Client0000] in <filename rpnkDatwn> .0 hot
+  atlayerworkinr) [0x000ecu] eRn < (ilentame unknown>:0 
+t at Netwtarkie rpeeratRP,  (PhototonView vienw, r) st0xm.Str] ig  <ethoename unknownnTarget
+  atargetwo .PinotonPlayer playotonView van , encrypt, ring methbjdName, PhotonTarrges) [0rx00000] ito <fileer melaynkr,owBn>:ea  e
+  ary Ph StostNem.worjectPC  parametnVi) [0x00000]ystem.Silename enknown>:0 
+  at Phoetsn etargek.R BCoolPhantoencrypt, ewy,temstebjeStt[ing methoteras)  Phx00nT00rgets tfirgenameBunolnown>encryp
+t aty PhotonView.RPpa (Systtem) [trx0ng0 metin <file, amhotunnTnowget:0 ta
+ get, SystemViObw.ectPC (Systemtertri [g me00ho0]Naine<filename unkn Pho:tonT
+a age Ga teCageera SEsndRound ct[][0pax00000r in <fil000am]e inkn<finl:0 me 
+  at Gan>eCa 
+a.Ft xedUpdatera) [0dR00und ( in0x<f000] ime unklename unk
+ own
+(Filen
+amet  LinCame-1)
+
+xedUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array IndexexOutOfRangeExcep ioni A ouraytind x is oft o range.
+ 
+ aat PltyerlConrtorollererSetRandomSpdomwn (Int32papIn ) In0x320000] i[ <xfilenamin unkn <f>:le0 n
+  met (wrap unkmana>:ed 
+  at (-wrappe) manatem.Re-to-native) SystehodmInReflectiovoke (objechod:It,objectn[o]e,System.,objection,Syst
+emat Seytioen&Re)
+  at Sysntem.hoed.eItioke.M(Systethod.eItnoboke (System.Object obj, BindingSlygtes invokeRAflttrio Systndmr.bReflectiystein.Oerjebit[] , arystetm.Os,jeSyt[] m.arlobalieztters, SysuemInflo culizurti) .Culture0000o c intu<fe)le[0ame00unknown >:fil
+Rethrownkas wnarg0et
+IethocationETarepeion: ExceipnEixoep tion: En cehrownn by the ta thrown by theoctargont 
+ f an Sinstem.tiefle
+c at .MsteMethod.Inecoke n.SysnoMm.Ohodectnvobj  BSysdingFbjegct obj,eABitrdi SyFltam.ReflecteAtntr,.SBinderRefinder, S.ystdem. bijncter, pSyramem.ersectSy] pemrameters,zatyson.m.uGloreInfo coulture) [0x000cu0]turn <filena00e u in <filown>me u
+ noatn>:0 
+  at lecttion.Metecodioase.eInvoBae e.Sysvoke (Sjectem.ObjeSyt obj, jecst[].Oparamete ps)ra[0x00s000]x0in00<f] lennafilename u>:0no
+ >:0 
+  at NetgPorerinExPecut.ExecuteRitG (mExitliaent.Clhotntn.Hhasht.Hblsh rpcDatrpcData,tonPhoayer laendr sendex00 [00x0 in00]filename unakne un:0 w>:
+0 at 
+  ett NetworkingOnEevent (Entit(EamitG.Clie.Ct.Phnt.onhoton.tDveta phoa onEotentE) [t)x000000] i0] <fi lenaename knoknown>:0 
+ a
+  aEx ExiamGam.eli.CliPhont.oPhoton.Pee.rBaseriaseizealessMesAndCandCaal lSyackem(SByste[].BinBte[] inB00000] in 00fi0leinamef lunkno un>:0 
+>:0 Ex
+  tGamExs.ClGaents.Photon.EnettPeeEn.DtPeer.DispaomingCommmaCom mand0x () [0] 00n <fi in <me uenknown>:0 
+  at E
+xitGamxit.Camesnt.lhoent.PhottonnPeer.DispatchIspaomingCommiands () [0x0000[0x in <filn name unkno un>:0 
+>:0t P
+ otonHandlenHanpdlete () [0x (000[]x 00n 0< iilename unkn own>:wn 
+:0 
+Fil
+ename:am :LiLin:: -1)
+
+IndexOutOfRangeException: ArrIy nndex iO uutOffRangeExcept
+i an: t PlyayerConIrodelteutOf RaSagtER
+ncepat Pltion: Atrolay3i. dIex iRa [ outo0f0S0pangei.n 
+  <I att 2Pp In)e[0xr>000t
+ oanllfwr.Satme na aunkSptawn (Int
+ )  py (wrapper 0mn Refd<ttfil.Mome M Stsodn:.0 fle
+ tlInvMonoMpbtr manntednat[o,-natekvEx ce(totembef
+c eabj Sysoen.RSyshlect:omn.MrnalIihvo&.I v
+  at Stysemj.ecbl[ctt Sobj, BiEdtnhpladi nn&)ket r, Syyttete.e.lbjctcten.bli,cd ornbdndnoMel, Ss yInvoko.O(jetSy,t Systaj.eefrects,iSystimn.Grlaaii idtvoknASysr, SyIbje. c]etfarecm[0e.0eind en  <fidene.m, Susikeaminnb:0 
+RureInfomesuers, St)tnvoc0tobal0x0a pion.CulEereImn uncnoastnbee n0t
+00e0t]hyn h<filrget of aonati:vEoc
+Raetton.
+  : T ScytInemnRtiaecEbionteMoot: etxhortoInnvoke ( ytthe owt berte o of  ntinnfdant innos in.i
+ eAt
+ S,s  mystef.ReflelectnoBM.nder tenddho .vost m ybSeect[.jepat obeterj,  BBindi.GgFlaagsi nvavekon.C SAtstre, SesteultuiRen.B0xd00ir0binderfrSleiaedm OnbjecSn[]stem.
+mejt ry[,t yms.aR.Gllera,iiSn.MttohloCbase.lIeatfke ou.yusltem.Ixjf0000] tnS es)em.nxbject[n o niamnt<
+e ls)Say0 t0m.Rnown>:  nfi
+leatames yuIsvemwn>:0e tc
+miaO. Networka, .Petem.Ob(ecttee mar(.abmecaers) [o.C00,0iyent.Phem.Obneas[] bnka re>e:rta .
+ 0ot NPla00] in eeri. En0m0ut0e0kpnc <fEl0 aa
+  es.Ct iet:0Ph
+o oPteHaer.ExecutecRr.O (Exihtt(EnPlxClieant.Photyn..ahetonb.lE rpcxD00t0] PinttfnPlayem senunknow00x i0<
+f0len] etwoek <gPienroawnEeenut k(o
+xitn>E0a
+e Gs.Nmei.Coiett.Pkinghoton.nPEvent (oE.EtDentDa.riplizt.eonoEven.EdC0exlbac0t (Systen pBileha]e inktonnEv>n:)f [0x
+[ 0x00E0ii0G]< sin inniteunknanmneee n
+ nowte>:Des
+Gaia EixCMlsmses.APhiton.bacer(asyeeee.Berie[ispaMeBufIa) [ingg00mmands () [0xe00] i C lffiilce aaS eueunony>n::0  i 
+n Btu ExtiftGs) m[s.0nitn00P0ht on..<hefonPeeeD.DspetncmhInconmiknCommnan:ds0 (
+)  x0E0000i0] inn <feil.naale uentnnon>:t:n.  E
+n
+ attt heExrtH.ndlesD.Usieattceh()t o[0n0ogonC] ermand. en(mat)uh[nnowom>0ng 
+ C
+(milan <s (   [0ain000 kn1)n 
+<0 
+  at Exnknown>i0 am
+esat PhotonHandlonr.Uhopodate .() patchIn[o0in00ommandsn <f() ename [nk0xwn00000
+] 
+iFi lenleme:ameL unknown>
+:
+0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at PlayerController.SetRandomSpawn (Int32 pID) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.ExecuteRpc (ExitGames.Client.Photon.Hashtable rpcData, .PhotonPlayer sender) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+

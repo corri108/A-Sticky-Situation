@@ -12,17 +12,57 @@ public class NetworkingObject : Photon.PunBehaviour {
 	[HideInInspector]
 	public bool[] spawnsOccupied;
 	// Use this for initialization
+
+	//for accessing the select screen
+	public GameObject selectScreen;
+	public GameObject level;
+	private CharacterType characterSelection;
 	void Start () 
 	{
+		//set select screen inactive until we join
+		selectScreen.active = false;
+		//set level active until we join
+		level.active = true;
+
 		spawnsOccupied = new bool[spawnPoints.Length];
 		if(debugMode)
 			PhotonNetwork.ConnectUsingSettings(GlobalProperties.VERSION);
 		else
 		{
-			//you already have joined the room. init player now
-			InitializePlayer();
-			PhotonNetwork.isMessageQueueRunning = true;
+			//we are in real mode, so we are already connected and in the room. lets set the select screen
+			selectScreen.active = true;
+			//set level active so we can see the select screen better.
+			level.active = false;
+			GameObject.FindObjectOfType<GameCamera>().JoinedButNoPlayerPicked();
 		}
+	}
+
+	public void ReadyUp()
+	{
+		//you already have joined the room. init player now
+		InitializePlayer(characterSelection);
+		PhotonNetwork.isMessageQueueRunning = true;
+		selectScreen.active = false;
+		//set level active again for waiting stage
+		level.active = true;
+	}
+
+	//character selection methods
+	public void ChooseScientist()
+	{
+		characterSelection = CharacterType.Scientist;
+	}
+	public void ChooseGhost()
+	{
+		characterSelection = CharacterType.Ghost;
+	}
+	public void ChooseBigBoy()
+	{
+		characterSelection = CharacterType.BigBoy;
+	}
+	public void ChooseTheif()
+	{
+		characterSelection = CharacterType.Theif;
 	}
 
 	public override void OnJoinedLobby()
@@ -47,7 +87,7 @@ public class NetworkingObject : Photon.PunBehaviour {
 		}
 	}
 
-	private void InitializePlayer()
+	private void InitializePlayer(CharacterType type)
 	{
 		int yourPlayerID = -1;
 		//get how many players there are first to figure out which player you are
@@ -63,7 +103,7 @@ public class NetworkingObject : Photon.PunBehaviour {
 		
 		Debug.Log ("Your ID: " + yourPlayerID);
 		
-		GameObject myPlayer = PhotonNetwork.Instantiate ("TestPlayer", Vector3.zero, Quaternion.identity, 0);
+		GameObject myPlayer = PhotonNetwork.Instantiate (type.ToString(), Vector3.zero, Quaternion.identity, 0);
 		PlayerController controller = myPlayer.GetComponent<PlayerController> ();
 		controller.enabled = true;
 		controller.GetComponent<PhotonView>().RPC("SetPlayerNumber", PhotonTargets.AllBuffered, yourPlayerID);
@@ -86,7 +126,10 @@ public class NetworkingObject : Photon.PunBehaviour {
 	{
 		if(debugMode)
 		{
-			InitializePlayer ();
+			//since we are in debug mode, set select screen active here instead of up in Start()
+			selectScreen.active = true;
+			GameObject.FindObjectOfType<GameCamera>().JoinedButNoPlayerPicked();
+			level.active = false;
 		}
 	}
 

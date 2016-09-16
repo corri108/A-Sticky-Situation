@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		//tell camera we have joined
-		GameObject.FindObjectOfType<GameCamera> ().MyPlayerHasJoined ();
+		GameObject.FindObjectOfType<GameCamera> ().MyPlayerHasJoined ();	
 	}
 	
 	//input and logic goes here
