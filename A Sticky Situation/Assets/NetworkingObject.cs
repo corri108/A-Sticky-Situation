@@ -73,7 +73,7 @@ public class NetworkingObject : Photon.PunBehaviour {
 		if(controller.GetComponent<PhotonView>().owner.isMasterClient)
 		{
 			//spawn a crate if we are master
-			GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", new Vector3(6,2.5f, 0), Quaternion.identity, 0);
+			//GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", new Vector3(6,2.5f, 0), Quaternion.identity, 0);
 			
 			//also, use a spawn point, but only if we are master.
 			int r = Random.Range(0, spawnPoints.Length);
@@ -105,7 +105,11 @@ public class NetworkingObject : Photon.PunBehaviour {
 				{
 					correctPlayer = p;
 				}
+			}
 
+			while(spawnsOccupied[r])
+			{
+				r = Random.Range(0, spawnPoints.Length);
 			}
 
 			correctPlayer.transform.position = spawnPoints[r].position;

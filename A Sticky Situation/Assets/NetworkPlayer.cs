@@ -4,16 +4,27 @@ using Photon;
 
 public class NetworkPlayer : Photon.PunBehaviour {
 
-	private Vector3 correctPlayerPos;
-	private Quaternion correctPlayerRot;
+	private Vector3 realPosition = Vector3.zero;
+	private Vector3 positionAtLastPacket = Vector3.zero;
+	private double currentTime = 0.0;
+	private double currentPacketTime = 0.0;
+	private double lastPacketTime = 0.0;
+	private double timeToReachGoal = 0.0;
+	private Animator ani;
+
+	void Start()
+	{
+		ani = transform.GetChild (0).GetComponent<Animator> ();
+	}
 	
-	// Update is called once per frame
-	void Update()
+	void Update ()
 	{
 		if (!photonView.isMine)
 		{
-			transform.position = Vector3.Lerp(transform.position, this.correctPlayerPos, Time.deltaTime * 5);
-			transform.rotation = Quaternion.Lerp(transform.rotation, this.correctPlayerRot, Time.deltaTime * 5);
+			//position lag
+			timeToReachGoal = currentPacketTime - lastPacketTime;
+			currentTime += Time.deltaTime;
+			transform.position = Vector3.Lerp(positionAtLastPacket, realPosition, (float)(currentTime / timeToReachGoal));
 		}
 	}
 	
@@ -21,16 +32,21 @@ public class NetworkPlayer : Photon.PunBehaviour {
 	{
 		if (stream.isWriting)
 		{
-			// We own this player: send the others our data
-			stream.SendNext(transform.position);
-			stream.SendNext(transform.rotation);
-			
+			stream.SendNext((Vector3)transform.position);
+			stream.SendNext((bool)ani.GetBool("Walking"));
+			stream.SendNext((bool)ani.GetBool("InAir"));
 		}
 		else
 		{
-			// Network player, receive data
-			this.correctPlayerPos = (Vector3)stream.ReceiveNext();
-			this.correctPlayerRot = (Quaternion)stream.ReceiveNext();
+			//trying to fix position lag
+			currentTime = 0.0;
+			positionAtLastPacket = transform.position;
+			realPosition = (Vector3)stream.ReceiveNext();
+			lastPacketTime = currentPacketTime;
+			currentPacketTime = info.timestamp;
+			//animator syncing
+			ani.SetBool("Walking", (bool)stream.ReceiveNext());
+			ani.SetBool("InAir", (bool)stream.ReceiveNext());
 		}
 	}
 }

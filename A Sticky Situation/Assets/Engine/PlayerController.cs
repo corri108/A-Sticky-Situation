@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour {
 	public Vector3 stuckPosition;
 	[HideInInspector]
 	public StickyBomb currentStuck = null;
+	[HideInInspector]
+	public Scorecard myStats;
 
 	//public vars
 	public string playerName = "Bob";
@@ -122,13 +124,16 @@ public class PlayerController : MonoBehaviour {
 				animator.SetBool("Jumped", true);
 				myBody.AddForce(Vector2.up * jumpForce);
 				AudioSource.PlayClipAtPoint(jump, this.transform.position);
+				animator.SetBool ("InAir", true);
 			}
 
 			if(!wasGrounded)
 			{
 				AudioSource.PlayClipAtPoint(land, this.transform.position);
+				animator.SetBool ("InAir", false);
 			}
 		}
+		else animator.SetBool ("InAir", true);
 
 		float raycastD = .55f;
 		//check raycasting for objects to the left and right of player
@@ -358,10 +363,45 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	[PunRPC]
+	void SetRandomSpawn(int pID)
+	{
+		GameCamera gc = GameObject.FindObjectOfType<GameCamera> ();
+
+		foreach(var p in gc.playerList)
+		{
+			p.gameObject.active = true;
+			gc._playerJoined = true;
+			gc.gameStartCountdown = 60 * 3;
+			gc.gameFinishedTimer = 60 * 10;
+		}
+		//use a spawn point to tell other player where to go
+		int r = Random.Range(0, gc.spawnPoints.Length);
+		PlayerController correctPlayer = this;
+		
+		while(gc.spawnsOccupied[r])
+		{
+			r = Random.Range(0, gc.spawnPoints.Length);
+		}
+		
+		correctPlayer.transform.position = gc.spawnPoints[r].position;
+		gc.spawnsOccupied[r] = true;
+		correctPlayer.gameObject.active = true;
+		correctPlayer.canMove = false;
+
+		//destroy all bombs
+		StickyBomb[] allBombs = GameObject.FindObjectsOfType<StickyBomb> ();
+		foreach(var b in allBombs)
+		{
+			PhotonNetwork.Destroy(b.gameObject);
+		}
+	}
+
+	[PunRPC]
 	void SetPlayerNumber(int id)
 	{
 		Color c = playerMaterials [id - 1].color;
 		playerID = id;
+		myStats = new Scorecard (id);
 		if(nametag == null)
 		{
 			nametag = transform.FindChild ("Nametag").GetComponent<TextMesh> ();
@@ -381,5 +421,7 @@ public class PlayerController : MonoBehaviour {
 			nametag.color = c;
 			nametag.text = "P" + id.ToString ();
 		}
+
+		GameObject.FindObjectOfType<GameCamera> ().playerList.Add (this);
 	}
 }

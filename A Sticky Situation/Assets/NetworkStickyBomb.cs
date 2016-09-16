@@ -81,6 +81,19 @@ public class NetworkStickyBomb : Photon.PunBehaviour {
 					}
 
 					GetComponent<PhotonView>().RPC("DisplayKill", PhotonTargets.All, stuckPlayer.playerID, gotKillPlayer.playerID);
+
+					//check to see if we should spawn a crate
+					players = GameObject.FindObjectsOfType<PlayerController>();
+					if(players.Length == 1)
+					{
+						//dont spawn crate
+					}
+					else
+					{
+						//spawn crate
+						//spawn a crate if we are master
+						GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", new Vector3(6,2.5f, 0), Quaternion.identity, 0);
+					}
 				}
 
 				if(justTransfered)
@@ -105,10 +118,8 @@ public class NetworkStickyBomb : Photon.PunBehaviour {
 	[PunRPC]
 	void DisplayKill(int killed, int killer)
 	{
-		PopText.Create ("P" + killed.ToString () + " was killed by P" + killer.ToString(), Color.white, 250, 
-		                new Vector3(0, 4, 1));
-
 		PlayerController stuckPlayer = null;
+		PlayerController gotKillPlayer = null;
 		PlayerController[] players = GameObject.FindObjectsOfType<PlayerController>();
 		
 		foreach(var p in players)
@@ -118,13 +129,41 @@ public class NetworkStickyBomb : Photon.PunBehaviour {
 				stuckPlayer = p;
 			}
 		}
+		foreach(var p in players)
+		{
+			if(p.playerID == sb.ownerID)
+			{
+				gotKillPlayer = p;
+			}
+		}
 
+		stuckPlayer.isStuck = false;
 		stuckPlayer.gameObject.active = false;
+
+		gotKillPlayer.myStats.Kills++;
+		stuckPlayer.myStats.Deaths++;
+
+		players = GameObject.FindObjectsOfType<PlayerController>();
+		if(players.Length == 1)
+		{
+			PopText.Create ("ROUND OVER - P" + killer.ToString() + " WINS!", Color.white, 250, 
+			                new Vector3(0, 4, 1));
+			gotKillPlayer.myStats.RoundsWon++;
+			GameObject.FindObjectOfType<GameCamera>().RoundOver();
+		}
+		else
+		{
+			PopText.Create ("P" + killed.ToString () + " was killed by P" + killer.ToString(), Color.white, 250, 
+			                new Vector3(0, 4, 1));
+		}
+
+		this.gameObject.active = false;
 	}
 
 	[PunRPC]
 	void Blowup()
-	{
+	{	
+		this.gameObject.transform.SetParent (null);
 		GameObject.Destroy ((GameObject)GameObject.Instantiate (blowupPS, this.transform.position, Quaternion.identity), 1f);
 	}
 	

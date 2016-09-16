@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameCamera : MonoBehaviour {
 
@@ -7,58 +8,152 @@ public class GameCamera : MonoBehaviour {
 	private Camera thisCamera;
 	private TextMesh thisText;
 	public float onPlayerJoinedSize = 5.5f;
-	private bool _playerJoined = false;
+	[HideInInspector]
+	public bool _playerJoined = false;
 	private bool _gameStarted = false;
+	private bool _initTimer = false;
+	private bool _gameEnded = false;
 	private bool playerStuck = false;
-	public int bombTime = 10;
-	int timer;
+
+	private Vector3 origScale;
+	private GameObject scoreboard;
+	private TextMesh scoreboardText;
+
+	public Transform[] spawnPoints;
+	//to make sure we dont double occupy a spawn
+	[HideInInspector]
+	public bool[] spawnsOccupied;
+	[HideInInspector]
+	public List<PlayerController> playerList;
+
+	[HideInInspector]
+	public int gameStartCountdown = 60 * 3;
+	[HideInInspector]
+	public int gameFinishedTimer = 60 * 10;
+
 	// Use this for initialization
 	void Start () 
 	{
+		spawnsOccupied = new bool[spawnPoints.Length];
+		playerList = new List<PlayerController> ();
+		playerList.Clear ();
 		thisCamera = this.GetComponent<Camera> ();
 		thisText = transform.GetChild (0).GetComponent<TextMesh> ();
 		thisText.text = "Joining...";
 		startSize = thisCamera.orthographicSize;
-		timer = bombTime * 60;
+		scoreboard = transform.FindChild ("Scoreboard").gameObject;
+		scoreboardText = scoreboard.transform.GetChild (0).GetComponent<TextMesh> ();
+	}
+
+	void Update()
+	{
+		if(Input.GetKey(KeyCode.Tab))
+		{
+			ShowStatistics();
+		}
+		else if(Input.GetKeyUp(KeyCode.Tab))
+		{
+			HideStatistics();
+		}
+	}
+
+	void ShowStatistics()
+	{
+		scoreboard.active = true;
+		//PlayerController[] players = GameObject.FindObjectsOfType<PlayerController>();
+		
+		scoreboardText.text = "";
+		foreach(var p in playerList)
+		{
+			scoreboardText.text += p.myStats.ToString() + "\n";
+		}
+	}
+
+	void HideStatistics()
+	{
+		scoreboard.active = false;
+		scoreboardText.text = "";
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
 		if(_playerJoined)
 		{
 			thisCamera.orthographicSize = Mathf.Lerp(thisCamera.orthographicSize, onPlayerJoinedSize, .1f);
 
-			if(!_gameStarted && PhotonNetwork.room != null)
+			if(!_gameStarted && PhotonNetwork.room != null && !_initTimer)
 			{
 				if(PhotonNetwork.playerList.Length == PhotonNetwork.room.maxPlayers)
 				{
 					//start countdown
-					BeginGame();
+					_initTimer = true;
 				}
 			}
-			else if(_gameStarted)
+			else if(!_gameStarted && PhotonNetwork.room != null && _initTimer)
+			{
+				gameStartCountdown--;
+				thisText.text = ( (gameStartCountdown / 60) + 1).ToString() + "...";
+
+				if(gameStartCountdown == 0)
+				{
+					BeginGame();
+					origScale = thisText.transform.localScale;
+					thisText.text = "";
+				}
+			}
+			else if(_gameStarted && !_gameEnded)
 			{
 				thisText.transform.localScale *= .95f;
+				thisText.text = "";
+			}
+			else if(_gameEnded)
+			{
+				thisText.transform.localScale = origScale;
+				gameFinishedTimer--;
+				if(gameFinishedTimer <= 300)
+				{
+					thisText.text = "Next round in " + ((gameFinishedTimer / 60) + 1).ToString() + "...";
+					if(gameFinishedTimer == 0)
+					{
+						EndRound();
+					}
+				}
 			}
 		}
 		else
 		{
 
 		}
-		if (playerStuck) 
+	}
+
+	public void RoundOver()
+	{
+		_gameEnded = true;
+		thisText.text = "";
+	}
+
+	void EndRound()
+	{
+		foreach(var p in playerList)
 		{
-			if (timer > 0) 
-			{
-				timer--;
-				thisText.text = (timer / 60).ToString ();
-			} 
-			else 
-			{
-				timer = bombTime * 60;
-				playerStuck = false;
-			}
+			p.gameObject.active = true;
 		}
+
+		_gameEnded = false;
+		_gameStarted = false;
+		_initTimer = false;
+		_playerJoined = false;
+		thisText.text = "";
+		spawnsOccupied = new bool[spawnPoints.Length];
+		foreach(var p in playerList)
+		{
+			p.GetComponent<PhotonView>().RPC("SetRandomSpawn", PhotonTargets.All, p.playerID);
+		}
+		_playerJoined = true;
+		_initTimer = true;
+		gameStartCountdown = 60 * 3;
+		gameFinishedTimer = 60 * 10;
 	}
 
 	public void BeginGame()
@@ -72,6 +167,11 @@ public class GameCamera : MonoBehaviour {
 
 		thisText.text = "Begin!";
 		_gameStarted = true;
+
+		if(PhotonNetwork.isMasterClient)
+		{
+			GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", new Vector3(6,2.5f, 0), Quaternion.identity, 0);
+		}
 	}
 
 	public void BombStuck()
