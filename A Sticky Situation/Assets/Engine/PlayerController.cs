@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask whatIsGround;
 	public Sprite hasBombSprite;
 	public Sprite noBombSprite;
+	public GameObject teleportParticle;
 	//sounds
 	public AudioClip foot1;
 	public AudioClip foot2;
@@ -291,6 +292,13 @@ public class PlayerController : MonoBehaviour {
 			PopText.Create("STUCK!", Color.white, 120, this.transform.position + Vector3.up * .5f);
 			Debug.Log("Current stuck: " + currentStuck.name);
 		}
+	}
+
+	[PunRPC]
+	void Teleported(Vector3 t1, Vector3 t2)
+	{
+		GameObject.Destroy (GameObject.Instantiate (teleportParticle, t1, Quaternion.identity), 2f);
+		GameObject.Destroy (GameObject.Instantiate (teleportParticle, t2, Quaternion.identity), 2f);
 	}
 
 	[PunRPC]

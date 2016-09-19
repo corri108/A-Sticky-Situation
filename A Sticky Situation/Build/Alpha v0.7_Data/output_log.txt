@@ -1,0 +1,3187 @@
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 860M  (ID=0x1392)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.582 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 46ac -> priority: 1 
+  Thread -> id: 2b58 -> priority: 1 
+Initialize engine version: 5.2.2f1 (3757309da7e7)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 860M  (ID=0x1392)
+    Vendor:   NVIDIA
+    VRAM:     1995 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.050 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+SwitchToProtocol: Udp PhotonNetwork.connected: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Platform assembly: C:\Users\socce_000\Documents\A-Sticky-Situation-master\A Sticky Situation\Build\Alpha v0.7_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 34bc -> priority: 1 
+  Thread -> id: 2cbc -> priority: 1 
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.642690 ms
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 906.
+Total: 0.524268 ms (FindLiveObjects: 0.041875 ms CreateObjectMapping: 0.023811 ms MarkObjects: 0.433948 ms  DeleteObjects: 0.024222 ms)
+
+SwitchToProtocol: Udp PhotonNetwork.connected: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.502786 ms
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 906.
+Total: 0.612125 ms (FindLiveObjects: 0.035717 ms CreateObjectMapping: 0.030380 ms MarkObjects: 0.505793 ms  DeleteObjects: 0.039412 ms)
+
+Your ID: 1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkPlayer.OnPhotonSerializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.SerializeComponent (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.SerializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeWrite (.PhotonView view) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.RunViewUpdate () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Your ID: 2
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkPlayer.OnPhotonSerializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeComponent (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeRead (System.Object[] data, .PhotonPlayer sender, Int32 networkTime, Int16 correctPrefix) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at NetworkPlayer.OnPhotonSerializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in <filename unknown>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <filename unknown>:0 
+  at PhotonView.ExecuteComponentOnSerialize (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeComponent (UnityEngine.Component component, .PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at PhotonView.DeserializeView (.PhotonStream stream, PhotonMessageInfo info) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnSerializeRead (System.Object[] data, .PhotonPlayer sender, Int32 networkTime, Int16 correctPrefix) [0x00000] in <filename unknown>:0 
+  at NetworkingPeer.OnEvent (ExitGames.Client.Photon.EventData photonEvent) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PeerBase.DeserializeMessageAndCallback (System.Byte[] inBuff) [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.EnetPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at ExitGames.Client.Photon.PhotonPeer.DispatchIncomingCommands () [0x00000] in <filename unknown>:0 
+  at PhotonHandler.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at CameraTrack.CalculateTargetsBoundingBox () [0x00000] in <filename unknown>:0 
+  at CameraTrack.LateUpdate () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+

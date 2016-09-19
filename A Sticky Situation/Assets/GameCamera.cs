@@ -185,6 +185,9 @@ public class GameCamera : MonoBehaviour {
 		{
 			GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", new Vector3(6,2.5f, 0), Quaternion.identity, 0);
 		}
+
+		GetComponent<CameraTrack> ().enabled = true;
+		GetComponent<CameraTrack> ().SetTargets (playerList);
 	}
 
 	public void BombStuck()

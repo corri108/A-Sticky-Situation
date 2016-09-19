@@ -82,7 +82,7 @@ public class NetworkingObject : Photon.PunBehaviour {
 		{
 			Debug.Log("Can't join random room!");
 			RoomOptions ro = new RoomOptions ();
-			ro.MaxPlayers = 2;
+			ro.MaxPlayers = 1;
 			PhotonNetwork.CreateRoom("Dev Test Room" , ro, null);
 		}
 	}
