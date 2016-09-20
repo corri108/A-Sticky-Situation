@@ -16,6 +16,7 @@ public class NetworkingObject : Photon.PunBehaviour {
 	//for accessing the select screen
 	public GameObject selectScreen;
 	public GameObject level;
+	public byte debugCharacterSize = 2;
 	private CharacterType characterSelection;
 	void Start () 
 	{
@@ -82,7 +83,7 @@ public class NetworkingObject : Photon.PunBehaviour {
 		{
 			Debug.Log("Can't join random room!");
 			RoomOptions ro = new RoomOptions ();
-			ro.MaxPlayers = 1;
+			ro.MaxPlayers = debugCharacterSize;
 			PhotonNetwork.CreateRoom("Dev Test Room" , ro, null);
 		}
 	}

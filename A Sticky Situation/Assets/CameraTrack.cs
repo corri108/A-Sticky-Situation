@@ -1,93 +1,107 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class CameraTrack : MonoBehaviour {
+public class CameraTrack : MonoBehaviour 
+{
+	public float m_DampTime = 0.2f;                 
+	public float m_ScreenEdgeBuffer = 4f;           
+	public float m_MinSize = 6.5f;                  
+	[HideInInspector]
+	public List<PlayerController> targets; 
 	
-	[SerializeField] 
-	List<PlayerController> targets;
+	private Camera m_Camera;                        
+	private float m_ZoomSpeed;                      
+	private Vector3 m_MoveVelocity;                 
+	private Vector3 m_DesiredPosition;              
 	
-	[SerializeField] 
-	float boundingBoxPadding = 2f;
-	
-	[SerializeField]
-	float minimumOrthographicSize = 5f;
-	
-	[SerializeField]
-	float zoomSpeed = 20f;
-	
-	Camera camera;
-	
-	void Awake () 
+	private void Awake()
 	{
-		camera = GetComponent<Camera>();
-		camera.orthographic = true;
-	}
+		m_Camera = GetComponentInChildren<Camera>();
+	}	
 
-	public void SetTargets(List<PlayerController> targ)
+	public void SetTargets( List<PlayerController> targ)
 	{
 		targets = new List<PlayerController> ();
 		targets = targ;
 	}
 	
-	void LateUpdate()
+	private void FixedUpdate()
 	{
-		Rect boundingBox = CalculateTargetsBoundingBox();
-		transform.position = Vector3.Lerp(transform.position, CalculateCameraPosition(boundingBox), .1f);
-		camera.orthographicSize = CalculateOrthographicSize(boundingBox);
-		//camera.orthographicSize = Mathf.Lerp (camera.orthographicSize, CalculateOrthographicSize (boundingBox), Time.deltaTime * zoomSpeed); 
+		Move();
+		Zoom();
 	}
 	
-	/// <summary>
-	/// Calculates a bounding box that contains all the targets.
-	/// </summary>
-	/// <returns>A Rect containing all the targets.</returns>
-	Rect CalculateTargetsBoundingBox()
+	private void Move()
 	{
-		float minX = Mathf.Infinity;
-		float maxX = Mathf.NegativeInfinity;
-		float minY = Mathf.Infinity;
-		float maxY = Mathf.NegativeInfinity;
+		FindAveragePosition();
 		
-		foreach (PlayerController target in targets) {
-			Vector3 position = target.transform.position;
+		transform.position = Vector3.SmoothDamp(transform.position, m_DesiredPosition, ref m_MoveVelocity, m_DampTime);
+	}
+
+	private void FindAveragePosition()
+	{
+		Vector3 averagePos = new Vector3();
+		int numTargets = 0;
+		
+		for (int i = 0; i < targets.Count; i++)
+		{
+			if (!targets[i].gameObject.activeSelf)
+				continue;
 			
-			minX = Mathf.Min(minX, position.x);
-			minY = Mathf.Min(minY, position.y);
-			maxX = Mathf.Max(maxX, position.x);
-			maxY = Mathf.Max(maxY, position.y);
+			averagePos += targets[i].transform.position;
+			numTargets++;
 		}
 		
-		return Rect.MinMaxRect(minX - boundingBoxPadding, maxY + boundingBoxPadding, maxX + boundingBoxPadding, minY - boundingBoxPadding);
+		if (numTargets > 0)
+			averagePos /= numTargets;
+		
+		averagePos.y = transform.position.y;
+		
+		m_DesiredPosition = new Vector3(averagePos.x, averagePos.y, -10);
 	}
 	
-	/// <summary>
-	/// Calculates a camera position given the a bounding box containing all the targets.
-	/// </summary>
-	/// <param name="boundingBox">A Rect bounding box containg all targets.</param>
-	/// <returns>A Vector3 in the center of the bounding box.</returns>
-	Vector3 CalculateCameraPosition(Rect boundingBox)
+	
+	private void Zoom()
 	{
-		Vector2 boundingBoxCenter = boundingBox.center;
-		
-		return new Vector3(boundingBoxCenter.x, boundingBoxCenter.y, camera.transform.position.z);
+		float requiredSize = FindRequiredSize();
+		m_Camera.orthographicSize = Mathf.SmoothDamp(m_Camera.orthographicSize, requiredSize, ref m_ZoomSpeed, m_DampTime);
 	}
 	
-	/// <summary>
-	/// Calculates a new orthographic size for the camera based on the target bounding box.
-	/// </summary>
-	/// <param name="boundingBox">A Rect bounding box containg all targets.</param>
-	/// <returns>A float for the orthographic size.</returns>
-	float CalculateOrthographicSize(Rect boundingBox)
+	
+	private float FindRequiredSize()
 	{
-		float orthographicSize = camera.orthographicSize;
-		Vector3 topRight = new Vector3(boundingBox.x + boundingBox.width, boundingBox.y, 0f);
-		Vector3 topRightAsViewport = camera.WorldToViewportPoint(topRight);
+		Vector3 desiredLocalPos = transform.InverseTransformPoint(m_DesiredPosition);
 		
-		if (topRightAsViewport.x >= topRightAsViewport.y)
-			orthographicSize = (Mathf.Abs(boundingBox.width) / camera.aspect / 2f) + 2;
-		else
-			orthographicSize = (Mathf.Abs(boundingBox.height) / 2f) + 2;
+		float size = 0f;
 		
-		return Mathf.Clamp(Mathf.Lerp(camera.orthographicSize, orthographicSize, Time.deltaTime * zoomSpeed), minimumOrthographicSize, Mathf.Infinity);
+		for (int i = 0; i < targets.Count; i++)
+		{
+			if (!targets[i].gameObject.activeSelf)
+				continue;
+			
+			Vector3 targetLocalPos = transform.InverseTransformPoint(targets[i].transform.position);
+			
+			Vector3 desiredPosToTarget = targetLocalPos - desiredLocalPos;
+			
+			size = Mathf.Max (size, Mathf.Abs (desiredPosToTarget.y));
+			
+			size = Mathf.Max (size, Mathf.Abs (desiredPosToTarget.x) / m_Camera.aspect);
+		}
+		
+		size += m_ScreenEdgeBuffer;
+		
+		size = Mathf.Max(size, m_MinSize);
+		
+		return size;
+	}
+	
+	
+	public void SetStartPositionAndSize()
+	{
+		FindAveragePosition();
+		
+		transform.position = m_DesiredPosition;
+		
+		m_Camera.orthographicSize = FindRequiredSize();
 	}
 }
