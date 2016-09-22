@@ -371,6 +371,17 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	[PunRPC]
+	void SetCanMove()
+	{
+		GameCamera gc = GameObject.FindObjectOfType<GameCamera> ();
+		
+		foreach(var p in gc.playerList)
+		{
+			p.canMove = true;
+		}
+	}
+
+	[PunRPC]
 	void SetRandomSpawn(int pID)
 	{
 		GameCamera gc = GameObject.FindObjectOfType<GameCamera> ();

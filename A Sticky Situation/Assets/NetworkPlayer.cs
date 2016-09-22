@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Photon;
+using System;
 
 public class NetworkPlayer : Photon.PunBehaviour {
 
@@ -36,13 +37,17 @@ public class NetworkPlayer : Photon.PunBehaviour {
 	{
 		if (stream.isWriting)
 		{
+			try{
 			stream.SendNext((Vector3)transform.position);
 			stream.SendNext((bool)ani.GetBool("Walking"));
 			stream.SendNext((bool)ani.GetBool("InAir"));
 			stream.SendNext((Vector3)transform.localScale);
+			}
+			catch(Exception e){}
 		}
 		else
 		{
+			try{
 			//trying to fix position lag
 			currentTime = 0.0;
 			positionAtLastPacket = transform.position;
@@ -62,6 +67,8 @@ public class NetworkPlayer : Photon.PunBehaviour {
 			{
 				this.transform.GetChild(0).localScale = negScale;
 			}
+			}
+			catch(Exception e){}
 		}
 	}
 }

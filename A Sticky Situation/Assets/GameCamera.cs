@@ -178,6 +178,11 @@ public class GameCamera : MonoBehaviour {
 			p.canMove = true;
 		}
 
+		foreach(var p in playerList)
+		{
+			p.GetComponent<PhotonView>().RPC("SetCanMove", PhotonTargets.All);
+		}
+
 		thisText.text = "Begin!";
 		_gameStarted = true;
 
