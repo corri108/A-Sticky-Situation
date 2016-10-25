@@ -10,7 +10,8 @@ public class GameCamera : MonoBehaviour {
 	public float onPlayerJoinedSize = 5.5f;
 	[HideInInspector]
 	public bool _playerJoined = false;
-	private bool _gameStarted = false;
+	[HideInInspector]
+	public bool _gameStarted = false;
 	private bool _initTimer = false;
 	private bool _gameEnded = false;
 	private bool playerStuck = false;

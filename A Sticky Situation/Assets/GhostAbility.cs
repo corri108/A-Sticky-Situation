@@ -5,6 +5,8 @@ using Photon;
 public class GhostAbility : PunBehaviour {
 
 	public Material material;
+	public Material mainMaterial;
+	public Material ghostMaterial;
 	public GameObject cape;
 	bool abilityAvailable;
 	bool used;
@@ -17,19 +19,54 @@ public class GhostAbility : PunBehaviour {
 
 	void Start()
 	{
-		Debug.Log (transform.GetChild (0).GetChild (0).name);
-		material = transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material;
+		mainMaterial = transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material;
 		abilityAvailable = true;
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKeyDown (KeyCode.LeftShift)) 
+		if (Camera.main.GetComponent<GameCamera> ()._gameStarted) 
 		{
-			GetComponent<PhotonView> ().RPC ("Disappear", PhotonTargets.AllBuffered, null);
+			if (Input.GetKeyDown (KeyCode.LeftShift)) 
+			{
+				GetComponent<PhotonView> ().RPC ("Disappear", PhotonTargets.AllBuffered, null);
+			}
 		}
-			
+		if (used) 
+		{
+			if (timer < wait) 
+			{
+				transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = ghostMaterial;
+				//5
+				for(int i = 0; i < 5; ++i)
+				{
+					transform.GetChild (0).GetChild (0).GetChild (i).GetComponent<SpriteRenderer> ().material = ghostMaterial;
+					if(i != 4)
+					{
+						transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetComponent<SpriteRenderer> ().material = ghostMaterial;
+						transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material = ghostMaterial;
+					}
+				}
+				cape.SetActive (false);
+				timer += Time.deltaTime;
+			} 
+			else 
+			{
+				cape.SetActive (true);
+				transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = mainMaterial;
+				//5
+				for(int i = 0; i < 5; ++i)
+				{
+					transform.GetChild (0).GetChild (0).GetChild (i).GetComponent<SpriteRenderer> ().material = mainMaterial;
+					if(i != 4)
+					{
+						transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetComponent<SpriteRenderer> ().material = mainMaterial;
+						transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material = mainMaterial;
+					}
+				}
+			}
+		}
 
 	}
 
