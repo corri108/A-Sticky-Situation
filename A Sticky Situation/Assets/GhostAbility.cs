@@ -8,9 +8,8 @@ public class GhostAbility : PunBehaviour {
 	public Material mainMaterial;
 	public Material ghostMaterial;
 	public GameObject cape;
-	bool abilityAvailable;
+	public bool abilityAvailable;
 	bool used;
-	bool timerStart;
 
 	float timer;
 	Color tempColor;
@@ -32,7 +31,13 @@ public class GhostAbility : PunBehaviour {
 			{
 				GetComponent<PhotonView> ().RPC ("Disappear", PhotonTargets.AllBuffered, null);
 			}
+		} 
+		else 
+		{
+			abilityAvailable = true;
+			used = false;
 		}
+
 		if (used) 
 		{
 			if (timer < wait) 

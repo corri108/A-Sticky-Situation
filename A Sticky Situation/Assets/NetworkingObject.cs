@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using Photon;
 
@@ -61,9 +60,9 @@ public class NetworkingObject : Photon.PunBehaviour {
 	{
 		characterSelection = CharacterType.BigBoy;
 	}
-	public void ChooseTheif()
+	public void ChooseThief()
 	{
-		characterSelection = CharacterType.Theif;
+		characterSelection = CharacterType.Thief;
 	}
 
 	public override void OnJoinedLobby()

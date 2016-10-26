@@ -3,7 +3,7 @@ using System.Collections;
 
 public enum CharacterType
 {
-	Theif,
+	Thief,
 	Ghost,
 	BigBoy,
 	Scientist
