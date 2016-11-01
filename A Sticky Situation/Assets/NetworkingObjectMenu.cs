@@ -15,6 +15,8 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 	public Button create;
 	public TextBox roomName;
 	public TextBox maxPlayers;
+	public GameObject title;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -26,11 +28,10 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 		//turn off old options
 		connect.gameObject.active = false;
 		quit.gameObject.active = false;
+		title.SetActive (false);
 		//turn on new options
 		join.gameObject.active = true;
 		create.gameObject.active = true;
-		roomName.gameObject.active = true;
-		maxPlayers.gameObject.active = true;
 
 		AudioSource.PlayClipAtPoint (click, this.transform.position);
 		PopText.Create ("Connected to game server.", Color.black, 150, this.transform.position);
@@ -63,14 +64,13 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 	{
 		AudioSource.PlayClipAtPoint (click, this.transform.position);
 		PhotonNetwork.ConnectUsingSettings (GlobalProperties.VERSION);
-		PopText.Create ("Connecting...", Color.black, 80, this.transform.position);
 	}
 
 	public void ClickJoin()
 	{
 		AudioSource.PlayClipAtPoint (click, this.transform.position);
 		PhotonNetwork.JoinRoom (roomName.text);
-		PopText.Create ("Joining room \"" + roomName.text + "\"...", Color.black, 200, this.transform.position);
+		PopText.Create ("Joining room \"" + roomName.text + "\"...", Color.white, 200, this.transform.position);
 	}
 	
 	public void ClickCreate()
@@ -79,7 +79,7 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 		ro.MaxPlayers = byte.Parse(maxPlayers.text);
 		AudioSource.PlayClipAtPoint (click, this.transform.position);
 		PhotonNetwork.JoinOrCreateRoom (roomName.text, ro, TypedLobby.Default);
-		PopText.Create ("Creating and joining room \"" + roomName.text + "\"...", Color.black, 200, this.transform.position);
+		PopText.Create ("Creating and joining room \"" + roomName.text + "\"...", Color.white, 200, this.transform.position);
 	}
 	
 	public void ClickQuit()
