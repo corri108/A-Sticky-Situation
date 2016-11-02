@@ -109,6 +109,8 @@ public class NetworkingObject : Photon.PunBehaviour {
 		controller.GetComponent<PhotonView>().RPC("SetPlayerNumber", PhotonTargets.AllBuffered, yourPlayerID);
 		Rigidbody2D myBody = myPlayer.GetComponent<Rigidbody2D> ();
 		myBody.gravityScale = GlobalProperties.GravityScale;
+		if (type == CharacterType.Thief)
+			myPlayer.GetComponent<ThiefAbility> ().enabled = true;
 		
 		if(controller.GetComponent<PhotonView>().owner.isMasterClient)
 		{

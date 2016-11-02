@@ -85,6 +85,15 @@ public class PlayerController : MonoBehaviour {
 		//tell camera we have joined
 		GameObject.FindObjectOfType<GameCamera> ().MyPlayerHasJoined ();	
 	}
+
+	void SpecialCharacterMoves()
+	{
+		if (Input.GetKeyDown (KeyCode.LeftShift)) 
+		{
+			if(GetComponent<GhostAbility>() != null)
+				GetComponent<PhotonView> ().RPC ("Disappear", PhotonTargets.AllBuffered, null);
+		}
+	}
 	
 	//input and logic goes here
 	void Update () 
@@ -94,6 +103,8 @@ public class PlayerController : MonoBehaviour {
 
 	    xInput = Input.GetAxis ("Horizontal");
 		xInput *= accelerationSpeed;
+
+		SpecialCharacterMoves ();
 
 		if (xInput > 0 || xInput < 0)
 		{
@@ -161,19 +172,54 @@ public class PlayerController : MonoBehaviour {
 		{
 			if(Input.GetMouseButtonDown(0))
 			{
-				//throw bomb
-				this.GetComponent<PhotonView>().RPC("ThrowBomb", PhotonTargets.All);
-				GameObject theBomb = PhotonNetwork.Instantiate("StickyBomb", this.transform.position, Quaternion.identity, 0);
-				this.GetComponent<PhotonView>().RPC("SetBomb", PhotonTargets.All, theBomb.GetComponent<PhotonView>().viewID, playerName);
+				if(GetComponent<Scientist>() == null)
+				{
+					//throw bomb
+					this.GetComponent<PhotonView>().RPC("ThrowBomb", PhotonTargets.All);
+					GameObject theBomb = PhotonNetwork.Instantiate("StickyBomb", this.transform.position, Quaternion.identity, 0);
+					this.GetComponent<PhotonView>().RPC("SetBomb", PhotonTargets.All, theBomb.GetComponent<PhotonView>().viewID, playerName);
 
-				if(transform.localScale.x > 0)
-				{
-					//throw to right
-					theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(200,-50));
+					if(transform.localScale.x > 0)
+					{
+						//throw to right
+						theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(200,-50));
+					}
+					else
+					{
+						theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200,-50));
+					}
 				}
-				else
+				//WAIT if you are the scientist, let us throw two instead!
+				else if(GetComponent<Scientist>() != null)
 				{
-					theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200,-50));
+					//throw one bomb
+					this.GetComponent<PhotonView>().RPC("ThrowBomb", PhotonTargets.All);
+					GameObject theBomb = PhotonNetwork.Instantiate("StickyBomb", this.transform.position, Quaternion.identity, 0);
+					this.GetComponent<PhotonView>().RPC("SetBomb", PhotonTargets.All, theBomb.GetComponent<PhotonView>().viewID, playerName);
+					
+					if(transform.localScale.x > 0)
+					{
+						//throw to right
+						theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(200,-75));
+					}
+					else
+					{
+						theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200,-75));
+					}
+
+					//throw another
+					GameObject secondBomb = PhotonNetwork.Instantiate("StickyBomb", this.transform.position, Quaternion.identity, 0);
+					this.GetComponent<PhotonView>().RPC("SetBomb", PhotonTargets.All, secondBomb.GetComponent<PhotonView>().viewID, playerName);
+					
+					if(transform.localScale.x > 0)
+					{
+						//throw to right
+						secondBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(200,75));
+					}
+					else
+					{
+						secondBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200,75));
+					}
 				}
 			}
 		}

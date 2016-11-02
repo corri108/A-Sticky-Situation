@@ -80,7 +80,16 @@ public class NetworkStickyBomb : Photon.PunBehaviour {
 						}
 					}
 
-					GetComponent<PhotonView>().RPC("DisplayKill", PhotonTargets.All, stuckPlayer.playerID, gotKillPlayer.playerID);
+					if(stuckPlayer.GetComponent<BigBoy>() != null && 
+					   !stuckPlayer.GetComponent<BigBoy>().alreadyHit)
+					{
+						//take away a life but dont kill him
+						GetComponent<PhotonView>().RPC("BigBoyHit", PhotonTargets.All, stuckPlayer.playerID, gotKillPlayer.playerID);
+					}
+					else
+					{
+						GetComponent<PhotonView>().RPC("DisplayKill", PhotonTargets.All, stuckPlayer.playerID, gotKillPlayer.playerID);
+					}
 
 					//check to see if we should spawn a crate
 					players = GameObject.FindObjectsOfType<PlayerController>();
@@ -157,6 +166,37 @@ public class NetworkStickyBomb : Photon.PunBehaviour {
 			                new Vector3(0, 4, 1));
 		}
 
+		this.gameObject.active = false;
+	}
+
+	[PunRPC]
+	void BigBoyHit(int killed, int killer)
+	{
+		PlayerController stuckPlayer = null;
+		PlayerController gotKillPlayer = null;
+		PlayerController[] players = GameObject.FindObjectsOfType<PlayerController>();
+		
+		foreach(var p in players)
+		{
+			if(p.playerID == sb.stuckID)
+			{
+				stuckPlayer = p;
+			}
+		}
+		foreach(var p in players)
+		{
+			if(p.playerID == sb.ownerID)
+			{
+				gotKillPlayer = p;
+			}
+		}
+		
+		stuckPlayer.isStuck = false;
+		stuckPlayer.GetComponent<BigBoy> ().alreadyHit = true;
+
+		PopText.Create ("P" + killed.ToString () + " was hit by P" + killer.ToString(), Color.white, 250, 
+			                new Vector3(0, 4, 1));
+		
 		this.gameObject.active = false;
 	}
 

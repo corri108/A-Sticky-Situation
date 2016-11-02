@@ -27,10 +27,7 @@ public class GhostAbility : PunBehaviour {
 	{
 		if (Camera.main.GetComponent<GameCamera> ()._gameStarted) 
 		{
-			if (Input.GetKeyDown (KeyCode.LeftShift)) 
-			{
-				GetComponent<PhotonView> ().RPC ("Disappear", PhotonTargets.AllBuffered, null);
-			}
+
 		} 
 		else 
 		{
