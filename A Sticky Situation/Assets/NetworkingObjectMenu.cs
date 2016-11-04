@@ -10,12 +10,12 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 	public AudioClip click;
 	public AudioClip clickBack;
 	public Button connect;
+	public Button about;
 	public Button quit;
 	public Button join;
 	public Button create;
 	public TextBox roomName;
 	public TextBox maxPlayers;
-	public GameObject title;
 
 	// Use this for initialization
 	void Start () 
@@ -28,7 +28,7 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 		//turn off old options
 		connect.gameObject.active = false;
 		quit.gameObject.active = false;
-		title.SetActive (false);
+		about.gameObject.active = false;
 		//turn on new options
 		join.gameObject.active = true;
 		create.gameObject.active = true;
