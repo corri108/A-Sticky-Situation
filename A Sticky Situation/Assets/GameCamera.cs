@@ -189,11 +189,18 @@ public class GameCamera : MonoBehaviour {
 
 		if(PhotonNetwork.isMasterClient)
 		{
-			GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", new Vector3(6,2.5f, 0), Quaternion.identity, 0);
+			int r = Random.Range(0,spawnPoints.Length);
+			GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", spawnPoints[r].position, Quaternion.identity, 0);
+			//GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", new Vector3(6,2.5f, 0), Quaternion.identity, 0);
 		}
 
 		GetComponent<CameraTrack> ().enabled = true;
 		GetComponent<CameraTrack> ().SetTargets (playerList);
+	}
+
+	public Vector3 GetRandomSpawnPoint()
+	{
+		return spawnPoints [Random.Range (0, spawnPoints.Length)].position;
 	}
 
 	public void BombStuck()

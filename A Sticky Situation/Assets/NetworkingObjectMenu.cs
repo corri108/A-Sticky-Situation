@@ -4,6 +4,7 @@ using System.Collections;
 using Photon;
 using Button = UnityEngine.UI.Button;
 using TextBox = UnityEngine.UI.InputField;
+using Dropdown = UnityEngine.UI.Dropdown;
 
 public class NetworkingObjectMenu : Photon.PunBehaviour {
 
@@ -16,6 +17,7 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 	public Button create;
 	public TextBox roomName;
 	public TextBox maxPlayers;
+	public Dropdown levelChoose;
 
 	// Use this for initialization
 	void Start () 
@@ -46,7 +48,12 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 	public override void OnJoinedRoom ()
 	{
 		PhotonNetwork.isMessageQueueRunning = false;
-		Application.LoadLevel ("TestScene");
+
+		string levelString = "TestScene";
+		if(levelChoose.captionText.text.Equals("Boxlands"))
+			Application.LoadLevel ("TestScene");
+		else
+			Application.LoadLevel ("Level2");
 	}
 	
 	public override void OnPhotonPlayerConnected (PhotonPlayer newPlayer)
@@ -75,6 +82,9 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 	
 	public void ClickCreate()
 	{
+		string level = levelChoose.captionText.text;
+		Debug.Log ("LEVEL: " + level);
+		GlobalProperties.LEVEL = level;
 		RoomOptions ro = new RoomOptions ();
 		ro.MaxPlayers = byte.Parse(maxPlayers.text);
 		AudioSource.PlayClipAtPoint (click, this.transform.position);

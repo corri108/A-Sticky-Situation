@@ -24,7 +24,8 @@ public class StickyBomb : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D c)
 	{
 		//if youre not a player (IE if you are part of the level)
-		if (c.gameObject.transform.root.GetComponent<PlayerController>() == null)
+		if (c.gameObject.transform.root.GetComponent<PlayerController>() == null && 
+		    c.gameObject.GetComponent<StickyBomb>() == null)
 		{
 			if(PhotonNetwork.isMasterClient)
 			{

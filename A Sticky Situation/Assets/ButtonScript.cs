@@ -13,6 +13,7 @@ public class ButtonScript : MonoBehaviour {
 	public Button startJoinBtn;
 	public Button backBtn;
 	public Button joinBtn;
+	public Dropdown levelSelect;
 	public GameObject title;
 
 	public void Join()
@@ -20,6 +21,7 @@ public class ButtonScript : MonoBehaviour {
 		title.SetActive (false);
 		joinBtn.gameObject.SetActive (false);
 		createBtn.gameObject.SetActive (false);
+		levelSelect.gameObject.SetActive (false);
 		startJoinBtn.gameObject.SetActive (true);
 		roomName.gameObject.SetActive (true);
 		backBtn.gameObject.SetActive (true);
@@ -32,6 +34,7 @@ public class ButtonScript : MonoBehaviour {
 		joinBtn.gameObject.SetActive (false);
 		createBtn.gameObject.SetActive (false);
 		startCreateBtn.gameObject.SetActive (true);
+		levelSelect.gameObject.SetActive (true);
 		roomName.gameObject.SetActive (true);
 		maxPlayers.gameObject.SetActive (true);
 		backBtn.gameObject.SetActive (true);
@@ -45,6 +48,7 @@ public class ButtonScript : MonoBehaviour {
 		createBtn.gameObject.SetActive (true);
 		startCreateBtn.gameObject.SetActive (false);
 		startJoinBtn.gameObject.SetActive (false);
+		levelSelect.gameObject.SetActive (false);
 		roomName.gameObject.SetActive (false);
 		maxPlayers.gameObject.SetActive (false);
 		backBtn.gameObject.SetActive (false);

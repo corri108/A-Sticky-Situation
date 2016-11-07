@@ -341,6 +341,30 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	[PunRPC]
+	void PickupBombGround(Vector3 stuckPos, Vector3 scale, int stickyID)
+	{
+		StickyBomb[] stickys = GameObject.FindObjectsOfType<StickyBomb> ();
+		StickyBomb theSticky = null;
+		
+		foreach(var s in stickys)
+		{
+			if(s.GetComponent<PhotonView>().viewID == stickyID)
+			{
+				theSticky = s;
+				break;
+			}
+		}
+		
+		if(theSticky != null)
+		{
+			//pickup the bomb, and destroy the bomb
+			hasStickyBomb = true;
+			bombStatus.GetComponent<SpriteRenderer>().sprite = hasBombSprite;
+			PhotonNetwork.Destroy(theSticky.gameObject);
+		}
+	}
+
+	[PunRPC]
 	void Teleported(Vector3 t1, Vector3 t2)
 	{
 		GameObject.Destroy (GameObject.Instantiate (teleportParticle, t1, Quaternion.identity), 2f);

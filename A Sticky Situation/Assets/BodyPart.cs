@@ -26,7 +26,10 @@ public class BodyPart : MonoBehaviour {
 
 				if(sb.hitGround)
 				{
-					PopText.Create("FDSAF", Color.black, 60, sb.transform.position);
+					PopText.Create("Get Bomb!", Color.black, 60, sb.transform.position + Vector3.up);
+					Vector3 scale = new Vector3(c.gameObject.transform.localScale.x,c.gameObject.transform.localScale.y,c.gameObject.transform.localScale.z);
+					//this transform, scale, stickyID
+					pc.GetComponent<PhotonView> ().RPC ("PickupBombGround", PhotonTargets.All, sb.transform.position, scale, sb.GetComponent<PhotonView>().viewID);
 				}
 				else
 				{

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Photon;
+using System.Collections.Generic;
 
 public class NetworkStickyBomb : Photon.PunBehaviour {
 
@@ -105,7 +106,8 @@ public class NetworkStickyBomb : Photon.PunBehaviour {
 					{
 						//spawn crate
 						//spawn a crate if we are master
-						GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", new Vector3(6,2.5f, 0), Quaternion.identity, 0);
+						GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", 
+						                   GameObject.FindObjectOfType<GameCamera>().GetRandomSpawnPoint(), Quaternion.identity, 0);
 					}
 				}
 
@@ -137,7 +139,6 @@ public class NetworkStickyBomb : Photon.PunBehaviour {
 				if(groundedTimer == 0)
 				{
 					GetComponent<PhotonView>().RPC("Blowup", PhotonTargets.All);
-					PhotonNetwork.Destroy(this.gameObject);
 
 					PlayerController stuckPlayer = null;
 					PlayerController gotKillPlayer = null;
@@ -168,18 +169,31 @@ public class NetworkStickyBomb : Photon.PunBehaviour {
 					{
 						GetComponent<PhotonView>().RPC("DisplayKill", PhotonTargets.All, stuckPlayer.playerID, gotKillPlayer.playerID);
 					}*/
+					int[] hits = new int[]{-1,-1,-1,-1};
+					int[] pID = new int[]{-1,-1,-1,-1};
+					for(int i = 0; i < players.Length; ++i)
+					{
+						PlayerController p = players[i];
+						//pID[i] = p.playerID;
+						if(Vector3.Distance(this.transform.position, p.transform.position) < 1.8f)
+						{
+							hits[i] = p.playerID;
+						}
+					}
 
-					GetComponent<PhotonView>().RPC("DisplayKill", PhotonTargets.All, -1, gotKillPlayer.playerID);
+					GetComponent<PhotonView>().RPC("DisplayKillGround", PhotonTargets.All, gotKillPlayer.playerID,
+					                              hits[0], hits[1], hits[2], hits[3]);
 					
 					//check to see if we should spawn a crate
 					players = GameObject.FindObjectsOfType<PlayerController>();
-					if(players.Length == 1)
+					if(players.Length == 1 && PhotonNetwork.room.playerCount != 1)
 					{
 						//dont spawn crate
 					}
 					else
 					{
-						GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", new Vector3(6,2.5f, 0), Quaternion.identity, 0);
+						GameObject crate = PhotonNetwork.Instantiate ("StickyCrate", 
+						                   GameObject.FindObjectOfType<GameCamera>().GetRandomSpawnPoint(), Quaternion.identity, 0);
 					}
 				}
 			}
@@ -260,6 +274,81 @@ public class NetworkStickyBomb : Photon.PunBehaviour {
 			}
 		}
 
+		this.gameObject.active = false;
+	}
+
+	[PunRPC]
+	void DisplayKillGround(int threwTheBomb, int op1, int op2, int op3, int op4)
+	{
+		PlayerController gotKillPlayer = null;
+		PlayerController[] players = GameObject.FindObjectsOfType<PlayerController> ();
+		List<PlayerController> deadPlayers = new List<PlayerController> ();
+
+		foreach(var p in players)
+		{
+			if(p.playerID == sb.ownerID)
+			{
+				gotKillPlayer = p;
+			}
+			if(p.playerID == op1)
+				deadPlayers.Add(p);
+			else if(p.playerID == op2)
+				deadPlayers.Add(p);
+			else if(p.playerID == op3)
+				deadPlayers.Add(p);
+			else if(p.playerID == op4)
+				deadPlayers.Add(p);
+		}
+
+		foreach(PlayerController dp in deadPlayers)
+		{
+			dp.isStuck = false;
+			dp.gameObject.active = false;
+			if(dp != gotKillPlayer)
+				gotKillPlayer.myStats.Kills++;
+			dp.myStats.Deaths++;
+		}
+		
+		players = GameObject.FindObjectsOfType<PlayerController>();
+		if(players.Length == 1 && PhotonNetwork.playerList.Length != 1)
+		{
+			PopText.Create ("ROUND OVER - P" + gotKillPlayer.playerID.ToString() + " WINS!", Color.white, 250, 
+			                new Vector3(0, 4, 1));
+			gotKillPlayer.myStats.RoundsWon++;
+			GameObject.FindObjectOfType<GameCamera>().RoundOver();
+		}
+		else if(deadPlayers.Count == 1)
+		{
+			if(deadPlayers[0].playerID == gotKillPlayer.playerID)
+			{
+				PopText.Create ("P" + deadPlayers[0].playerID.ToString () + " killed himself.", Color.white, 250, 
+				                new Vector3(0, 4, 1));
+
+				if(players.Length == 0)
+				{
+					//PopText.Create ("ROUND OVER - Tie!", Color.white, 250, 
+					                //new Vector3(0, 4, 1));
+					GameObject.FindObjectOfType<GameCamera>().RoundOver();
+				}
+			}
+			else
+			{
+				PopText.Create ("P" + deadPlayers[0].playerID.ToString () + " was killed by P" + gotKillPlayer.playerID.ToString(), Color.white, 250, 
+				                new Vector3(0, 4, 1));
+			}
+		}
+		else if(players.Length == 0)
+		{
+			PopText.Create ("ROUND OVER - Tie!", Color.white, 250, 
+			                new Vector3(0, 4, 1));
+			GameObject.FindObjectOfType<GameCamera>().RoundOver();
+		}
+		else if(deadPlayers.Count > 1)
+		{
+			PopText.Create ("P" + gotKillPlayer.playerID.ToString() + " got a " + deadPlayers.Count.ToString () + " player multikill!", Color.white, 250, 
+			                new Vector3(0, 4, 1));
+		}
+		
 		this.gameObject.active = false;
 	}
 
