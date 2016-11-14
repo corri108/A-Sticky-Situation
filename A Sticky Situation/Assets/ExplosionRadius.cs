@@ -42,7 +42,7 @@ public class ExplosionRadius : MonoBehaviour {
 		}*/
 	}
 
-	void OnTriggerEnter(Collider2D c)
+	void OnTriggerEnter2D(Collider2D c)
 	{
 		if(PhotonNetwork.isMasterClient)
 		{

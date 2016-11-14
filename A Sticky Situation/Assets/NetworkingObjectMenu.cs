@@ -10,7 +10,7 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 
 	public AudioClip click;
 	public AudioClip clickBack;
-	public Button connect;
+	public Button connect_online;
 	public Button about;
 	public Button quit;
 	public Button join;
@@ -18,6 +18,7 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 	public TextBox roomName;
 	public TextBox maxPlayers;
 	public Dropdown levelChoose;
+	public Button playlocal;
 
 	// Use this for initialization
 	void Start () 
@@ -28,7 +29,7 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 	public override void OnJoinedLobby()
 	{
 		//turn off old options
-		connect.gameObject.active = false;
+		connect_online.gameObject.active = false;
 		quit.gameObject.active = false;
 		about.gameObject.active = false;
 		//turn on new options
@@ -96,6 +97,16 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 	{
 		AudioSource.PlayClipAtPoint (clickBack, this.transform.position);
 		Application.Quit ();
+	}
+
+	public void ClickPlayLocal()
+	{
+		AudioSource.PlayClipAtPoint (click, this.transform.position);
+		connect_online.gameObject.active = false;
+		playlocal.gameObject.active = false;
+		quit.gameObject.active = false;
+		about.gameObject.active = false;
+		//turn on new options
 	}
 	
 	void OnGUI()

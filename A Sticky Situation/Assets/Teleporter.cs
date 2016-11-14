@@ -20,11 +20,23 @@ public class Teleporter : MonoBehaviour {
 	{
 		if(c.gameObject.GetComponent<PlayerController>() != null)
 		{
-			if(PhotonNetwork.player.ID == c.gameObject.GetComponent<PhotonView>().ownerId && !justTP)
+			if(GlobalProperties.IS_NETWORKED)
 			{
-				Teleporter next = GetTeleporterWithID(TeleID, c.gameObject.GetComponent<PlayerController>());
-				c.gameObject.transform.position = next.transform.position;
-				c.gameObject.GetComponent<PhotonView>().RPC("Teleported", PhotonTargets.All, this.transform.position, next.transform.position);
+				if(PhotonNetwork.player.ID == c.gameObject.GetComponent<PhotonView>().ownerId && !justTP)
+				{
+					Teleporter next = GetTeleporterWithID(TeleID, c.gameObject.GetComponent<PlayerController>());
+					c.gameObject.transform.position = next.transform.position;
+					c.gameObject.GetComponent<PhotonView>().RPC("Teleported", PhotonTargets.All, this.transform.position, next.transform.position);
+				}
+			}
+			else
+			{
+				if(!justTP)
+				{
+					Teleporter next = GetTeleporterWithID(TeleID, c.gameObject.GetComponent<PlayerController>());
+					c.gameObject.transform.position = next.transform.position;
+					c.gameObject.GetComponent<PlayerController>().LOCAL_Teleported(this.transform.position, next.transform.position);
+				}
 			}
 		}
 	}
@@ -33,9 +45,19 @@ public class Teleporter : MonoBehaviour {
 	{
 		if(c.gameObject.GetComponent<PlayerController>() != null)
 		{
-			if(PhotonNetwork.player.ID == c.gameObject.GetComponent<PhotonView>().ownerId && justTP)
+			if(GlobalProperties.IS_NETWORKED)
 			{
-				justTP = false;
+				if(PhotonNetwork.player.ID == c.gameObject.GetComponent<PhotonView>().ownerId && justTP)
+				{
+					justTP = false;
+				}
+			}
+			else
+			{
+				if(justTP)
+				{
+					justTP = false;
+				}
 			}
 		}
 	}

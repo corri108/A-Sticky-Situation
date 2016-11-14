@@ -8,3 +8,10 @@ public enum CharacterType
 	BigBoy,
 	Scientist
 }
+
+public enum LevelType
+{
+	Boxlands,
+	Plains,
+	TwoRooms
+}

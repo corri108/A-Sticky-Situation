@@ -24,16 +24,13 @@ public class ThiefAbility : PunBehaviour {
 			{
 				if (inRange) 
 				{
-					if (Input.GetKeyDown (KeyCode.LeftShift))
+					if(GlobalProperties.IS_NETWORKED)
 					{
-						if (target.GetComponent<PlayerController> ().hasStickyBomb)
-						{
-							target.GetComponent<PlayerController> ().hasStickyBomb = false;
-							this.GetComponent<PlayerController> ().hasStickyBomb = true;
-							target.GetComponent<PlayerController> ().bombStatus.GetComponent<SpriteRenderer>().sprite= target.GetComponent<PlayerController> ().noBombSprite;
-							this.GetComponent<PlayerController> ().bombStatus.GetComponent<SpriteRenderer>().sprite = this.GetComponent<PlayerController> ().hasBombSprite;
-							abilityAvailable = false;
-						}
+						NetworkLogic();
+					}
+					else
+					{
+						LocalLogic();
 					}
 				} 
 			}
@@ -41,6 +38,38 @@ public class ThiefAbility : PunBehaviour {
 		else 
 		{
 			abilityAvailable = true;
+		}
+	}
+
+	void NetworkLogic()
+	{
+		if (Input.GetKeyDown (KeyCode.LeftShift))
+		{
+			if (target.GetComponent<PlayerController> ().hasStickyBomb)
+			{
+				target.GetComponent<PlayerController> ().hasStickyBomb = false;
+				this.GetComponent<PlayerController> ().hasStickyBomb = true;
+				target.GetComponent<PlayerController> ().bombStatus.GetComponent<SpriteRenderer>().sprite= target.GetComponent<PlayerController> ().noBombSprite;
+				this.GetComponent<PlayerController> ().bombStatus.GetComponent<SpriteRenderer>().sprite = this.GetComponent<PlayerController> ().hasBombSprite;
+				abilityAvailable = false;
+			}
+		}
+	}
+
+	void LocalLogic()
+	{
+		Xbox360Controller xc = GetComponent<PlayerController> ().GetXBox ();
+
+		if (xc.PressedSpecial())
+		{
+			if (target.GetComponent<PlayerController> ().hasStickyBomb)
+			{
+				target.GetComponent<PlayerController> ().hasStickyBomb = false;
+				this.GetComponent<PlayerController> ().hasStickyBomb = true;
+				target.GetComponent<PlayerController> ().bombStatus.GetComponent<SpriteRenderer>().sprite= target.GetComponent<PlayerController> ().noBombSprite;
+				this.GetComponent<PlayerController> ().bombStatus.GetComponent<SpriteRenderer>().sprite = this.GetComponent<PlayerController> ().hasBombSprite;
+				abilityAvailable = false;
+			}
 		}
 	}
 
@@ -60,16 +89,32 @@ public class ThiefAbility : PunBehaviour {
 	{
 		if (col.gameObject.tag == "Player") 
 		{
-			this.GetComponent<PhotonView>().RPC("SetInRange", PhotonTargets.All);
-			target = col.gameObject;
+			if(GlobalProperties.IS_NETWORKED)
+			{
+				this.GetComponent<PhotonView>().RPC("SetInRange", PhotonTargets.All);
+				target = col.gameObject;
+			}
+			else
+			{
+				inRange = true;
+				target = col.gameObject;
+			}
 		}
 	}
 	void OnTriggerExit2D(Collider2D col)
 	{
 		if (col.gameObject.tag == "Player") 
 		{
-			this.GetComponent<PhotonView>().RPC("SetOutRange", PhotonTargets.All);
-			target = null;
+			if(GlobalProperties.IS_NETWORKED)
+			{
+				this.GetComponent<PhotonView>().RPC("SetOutRange", PhotonTargets.All);
+				target = null;
+			}
+			else
+			{
+				inRange = false;
+				target = null;
+			}
 		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameCamera : MonoBehaviour {
 
@@ -33,18 +34,103 @@ public class GameCamera : MonoBehaviour {
 	[HideInInspector]
 	public int gameFinishedTimer = 60 * 10;
 
+	//local
+	public GameObject localCratePrefab;
+	public AudioClip applause;
+	public AudioClip tieNoise;
+	public GameObject confetti;
+	public Light spotlight;
+	bool endingEffects = false;
+	int endingTimer = 60 * 5;
+	int endingTimerReset = 60 * 5;
+
 	// Use this for initialization
 	void Start () 
 	{
-		spawnsOccupied = new bool[spawnPoints.Length];
-		playerList = new List<PlayerController> ();
-		playerList.Clear ();
-		thisCamera = this.GetComponent<Camera> ();
-		thisText = transform.GetChild (0).GetComponent<TextMesh> ();
-		thisText.text = "Joining...";
-		startSize = thisCamera.orthographicSize;
-		scoreboard = transform.FindChild ("Scoreboard").gameObject;
-		scoreboardText = scoreboard.transform.GetChild (0).GetComponent<TextMesh> ();
+		if(GlobalProperties.IS_NETWORKED)
+		{
+			spawnsOccupied = new bool[spawnPoints.Length];
+			playerList = new List<PlayerController> ();
+			playerList.Clear ();
+			thisCamera = this.GetComponent<Camera> ();
+			thisText = transform.GetChild (0).GetComponent<TextMesh> ();
+			thisText.text = "Joining...";
+			startSize = thisCamera.orthographicSize;
+			scoreboard = transform.FindChild ("Scoreboard").gameObject;
+			scoreboardText = scoreboard.transform.GetChild (0).GetComponent<TextMesh> ();
+		}
+		else
+		{
+			playerList = new List<PlayerController> ();
+			playerList.Clear ();
+			spawnsOccupied = new bool[spawnPoints.Length];
+			//make players
+			for(int i = 0; i < GlobalProperties.PLAYERCHOICE.Length; ++i)
+			{
+				if(GlobalProperties.PLAYERCHOICE[i].Equals("NA"))
+				{
+					//dont make a player
+					//turn off ui object
+					GameObject canvasObject = GameObject.Find ("Canvas").transform.FindChild("P" + (i + 1).ToString() + "UI").gameObject;
+					canvasObject.active = false;
+				}
+				else
+				{
+					//make a new player
+					if(GlobalProperties.PLAYERCHOICE[i].Equals("Scientist"))
+					{
+						GameObject scientistPref = Resources.Load<GameObject>("LOCAL_Scientist");
+						PlayerController player = ((GameObject)GameObject.Instantiate(scientistPref, Vector3.zero, Quaternion.identity)).GetComponent<PlayerController>();
+						player.playerID = i + 1;
+						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();
+						myBody.gravityScale = GlobalProperties.GravityScale;
+						player.LOCAL_SetPlayerNumber(player.playerID);
+						playerList.Add(player);
+					}
+					else if(GlobalProperties.PLAYERCHOICE[i].Equals("BigBoy"))
+					{
+						GameObject scientistPref = Resources.Load<GameObject>("LOCAL_BigBoy");
+						PlayerController player = ((GameObject)GameObject.Instantiate(scientistPref, Vector3.zero, Quaternion.identity)).GetComponent<PlayerController>();
+						player.playerID = i + 1;
+						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();
+						myBody.gravityScale = GlobalProperties.GravityScale;
+						player.LOCAL_SetPlayerNumber(player.playerID);
+						playerList.Add(player);
+					}
+					else if(GlobalProperties.PLAYERCHOICE[i].Equals("Thief"))
+					{
+						GameObject scientistPref = Resources.Load<GameObject>("LOCAL_Thief");
+						PlayerController player = ((GameObject)GameObject.Instantiate(scientistPref, Vector3.zero, Quaternion.identity)).GetComponent<PlayerController>();
+						player.playerID = i + 1;
+						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();
+						myBody.gravityScale = GlobalProperties.GravityScale;
+						player.LOCAL_SetPlayerNumber(player.playerID);
+						playerList.Add(player);
+					}
+					else if(GlobalProperties.PLAYERCHOICE[i].Equals("Ghost"))
+					{
+						GameObject scientistPref = Resources.Load<GameObject>("LOCAL_Ghost");
+						PlayerController player = ((GameObject)GameObject.Instantiate(scientistPref, Vector3.zero, Quaternion.identity)).GetComponent<PlayerController>();
+						player.playerID = i + 1;
+						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();
+						myBody.gravityScale = GlobalProperties.GravityScale;
+						player.LOCAL_SetPlayerNumber(player.playerID);
+						playerList.Add(player);
+					}
+				}
+			}
+
+			foreach(var p in playerList)
+			{
+				p.GetComponent<PlayerController>().LOCAL_SetRandomSpawn();
+			}
+
+			thisCamera = this.GetComponent<Camera> ();
+			thisText = transform.GetChild (0).GetComponent<TextMesh> ();
+			startSize = thisCamera.orthographicSize;
+			scoreboard = transform.FindChild ("Scoreboard").gameObject;
+			scoreboardText = scoreboard.transform.GetChild (0).GetComponent<TextMesh> ();
+		}
 	}
 
 	public void JoinedButNoPlayerPicked()
@@ -54,13 +140,16 @@ public class GameCamera : MonoBehaviour {
 
 	void Update()
 	{
-		if(Input.GetKey(KeyCode.Tab))
+		if(GlobalProperties.IS_NETWORKED)
 		{
-			ShowStatistics();
-		}
-		else if(Input.GetKeyUp(KeyCode.Tab))
-		{
-			HideStatistics();
+			if(Input.GetKey(KeyCode.Tab))
+			{
+				ShowStatistics();
+			}
+			else if(Input.GetKeyUp(KeyCode.Tab))
+			{
+				HideStatistics();
+			}
 		}
 	}
 
@@ -76,19 +165,31 @@ public class GameCamera : MonoBehaviour {
 		}
 	}
 
+	public void UpdateStatsLocal()
+	{
+		for(int i = 0; i < playerList.Count; ++i)
+		{
+			PlayerController p = playerList[i];
+			GameObject canvasObject = GameObject.Find ("Canvas").transform.FindChild("P" + (i + 1).ToString() + "UI").gameObject;
+			Text roundsWon = canvasObject.transform.GetChild(1).GetComponent<Text>();
+			roundsWon.text = p.myStats.RoundsWon.ToString() + "\n";
+			Text stats = canvasObject.transform.GetChild(3).GetComponent<Text>();
+			stats.text = string.Format("K : {0}\nD : {1}\nC : {2}", p.myStats.Kills, p.myStats.Deaths, p.myStats.CratesPickedUp);
+		}
+	}
+
 	void HideStatistics()
 	{
 		scoreboard.active = false;
 		scoreboardText.text = "";
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () 
+
+	void NetworkFixedUpdate ()
 	{
 		if(_playerJoined)
 		{
 			thisCamera.orthographicSize = Mathf.Lerp(thisCamera.orthographicSize, onPlayerJoinedSize, .1f);
-
+			
 			if(!_gameStarted && PhotonNetwork.room != null && !_initTimer)
 			{
 				if(PhotonNetwork.playerList.Length == PhotonNetwork.room.maxPlayers && 
@@ -102,16 +203,16 @@ public class GameCamera : MonoBehaviour {
 			{
 				gameStartCountdown--;
 				thisText.text = ( (gameStartCountdown / 60) + 1).ToString() + "...";
-
+				
 				if(gameStartCountdown % 60 == 0)
 				{
 					AudioSource.PlayClipAtPoint(countdownNoise, this.transform.position);
 				}
-
+				
 				if(gameStartCountdown == 0)
 				{
 					AudioSource.PlayClipAtPoint(countdownNoise, this.transform.position);
-					BeginGame();
+					BeginGameNetwork();
 					origScale = thisText.transform.localScale;
 					thisText.text = "";
 				}
@@ -130,14 +231,90 @@ public class GameCamera : MonoBehaviour {
 					thisText.text = "Next round in " + ((gameFinishedTimer / 60) + 1).ToString() + "...";
 					if(gameFinishedTimer == 0)
 					{
-						EndRound();
+						EndRoundNetwork();
 					}
 				}
 			}
 		}
 		else
 		{
+			
+		}
+	}
+	
+	void LocalFixedUpdate ()
+	{
+		thisCamera.orthographicSize = Mathf.Lerp(thisCamera.orthographicSize, onPlayerJoinedSize, .1f);
 
+		if(!_gameStarted)
+		{
+			gameStartCountdown--;
+			thisText.text = ((gameStartCountdown / 60) + 1).ToString() + "...";
+			
+			if(gameStartCountdown % 60 == 0)
+			{
+				AudioSource.PlayClipAtPoint(countdownNoise, this.transform.position);
+			}
+			
+			if(gameStartCountdown == 0)
+			{
+				AudioSource.PlayClipAtPoint(countdownNoise, this.transform.position);
+				BeginGameLocal();
+				Debug.Log("New Round");
+				origScale = thisText.transform.localScale;
+				thisText.text = "";
+			}
+		}
+		else if(_gameStarted && !_gameEnded)
+		{
+			thisText.transform.localScale *= .95f;
+			thisText.text = "";
+		}
+		else if(_gameEnded)
+		{
+			thisText.transform.localScale = origScale;
+			gameFinishedTimer--;
+			if(gameFinishedTimer <= 300)
+			{
+				thisText.text = "Next round in " + ((gameFinishedTimer / 60) + 1).ToString() + "...";
+				if(gameFinishedTimer == 0)
+				{
+					EndRoundLocal();
+				}
+			}
+		}
+
+		if(endingEffects)
+		{
+			endingTimer--;
+
+			if(endingTimer % 5 == 0)
+			{
+				GameObject.Destroy((GameObject)GameObject.Instantiate(confetti, spotlight.transform.position, Quaternion.identity), 3f);
+			}
+
+			if(endingTimer == 40)
+			{
+				spotlight.GetComponent<WinningSpotlight> ().Close ();
+			}
+
+			if(endingTimer == 0)
+			{
+				endingEffects = false;
+			}
+		}
+	}
+
+	// Update is called once per frame
+	void FixedUpdate () 
+	{
+		if(GlobalProperties.IS_NETWORKED)
+		{
+			NetworkFixedUpdate ();
+		}
+		else
+		{
+			LocalFixedUpdate ();
 		}
 	}
 
@@ -145,9 +322,32 @@ public class GameCamera : MonoBehaviour {
 	{
 		_gameEnded = true;
 		thisText.text = "";
+		if(GameObject.FindObjectsOfType<PlayerController> ().Length > 0)
+		{
+			AudioSource.PlayClipAtPoint(applause, GameObject.FindObjectOfType<GameCamera>().transform.position);
+			QueueSpotlightLocal ();
+		}
+		else
+		{
+			//it was a tie
+			AudioSource.PlayClipAtPoint(tieNoise, GameObject.FindObjectOfType<GameCamera>().transform.position);
+		}
+		UpdateStatsLocal ();
 	}
 
-	void EndRound()
+	void QueueSpotlightLocal()
+	{
+		endingEffects = true;
+		if(spotlight == null)
+		{
+			spotlight = GameObject.FindObjectOfType<WinningSpotlight>().GetComponent<Light>();
+		}
+		spotlight.GetComponent<WinningSpotlight> ().Open ();
+		spotlight.GetComponent<WinningSpotlight> ().winner = GameObject.FindObjectsOfType<PlayerController> () [0].gameObject;
+		endingTimer = endingTimerReset;
+	}
+
+	void EndRoundNetwork()
 	{
 		foreach(var p in playerList)
 		{
@@ -170,7 +370,58 @@ public class GameCamera : MonoBehaviour {
 		gameFinishedTimer = 60 * 10;
 	}
 
-	public void BeginGame()
+	void EndRoundLocal()
+	{
+		foreach(var p in playerList)
+		{
+			p.gameObject.active = true;
+			p.LOCAL_ResetPlayer();
+		}
+		
+		_gameEnded = false;
+		_gameStarted = false;
+		thisText.text = "";
+		spawnsOccupied = new bool[spawnPoints.Length];
+		foreach(var p in playerList)
+		{
+			p.GetComponent<PlayerController>().LOCAL_SetRandomSpawn();
+		}
+		gameStartCountdown = 60 * 3;
+		gameFinishedTimer = 60 * 10;
+	}
+
+	public void BeginGameLocal()
+	{
+		PlayerController[] allPlayers = GameObject.FindObjectsOfType<PlayerController> ();
+		
+		foreach(var p in allPlayers)
+		{
+			p.canMove = true;
+		}
+		
+		foreach(var p in playerList)
+		{
+			p.GetComponent<PlayerController>().LOCAL_SetCanMove();
+		}
+		
+		thisText.text = "Begin!";
+		_gameStarted = true;
+		int r = Random.Range(0,spawnPoints.Length);
+
+		//destroy any crates that might be alive for some reason
+		StickyCrate[] oldCrates = GameObject.FindObjectsOfType<StickyCrate> ();
+		foreach(var c in oldCrates)
+		{
+			GameObject.Destroy(c.gameObject);
+		}
+
+		//make new crate for this round
+		GameObject crate = (GameObject)GameObject.Instantiate (localCratePrefab, spawnPoints[r].position, Quaternion.identity);
+		GetComponent<CameraTrack> ().enabled = true;
+		GetComponent<CameraTrack> ().SetTargets (playerList);
+	}
+
+	public void BeginGameNetwork()
 	{
 		PlayerController[] allPlayers = GameObject.FindObjectsOfType<PlayerController> ();
 
@@ -196,6 +447,38 @@ public class GameCamera : MonoBehaviour {
 
 		GetComponent<CameraTrack> ().enabled = true;
 		GetComponent<CameraTrack> ().SetTargets (playerList);
+	}
+
+	public void PlayerFellLocal (PlayerController player)
+	{
+		int numPlayersIncludingYou = GameObject.FindObjectsOfType<PlayerController> ().Length;
+		
+		//AudioSource.PlayClipAtPoint(countdownSound, GameObject.FindObjectOfType<GameCamera>().transform.position);
+
+		if(numPlayersIncludingYou == 1)
+		{
+			//dont worry, we already won
+			PopText.Create ("P" + player.playerID.ToString () + " killed himself out of happiness.", Color.white, 250, 
+			                new Vector3(0, 4, 1));
+		}
+		else if(numPlayersIncludingYou == 2)
+		{
+			player.myStats.Deaths++;
+			player.gameObject.active = false;
+			PlayerController winner = GameObject.FindObjectsOfType<PlayerController> ()[0];
+			winner.myStats.RoundsWon++;
+			//you just made someone else win
+			PopText.Create ("ROUND OVER - P" + winner.playerID.ToString() + " WINS!", Color.white, 250, 
+			                new Vector3(0, 4, 1));
+			GameObject.FindObjectOfType<GameCamera>().RoundOver();
+		}
+		else
+		{
+			player.myStats.Deaths++;
+			//you died, tragic, but the show must go on.
+			PopText.Create ("P" + player.playerID.ToString () + " killed himself.", Color.white, 250, 
+			                new Vector3(0, 4, 1));
+		}
 	}
 
 	public Vector3 GetRandomSpawnPoint()

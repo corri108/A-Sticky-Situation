@@ -19,21 +19,24 @@ public class NetworkingObject : Photon.PunBehaviour {
 	private CharacterType characterSelection;
 	void Start () 
 	{
-		//set select screen inactive until we join
-		selectScreen.active = false;
-		//set level active until we join
-		level.active = true;
-
-		spawnsOccupied = new bool[spawnPoints.Length];
-		if(debugMode)
-			PhotonNetwork.ConnectUsingSettings(GlobalProperties.VERSION);
-		else
+		if(GlobalProperties.IS_NETWORKED)
 		{
-			//we are in real mode, so we are already connected and in the room. lets set the select screen
-			selectScreen.active = true;
-			//set level active so we can see the select screen better.
-			level.active = false;
-			GameObject.FindObjectOfType<GameCamera>().JoinedButNoPlayerPicked();
+			//set select screen inactive until we join
+			selectScreen.active = false;
+			//set level active until we join
+			level.active = true;
+
+			spawnsOccupied = new bool[spawnPoints.Length];
+			if(debugMode)
+				PhotonNetwork.ConnectUsingSettings(GlobalProperties.VERSION);
+			else
+			{
+				//we are in real mode, so we are already connected and in the room. lets set the select screen
+				selectScreen.active = true;
+				//set level active so we can see the select screen better.
+				level.active = false;
+				GameObject.FindObjectOfType<GameCamera>().JoinedButNoPlayerPicked();
+			}
 		}
 	}
 
@@ -67,23 +70,29 @@ public class NetworkingObject : Photon.PunBehaviour {
 
 	public override void OnJoinedLobby()
 	{
-		if(debugMode)
-			PhotonNetwork.JoinRandomRoom();
-		else
+		if(GlobalProperties.IS_NETWORKED)
 		{
+			if(debugMode)
+				PhotonNetwork.JoinRandomRoom();
+			else
+			{
 
+			}
 		}
 	}
 
 	//for joining random room
 	void OnPhotonRandomJoinFailed()
 	{
-		if(debugMode)
+		if(GlobalProperties.IS_NETWORKED)
 		{
-			Debug.Log("Can't join random room!");
-			RoomOptions ro = new RoomOptions ();
-			ro.MaxPlayers = debugCharacterSize;
-			PhotonNetwork.CreateRoom("Dev Test Room" , ro, null);
+			if(debugMode)
+			{
+				Debug.Log("Can't join random room!");
+				RoomOptions ro = new RoomOptions ();
+				ro.MaxPlayers = debugCharacterSize;
+				PhotonNetwork.CreateRoom("Dev Test Room" , ro, null);
+			}
 		}
 	}
 
@@ -126,39 +135,45 @@ public class NetworkingObject : Photon.PunBehaviour {
 
 	public override void OnJoinedRoom ()
 	{
-		if(debugMode)
+		if(GlobalProperties.IS_NETWORKED)
 		{
-			//since we are in debug mode, set select screen active here instead of up in Start()
-			selectScreen.active = true;
-			GameObject.FindObjectOfType<GameCamera>().JoinedButNoPlayerPicked();
-			level.active = false;
+			if(debugMode)
+			{
+				//since we are in debug mode, set select screen active here instead of up in Start()
+				selectScreen.active = true;
+				GameObject.FindObjectOfType<GameCamera>().JoinedButNoPlayerPicked();
+				level.active = false;
+			}
 		}
 	}
 
 	public override void OnPhotonPlayerConnected (PhotonPlayer newPlayer)
 	{
-		if(PhotonNetwork.isMasterClient)
+		if(GlobalProperties.IS_NETWORKED)
 		{
-			//use a spawn point to tell other player where to go
-			int r = Random.Range(0, spawnPoints.Length);
-			PlayerController correctPlayer = null;
-			PlayerController[] allPlayers = GameObject.FindObjectsOfType<PlayerController>();
-
-			foreach(var p in allPlayers)
+			if(PhotonNetwork.isMasterClient)
 			{
-				if(PhotonPlayer.Find(p.GetComponent<PhotonView>().ownerId) != null)
+				//use a spawn point to tell other player where to go
+				int r = Random.Range(0, spawnPoints.Length);
+				PlayerController correctPlayer = null;
+				PlayerController[] allPlayers = GameObject.FindObjectsOfType<PlayerController>();
+
+				foreach(var p in allPlayers)
 				{
-					correctPlayer = p;
+					if(PhotonPlayer.Find(p.GetComponent<PhotonView>().ownerId) != null)
+					{
+						correctPlayer = p;
+					}
 				}
-			}
 
-			while(spawnsOccupied[r])
-			{
-				r = Random.Range(0, spawnPoints.Length);
-			}
+				while(spawnsOccupied[r])
+				{
+					r = Random.Range(0, spawnPoints.Length);
+				}
 
-			correctPlayer.transform.position = spawnPoints[r].position;
-			spawnsOccupied[r] = true;
+				correctPlayer.transform.position = spawnPoints[r].position;
+				spawnsOccupied[r] = true;
+			}
 		}
 	}
 	
@@ -170,13 +185,16 @@ public class NetworkingObject : Photon.PunBehaviour {
 
 	void OnGUI()
 	{
-		if(Diagnostics.ShowNetworkStats)
+		if(GlobalProperties.IS_NETWORKED)
 		{
-			GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-
-			if(PhotonNetwork.room != null)
+			if(Diagnostics.ShowNetworkStats)
 			{
-				GUILayout.Label(PhotonNetwork.room.ToString());
+				GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+
+				if(PhotonNetwork.room != null)
+				{
+					GUILayout.Label(PhotonNetwork.room.ToString());
+				}
 			}
 		}
 	}

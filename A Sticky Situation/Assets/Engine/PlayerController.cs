@@ -48,8 +48,13 @@ public class PlayerController : MonoBehaviour {
 	public AudioClip foot2;
 	public AudioClip land;
 	public AudioClip jump;
+	public AudioClip pickupBomb;
+	public AudioClip pickupCrate;
+	public AudioClip transferBomb;
+	public AudioClip getStuck;
+	public AudioClip threwBomb;
 
-	
+	Xbox360Controller XBox;
 	//for colors
 	public Material[] playerMaterials;
 
@@ -82,11 +87,14 @@ public class PlayerController : MonoBehaviour {
 			raycastObjects[i] =	raycast.GetChild (i);
 		}
 
-		//tell camera we have joined
-		GameObject.FindObjectOfType<GameCamera> ().MyPlayerHasJoined ();	
+		if(GlobalProperties.IS_NETWORKED)
+		{
+			//tell camera we have joined
+			GameObject.FindObjectOfType<GameCamera> ().MyPlayerHasJoined ();
+		}
 	}
 
-	void SpecialCharacterMoves()
+	void SpecialCharacterMovesNetwork()
 	{
 		if (Input.GetKeyDown (KeyCode.LeftShift)) 
 		{
@@ -101,10 +109,22 @@ public class PlayerController : MonoBehaviour {
 		if (!canMove)
 			return;
 
-	    xInput = Input.GetAxis ("Horizontal");
-		xInput *= accelerationSpeed;
+		//get horizontal movement
+		if(GlobalProperties.IS_NETWORKED)
+		{
+		    xInput = Input.GetAxis ("Horizontal");
+			xInput *= accelerationSpeed;
+		}
+		else
+		{
+			xInput = XBox.HorizontalAxis ();
+			xInput *= accelerationSpeed;
+		}
 
-		SpecialCharacterMoves ();
+		if(GlobalProperties.IS_NETWORKED)
+		{
+			SpecialCharacterMovesNetwork ();
+		}
 
 		if (xInput > 0 || xInput < 0)
 		{
@@ -129,14 +149,29 @@ public class PlayerController : MonoBehaviour {
 
 		if(isGrounded)
 		{
-			if(Input.GetButtonDown("Jump"))
+			if(GlobalProperties.IS_NETWORKED)
 			{
-				isGrounded = false;
-				animator.SetBool("Grounded", false);
-				animator.SetBool("Jumped", true);
-				myBody.AddForce(Vector2.up * jumpForce);
-				AudioSource.PlayClipAtPoint(jump, this.transform.position);
-				animator.SetBool ("InAir", true);
+				if(Input.GetButtonDown("Jump"))
+				{
+					isGrounded = false;
+					animator.SetBool("Grounded", false);
+					animator.SetBool("Jumped", true);
+					myBody.AddForce(Vector2.up * jumpForce);
+					AudioSource.PlayClipAtPoint(jump, this.transform.position);
+					animator.SetBool ("InAir", true);
+				}
+			}
+			else
+			{
+				if(XBox.PressedJump())
+				{
+					isGrounded = false;
+					animator.SetBool("Grounded", false);
+					animator.SetBool("Jumped", true);
+					myBody.AddForce(Vector2.up * jumpForce);
+					AudioSource.PlayClipAtPoint(jump, this.transform.position);
+					animator.SetBool ("InAir", true);
+				}
 			}
 
 			if(!wasGrounded)
@@ -170,61 +205,135 @@ public class PlayerController : MonoBehaviour {
 
 		if(hasStickyBomb)
 		{
-			if(Input.GetMouseButtonDown(0))
+			if(GlobalProperties.IS_NETWORKED && Input.GetMouseButtonDown(0))
 			{
-				if(GetComponent<Scientist>() == null)
-				{
-					//throw bomb
-					this.GetComponent<PhotonView>().RPC("ThrowBomb", PhotonTargets.All);
-					GameObject theBomb = PhotonNetwork.Instantiate("StickyBomb", this.transform.position, Quaternion.identity, 0);
-					this.GetComponent<PhotonView>().RPC("SetBomb", PhotonTargets.All, theBomb.GetComponent<PhotonView>().viewID, playerName);
-
-					if(transform.localScale.x > 0)
-					{
-						//throw to right
-						theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(200,-50));
-					}
-					else
-					{
-						theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200,-50));
-					}
-				}
-				//WAIT if you are the scientist, let us throw two instead!
-				else if(GetComponent<Scientist>() != null)
-				{
-					//throw one bomb
-					this.GetComponent<PhotonView>().RPC("ThrowBomb", PhotonTargets.All);
-					GameObject theBomb = PhotonNetwork.Instantiate("StickyBomb", this.transform.position, Quaternion.identity, 0);
-					this.GetComponent<PhotonView>().RPC("SetBomb", PhotonTargets.All, theBomb.GetComponent<PhotonView>().viewID, playerName);
-					
-					if(transform.localScale.x > 0)
-					{
-						//throw to right
-						theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(200,-75));
-					}
-					else
-					{
-						theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200,-75));
-					}
-
-					//throw another
-					GameObject secondBomb = PhotonNetwork.Instantiate("StickyBomb", this.transform.position, Quaternion.identity, 0);
-					this.GetComponent<PhotonView>().RPC("SetBomb", PhotonTargets.All, secondBomb.GetComponent<PhotonView>().viewID, playerName);
-					
-					if(transform.localScale.x > 0)
-					{
-						//throw to right
-						secondBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(200,75));
-					}
-					else
-					{
-						secondBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200,75));
-					}
-				}
+				NetworkThrowBomb();
 			}
+			else if(!GlobalProperties.IS_NETWORKED && XBox.PressedThrow())
+			{
+				LocalThrowBomb();
+			}
+
 		}
 
 		wasGrounded = isGrounded;
+	}
+
+	void NetworkThrowBomb ()
+	{
+		if(GetComponent<Scientist>() == null)
+		{
+			//throw bomb
+			this.GetComponent<PhotonView>().RPC("ThrowBomb", PhotonTargets.All);
+			GameObject theBomb = PhotonNetwork.Instantiate("StickyBomb", this.transform.position, Quaternion.identity, 0);
+			this.GetComponent<PhotonView>().RPC("SetBomb", PhotonTargets.All, theBomb.GetComponent<PhotonView>().viewID, playerName);
+			
+			if(transform.localScale.x > 0)
+			{
+				//throw to right
+				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(200,-50));
+			}
+			else
+			{
+				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200,-50));
+			}
+		}
+		//WAIT if you are the scientist, let us throw two instead!
+		else if(GetComponent<Scientist>() != null)
+		{
+			//throw one bomb
+			this.GetComponent<PhotonView>().RPC("ThrowBomb", PhotonTargets.All);
+			GameObject theBomb = PhotonNetwork.Instantiate("StickyBomb", this.transform.position, Quaternion.identity, 0);
+			this.GetComponent<PhotonView>().RPC("SetBomb", PhotonTargets.All, theBomb.GetComponent<PhotonView>().viewID, playerName);
+			
+			if(transform.localScale.x > 0)
+			{
+				//throw to right
+				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(200,-75));
+			}
+			else
+			{
+				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200,-75));
+			}
+			
+			//throw another
+			GameObject secondBomb = PhotonNetwork.Instantiate("StickyBomb", this.transform.position, Quaternion.identity, 0);
+			this.GetComponent<PhotonView>().RPC("SetBomb", PhotonTargets.All, secondBomb.GetComponent<PhotonView>().viewID, playerName);
+			
+			if(transform.localScale.x > 0)
+			{
+				//throw to right
+				secondBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(200,75));
+			}
+			else
+			{
+				secondBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-200,75));
+			}
+		}
+	}
+
+	private void LocalThrowBomb()
+	{
+		if(GetComponent<Scientist>() == null)
+		{
+			//throw bomb
+			hasStickyBomb = false;
+			bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
+
+			GameObject localStickyPrefab = Resources.Load<GameObject>("LocalStickyBomb");
+			GameObject theBomb = (GameObject)GameObject.Instantiate(localStickyPrefab, this.transform.position, Quaternion.identity);
+			StickyBomb sb = theBomb.GetComponent<StickyBomb>();
+			sb.ownerID = playerID;
+			AudioSource.PlayClipAtPoint(threwBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
+			
+			if(transform.localScale.x > 0)
+			{
+				//throw to right
+				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(600,-50));
+			}
+			else
+			{
+				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-600,-50));
+			}
+		}
+		//WAIT if you are the scientist, let us throw two instead!
+		else if(GetComponent<Scientist>() != null)
+		{
+			//throw bomb
+			hasStickyBomb = false;
+			bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
+			
+			GameObject localStickyPrefab = Resources.Load<GameObject>("LocalStickyBomb");
+			GameObject theBomb = (GameObject)GameObject.Instantiate(localStickyPrefab, this.transform.position, Quaternion.identity);
+			StickyBomb sb = theBomb.GetComponent<StickyBomb>();
+			sb.ownerID = playerID;
+			AudioSource.PlayClipAtPoint(threwBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
+			
+			if(transform.localScale.x > 0)
+			{
+				//throw to right
+				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(600,-75));
+			}
+			else
+			{
+				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-600,-75));
+			}
+			
+			//throw another
+			GameObject secondBomb = (GameObject)GameObject.Instantiate(localStickyPrefab, this.transform.position, Quaternion.identity);
+			StickyBomb sb2 = secondBomb.GetComponent<StickyBomb>();
+			sb2.ownerID = playerID;
+			
+			if(transform.localScale.x > 0)
+			{
+				//throw to right
+				secondBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(600,75));
+			}
+			else
+			{
+				secondBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-600,75));
+			}
+		}
 	}
 
 	private bool RaycastCollision(bool toTheRight, float raycastD)
@@ -267,11 +376,36 @@ public class PlayerController : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D c)
 	{
-		if(c.gameObject.GetComponent<StickyCrate>() != null)
+		if(GlobalProperties.IS_NETWORKED)
 		{
-			this.GetComponent<PhotonView>().RPC("PickupBomb", PhotonTargets.All);
-			PhotonNetwork.Destroy(c.gameObject);
+			if(c.gameObject.GetComponent<StickyCrate>() != null)
+			{
+				this.GetComponent<PhotonView>().RPC("PickupBomb", PhotonTargets.All);
+				PhotonNetwork.Destroy(c.gameObject);
+			}
 		}
+		else
+		{
+			if(c.gameObject.GetComponent<StickyCrate>() != null)
+			{
+				LOCAL_PickupBomb();
+				GameObject.Destroy(c.gameObject);
+			}
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D c)
+	{
+		if(c.GetComponent<KillBox>() != null)
+		{
+			//youre dead
+			GameObject.FindObjectOfType<GameCamera>().PlayerFellLocal(this);
+		}
+	}
+
+	public Xbox360Controller GetXBox ()
+	{
+		return XBox;
 	}
 	
 	[PunRPC]
@@ -280,6 +414,17 @@ public class PlayerController : MonoBehaviour {
 		Debug.Log("Picked up Sticky");
 		hasStickyBomb = true;
 		bombStatus.GetComponent<SpriteRenderer>().sprite = hasBombSprite;
+		AudioSource.PlayClipAtPoint(pickupCrate, GameObject.FindObjectOfType<GameCamera>().transform.position);
+	}
+
+	void LOCAL_PickupBomb()
+	{
+		Debug.Log("Picked up Sticky");
+		hasStickyBomb = true;
+		bombStatus.GetComponent<SpriteRenderer>().sprite = hasBombSprite;
+		myStats.CratesPickedUp++;
+		GameObject.FindObjectOfType<GameCamera> ().UpdateStatsLocal ();
+		AudioSource.PlayClipAtPoint(pickupCrate, GameObject.FindObjectOfType<GameCamera>().transform.position);
 	}
 
 	[PunRPC]
@@ -288,6 +433,7 @@ public class PlayerController : MonoBehaviour {
 		Debug.Log("Threw a bomb");
 		hasStickyBomb = false;
 		bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
+		AudioSource.PlayClipAtPoint(threwBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
 	}
 
 	[PunRPC]
@@ -328,6 +474,7 @@ public class PlayerController : MonoBehaviour {
 
 		if(theSticky != null)
 		{
+			AudioSource.PlayClipAtPoint(getStuck, GameObject.FindObjectOfType<GameCamera>().transform.position);
 			currentStuck = theSticky.GetComponent<StickyBomb>();
 			theSticky.transform.SetParent(this.transform);
 			theSticky.transform.localScale = scale * 9;
@@ -357,6 +504,7 @@ public class PlayerController : MonoBehaviour {
 		
 		if(theSticky != null)
 		{
+			AudioSource.PlayClipAtPoint(pickupBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
 			//pickup the bomb, and destroy the bomb
 			hasStickyBomb = true;
 			bombStatus.GetComponent<SpriteRenderer>().sprite = hasBombSprite;
@@ -369,6 +517,13 @@ public class PlayerController : MonoBehaviour {
 	{
 		GameObject.Destroy (GameObject.Instantiate (teleportParticle, t1, Quaternion.identity), 2f);
 		GameObject.Destroy (GameObject.Instantiate (teleportParticle, t2, Quaternion.identity), 2f);
+	}
+
+	public void LOCAL_Teleported(Vector3 t1, Vector3 t2)
+	{
+		GameObject.Destroy (GameObject.Instantiate (teleportParticle, t1, Quaternion.identity), 2f);
+		GameObject.Destroy (GameObject.Instantiate (teleportParticle, t2, Quaternion.identity), 2f);
+		AudioSource.PlayClipAtPoint(threwBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
 	}
 
 	[PunRPC]
@@ -391,6 +546,7 @@ public class PlayerController : MonoBehaviour {
 		
 		if(theSticky != null)
 		{
+			AudioSource.PlayClipAtPoint(transferBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
 			currentStuck = theSticky.GetComponent<StickyBomb>();
 			theSticky.transform.SetParent(this.transform);
 			theSticky.transform.position = stuckPos;
@@ -451,6 +607,11 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	public void LOCAL_SetCanMove()
+	{
+		this.canMove = true;
+	}
+
 	[PunRPC]
 	void SetRandomSpawn(int pID)
 	{
@@ -485,6 +646,103 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	public void LOCAL_PickupBombGround(StickyBomb theSticky)
+	{
+		//pickup the bomb, and destroy the bomb
+		hasStickyBomb = true;
+		bombStatus.GetComponent<SpriteRenderer>().sprite = hasBombSprite;
+		AudioSource.PlayClipAtPoint(pickupBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
+		GameObject.Destroy(theSticky.gameObject);
+	}
+
+	public void LOCAL_GetStuck(Vector3 stuckPos, Vector3 scale, StickyBomb theSticky)
+	{
+		isStuck = true;
+		stuckPosition = stuckPos;
+		
+		if(theSticky != null)
+		{
+			AudioSource.PlayClipAtPoint(getStuck, GameObject.FindObjectOfType<GameCamera>().transform.position);
+			currentStuck = theSticky.GetComponent<StickyBomb>();
+			theSticky.transform.SetParent(this.transform);
+			theSticky.transform.localScale = scale * 9;
+			theSticky.transform.position = stuckPos;
+			theSticky.GetComponent<Rigidbody2D>().isKinematic = true;
+			theSticky.isStuck = true;
+			theSticky.GetComponent<StickyBomb>().stuckID = playerID;
+			PopText.Create("STUCK!", Color.white, 120, this.transform.position + Vector3.up * .5f);
+			Debug.Log("Current stuck: " + currentStuck.name);
+		}
+	}
+
+	public void LOCAL_SwitchOwners(Vector3 stuckPos, Vector3 scale, StickyBomb theSticky)
+	{
+		isStuck = true;
+		stuckPosition = stuckPos;
+		
+		if(theSticky != null)
+		{
+			currentStuck = theSticky.GetComponent<StickyBomb>();
+			theSticky.transform.SetParent(this.transform);
+			theSticky.transform.position = stuckPos;
+			theSticky.GetComponent<Rigidbody2D>().isKinematic = true;
+			theSticky.isStuck = true;
+			//the person that ran into you is now the potential killer
+			theSticky.GetComponent<StickyBomb>().ownerID = theSticky.GetComponent<StickyBomb>().stuckID;
+			theSticky.GetComponent<StickyBomb>().stuckID = playerID;
+			theSticky.GetComponent<LocalStickyBomb>().TransferBomb();
+			PopText.Create("STUCK!", Color.white, 120, this.transform.position + Vector3.up * .5f);
+			//get the new owner and tell him he isnt stuck anymore
+			AudioSource.PlayClipAtPoint(transferBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
+			PlayerController newOwner = null;
+			PlayerController[] players = GameObject.FindObjectsOfType<PlayerController>();
+			
+			foreach(var p in players)
+			{
+				if(p.playerID == theSticky.ownerID)
+				{
+					newOwner = p;
+				}
+			}
+			
+			newOwner.isStuck = false;
+			newOwner.currentStuck = null;
+		}
+		GameObject.Find ("Main Camera").GetComponent<GameCamera> ().BombStuck ();
+	}
+
+	public void LOCAL_SetRandomSpawn()
+	{
+		GameCamera gc = GameObject.FindObjectOfType<GameCamera> ();
+		
+		foreach(var p in gc.playerList)
+		{
+			p.gameObject.active = true;
+			gc._playerJoined = true;
+			gc.gameStartCountdown = 60 * 3;
+			gc.gameFinishedTimer = 60 * 10;
+		}
+		//use a spawn point to tell other player where to go
+		int r = Random.Range(0, gc.spawnPoints.Length);
+		
+		while(gc.spawnsOccupied[r])
+		{
+			r = Random.Range(0, gc.spawnPoints.Length);
+		}
+		
+		this.transform.position = gc.spawnPoints[r].position;
+		gc.spawnsOccupied[r] = true;
+		this.gameObject.active = true;
+		this.canMove = false;
+		
+		//destroy all bombs
+		StickyBomb[] allBombs = GameObject.FindObjectsOfType<StickyBomb> ();
+		foreach(var b in allBombs)
+		{
+			GameObject.Destroy(b.gameObject);
+		}
+	}
+
 	[PunRPC]
 	void SetPlayerNumber(int id)
 	{
@@ -512,5 +770,44 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		GameObject.FindObjectOfType<GameCamera> ().playerList.Add (this);
+	}
+
+	public void LOCAL_ResetPlayer()
+	{
+		animator.SetBool ("Walking", false);
+		animator.SetBool ("InAir", false);
+
+		if(GetComponent<BigBoy>() != null)
+		{
+			GetComponent<BigBoy>().alreadyHit = false;
+			transform.FindChild("BigBoyStatus").GetComponent<SpriteRenderer>().enabled = true;
+		}
+	}
+
+	public void LOCAL_SetPlayerNumber(int id)
+	{
+		Color c = playerMaterials [id - 1].color;
+		playerID = id;
+		myStats = new Scorecard (id);
+		XBox = new Xbox360Controller (id);
+		if(nametag == null)
+		{
+			nametag = transform.FindChild ("Nametag").GetComponent<TextMesh> ();
+			//change player to dif color
+			//body
+			transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
+			//5
+			for(int i = 0; i < 5; ++i)
+			{
+				transform.GetChild (0).GetChild (0).GetChild (i).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
+				if(i != 4)
+				{
+					transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
+					transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
+				}
+			}
+			nametag.color = c;
+			nametag.text = "P" + id.ToString ();
+		}
 	}
 }
