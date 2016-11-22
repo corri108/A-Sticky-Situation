@@ -7,8 +7,10 @@ public class GhostAbility : PunBehaviour {
 	public Material material;
 	public Material mainMaterial;
 	public Material ghostMaterial;
-	public GameObject cape;
+	public GameObject[] hideObjects;
 	public bool abilityAvailable;
+	[HideInInspector]
+	public AbilityStatus abs = null;
 	bool used;
 
 	float timer;
@@ -50,12 +52,18 @@ public class GhostAbility : PunBehaviour {
 						transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material = ghostMaterial;
 					}
 				}
-				cape.SetActive (false);
+				foreach(var ho in hideObjects)
+				{
+					ho.SetActive (false);
+				}
 				timer += Time.deltaTime;
 			} 
 			else 
 			{
-				cape.SetActive (true);
+				foreach(var ho in hideObjects)
+				{
+					ho.SetActive (true);
+				}
 				transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = mainMaterial;
 				//5
 				for(int i = 0; i < 5; ++i)
@@ -67,9 +75,54 @@ public class GhostAbility : PunBehaviour {
 						transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material = mainMaterial;
 					}
 				}
+
+				timer = 0;
+				used = false;
+				abilityAvailable = true;
 			}
 		}
 
+	}
+
+	public void SetABS(AbilityStatus abs)
+	{
+		this.abs = abs;
+	}
+
+	public void LOCAL_Reset()
+	{
+		foreach(var ho in hideObjects)
+		{
+			ho.SetActive (true);
+		}
+		transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = mainMaterial;
+		//5
+		for(int i = 0; i < 5; ++i)
+		{
+			transform.GetChild (0).GetChild (0).GetChild (i).GetComponent<SpriteRenderer> ().material = mainMaterial;
+			if(i != 4)
+			{
+				transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetComponent<SpriteRenderer> ().material = mainMaterial;
+				transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material = mainMaterial;
+			}
+		}
+		
+		timer = 0;
+		used = false;
+		abilityAvailable = true;
+	}
+
+	public void LOCAL_Disappear()
+	{
+		if (abilityAvailable) 
+		{
+			used = true;
+			abilityAvailable = false;
+		}
+		else
+		{
+			//play noise
+		}
 	}
 
 	[PunRPC]

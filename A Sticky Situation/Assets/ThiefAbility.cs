@@ -6,9 +6,14 @@ public class ThiefAbility : PunBehaviour {
 
 	public bool abilityAvailable;
 	bool used;
-
+	[HideInInspector]
+	public AbilityStatus abs = null;
 	public bool inRange;
 	GameObject target;
+	bool trySteal = false;
+
+	private int stealTimer = 30;
+	private int stealTimerReset = 30;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +27,7 @@ public class ThiefAbility : PunBehaviour {
 		{
 			if (abilityAvailable) 
 			{
-				if (inRange) 
+				if (inRange && target != null) 
 				{
 					if(GlobalProperties.IS_NETWORKED)
 					{
@@ -39,6 +44,38 @@ public class ThiefAbility : PunBehaviour {
 		{
 			abilityAvailable = true;
 		}
+	}
+
+	void FixedUpdate()
+	{
+		if(trySteal)
+		{
+			//countdown until steal no longer works
+			stealTimer--;
+
+			if(stealTimer == 0)
+			{
+				stealTimer = stealTimerReset;
+				trySteal = false;
+			}
+		}
+	}
+
+	public void LOCAL_Reset()
+	{
+		abilityAvailable = true;
+		trySteal = false;
+		target = null;
+	}
+
+	public void LOCAL_Steal()
+	{
+		trySteal = true;
+	}
+
+	public void SetABS(AbilityStatus abs)
+	{
+		this.abs = abs;
 	}
 
 	void NetworkLogic()
@@ -60,7 +97,7 @@ public class ThiefAbility : PunBehaviour {
 	{
 		Xbox360Controller xc = GetComponent<PlayerController> ().GetXBox ();
 
-		if (xc.PressedSpecial())
+		if (trySteal)
 		{
 			if (target.GetComponent<PlayerController> ().hasStickyBomb)
 			{
@@ -69,6 +106,7 @@ public class ThiefAbility : PunBehaviour {
 				target.GetComponent<PlayerController> ().bombStatus.GetComponent<SpriteRenderer>().sprite= target.GetComponent<PlayerController> ().noBombSprite;
 				this.GetComponent<PlayerController> ().bombStatus.GetComponent<SpriteRenderer>().sprite = this.GetComponent<PlayerController> ().hasBombSprite;
 				abilityAvailable = false;
+				PopText.Create ("SNATCHED!", Color.white, 60, transform.position + Vector3.up * .5f);
 			}
 		}
 	}
@@ -85,7 +123,7 @@ public class ThiefAbility : PunBehaviour {
 		inRange = false;
 	}
 
-	void OnTriggerStay2D(Collider2D col)
+	void OnTriggerEnter2D(Collider2D col)
 	{
 		if (col.gameObject.tag == "Player") 
 		{

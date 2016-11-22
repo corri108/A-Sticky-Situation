@@ -38,11 +38,14 @@ public class PlayerController : MonoBehaviour {
 	public string playerName = "Bob";
 	public float maxSpeed = 2f;
 	public float accelerationSpeed = .12f;
+	private float sprintSpeed = 1.65f;
+	private GameObject sprintParticle;
 	public float jumpForce = 100f;
 	public LayerMask whatIsGround;
 	public Sprite hasBombSprite;
 	public Sprite noBombSprite;
 	public GameObject teleportParticle;
+	public GameObject specialParticleEffect;
 	//sounds
 	public AudioClip foot1;
 	public AudioClip foot2;
@@ -53,11 +56,25 @@ public class PlayerController : MonoBehaviour {
 	public AudioClip transferBomb;
 	public AudioClip getStuck;
 	public AudioClip threwBomb;
+	public AudioClip specialNoise;
 
 	Xbox360Controller XBox;
 	//for colors
 	public Material[] playerMaterials;
 
+	private AbilityStatus abs;
+	private Vector3 absScale;
+	private Vector3 absMinScale;
+	private SpriteRenderer sprintBar;
+	private Vector3 sprintScale;
+	private Vector3 sprintMinScale;
+	private int sprintJuice = 60 * 4;
+	private int sprintJuiceMax = 60 * 4;
+	private bool exhausted = false;
+	private int exhaustedResetMax = 60 * 3;
+	private int exhausedResetTimer = 60 * 3;
+	private int giveSprintBack = 0;
+	private Color playercolor;
 	//for keeping movement
 	float xInput = 0;
 	// Use this for initialization
@@ -75,8 +92,16 @@ public class PlayerController : MonoBehaviour {
 		footTransform = transform.FindChild ("FootPosition");
 		nametagScale = new Vector3 (nametag.transform.localScale.x, nametag.transform.localScale.y, nametag.transform.localScale.z);
 		nametagMinScale = new Vector3 (-nametag.transform.localScale.x, nametag.transform.localScale.y, nametag.transform.localScale.z);
+		abs = this.transform.GetComponentInChildren<AbilityStatus> ();
+		absScale = new Vector3 (abs.transform.localScale.x, abs.transform.localScale.y, abs.transform.localScale.z);
+		absMinScale = new Vector3 (-abs.transform.localScale.x, abs.transform.localScale.y, abs.transform.localScale.z);
 		scale = new Vector3 (transform.localScale.x, transform.localScale.y, transform.localScale.z);
 		minScale = new Vector3 (-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+		sprintParticle = Resources.Load<GameObject> ("DustParticle");
+		sprintBar = this.transform.FindChild ("SprintStatus").GetComponent<SpriteRenderer> ();
+		sprintBar.color = playercolor;
+		sprintScale = new Vector3 (sprintBar.transform.localScale.x, sprintBar.transform.localScale.y, sprintBar.transform.localScale.z);
+		sprintMinScale = new Vector3 (-sprintBar.transform.localScale.x, sprintBar.transform.localScale.y, sprintBar.transform.localScale.z);
 
 		//raycasting setup
 		Transform raycast = transform.FindChild ("Raycasts");
@@ -102,6 +127,32 @@ public class PlayerController : MonoBehaviour {
 				GetComponent<PhotonView> ().RPC ("Disappear", PhotonTargets.AllBuffered, null);
 		}
 	}
+
+	void SpecialCharacterMovesLocal()
+	{
+		if (XBox.PressedSpecial()) 
+		{
+			if(GetComponent<GhostAbility>() != null && abs.ability_ready)
+			{
+				GetComponent<GhostAbility>().LOCAL_Disappear();
+				GetComponent<GhostAbility>().SetABS(abs);
+				abs.ability_ready = false;
+				abs.UpdateReady();
+				AudioSource.PlayClipAtPoint(specialNoise, GameObject.FindObjectOfType<GameCamera>().transform.position);
+				GameObject.Destroy (GameObject.Instantiate (specialParticleEffect, this.transform.position, Quaternion.identity), 5f);
+			}
+			else if(GetComponent<ThiefAbility>() != null && abs.ability_ready)
+			{
+				GetComponent<ThiefAbility>().abilityAvailable = true;
+				GetComponent<ThiefAbility>().LOCAL_Steal();
+				GetComponent<ThiefAbility>().SetABS(abs);
+				abs.ability_ready = false;
+				abs.UpdateReady();
+				AudioSource.PlayClipAtPoint(specialNoise, GameObject.FindObjectOfType<GameCamera>().transform.position);
+				GameObject.Destroy (GameObject.Instantiate (specialParticleEffect, this.transform.position, Quaternion.identity), 5f);
+			}
+		}
+	}
 	
 	//input and logic goes here
 	void Update () 
@@ -119,12 +170,31 @@ public class PlayerController : MonoBehaviour {
 		{
 			xInput = XBox.HorizontalAxis ();
 			xInput *= accelerationSpeed;
+
+			if(XBox.SprintPressed() && !exhausted)
+			{
+				xInput *= sprintSpeed;
+				animator.SetFloat("Speed" , 1f);
+				GameObject sp = (GameObject)GameObject.Instantiate(sprintParticle, footTransform.position, Quaternion.identity);
+				sp.GetComponent<ParticleSystem>().startColor = playercolor;
+				GameObject.Destroy(sp, 3.5f);
+			}
+			else
+			{
+				animator.SetFloat("Speed" , 0f);
+			}
 		}
 
 		if(GlobalProperties.IS_NETWORKED)
 		{
 			SpecialCharacterMovesNetwork ();
 		}
+		else
+		{
+			SpecialCharacterMovesLocal();
+		}
+
+		CalculateSprintScale (false/*xInput > 0*/);
 
 		if (xInput > 0 || xInput < 0)
 		{
@@ -134,11 +204,13 @@ public class PlayerController : MonoBehaviour {
 			{
 				this.transform.localScale = scale;
 				nametag.transform.localScale = nametagScale;
+				abs.transform.localScale = absScale;
 			}
 			else
 			{
 				this.transform.localScale = minScale;
 				nametag.transform.localScale = nametagMinScale;
+				abs.transform.localScale = absMinScale;
 			}
 		}
 		else
@@ -259,6 +331,7 @@ public class PlayerController : MonoBehaviour {
 			//throw another
 			GameObject secondBomb = PhotonNetwork.Instantiate("StickyBomb", this.transform.position, Quaternion.identity, 0);
 			this.GetComponent<PhotonView>().RPC("SetBomb", PhotonTargets.All, secondBomb.GetComponent<PhotonView>().viewID, playerName);
+			AudioSource.PlayClipAtPoint(specialNoise, GameObject.FindObjectOfType<GameCamera>().transform.position);
 			
 			if(transform.localScale.x > 0)
 			{
@@ -272,42 +345,36 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	public static bool SomeoneHasSticky()
+	{
+		PlayerController[] pcs = GameObject.FindObjectsOfType<PlayerController> ();
+
+		foreach(var p in pcs)
+		{
+			if(p.hasStickyBomb)
+				return true;
+		}
+
+		return false;
+	}
+
 	private void LocalThrowBomb()
 	{
-		if(GetComponent<Scientist>() == null)
-		{
-			//throw bomb
-			hasStickyBomb = false;
-			bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
-
-			GameObject localStickyPrefab = Resources.Load<GameObject>("LocalStickyBomb");
-			GameObject theBomb = (GameObject)GameObject.Instantiate(localStickyPrefab, this.transform.position, Quaternion.identity);
-			StickyBomb sb = theBomb.GetComponent<StickyBomb>();
-			sb.ownerID = playerID;
-			AudioSource.PlayClipAtPoint(threwBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
-			
-			if(transform.localScale.x > 0)
-			{
-				//throw to right
-				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(600,-50));
-			}
-			else
-			{
-				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-600,-50));
-			}
-		}
 		//WAIT if you are the scientist, let us throw two instead!
-		else if(GetComponent<Scientist>() != null)
+		if(GetComponent<Scientist>() != null && abs.ability_ready)
 		{
 			//throw bomb
 			hasStickyBomb = false;
 			bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
+			abs.ability_ready = false;
+			abs.UpdateReady();
 			
 			GameObject localStickyPrefab = Resources.Load<GameObject>("LocalStickyBomb");
 			GameObject theBomb = (GameObject)GameObject.Instantiate(localStickyPrefab, this.transform.position, Quaternion.identity);
 			StickyBomb sb = theBomb.GetComponent<StickyBomb>();
 			sb.ownerID = playerID;
 			AudioSource.PlayClipAtPoint(threwBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
+			GameObject.Destroy (GameObject.Instantiate (specialParticleEffect, this.transform.position, Quaternion.identity), 5f);
 			
 			if(transform.localScale.x > 0)
 			{
@@ -334,6 +401,28 @@ public class PlayerController : MonoBehaviour {
 				secondBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-600,75));
 			}
 		}
+		else
+		{
+			//throw bomb
+			hasStickyBomb = false;
+			bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
+			
+			GameObject localStickyPrefab = Resources.Load<GameObject>("LocalStickyBomb");
+			GameObject theBomb = (GameObject)GameObject.Instantiate(localStickyPrefab, this.transform.position, Quaternion.identity);
+			StickyBomb sb = theBomb.GetComponent<StickyBomb>();
+			sb.ownerID = playerID;
+			AudioSource.PlayClipAtPoint(threwBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
+			
+			if(transform.localScale.x > 0)
+			{
+				//throw to right
+				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(600,-50));
+			}
+			else
+			{
+				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-600,-50));
+			}
+		}
 	}
 
 	private bool RaycastCollision(bool toTheRight, float raycastD)
@@ -358,6 +447,22 @@ public class PlayerController : MonoBehaviour {
 		//no collisions were detected
 		return false;
 	}
+
+	void CalculateSprintScale(bool flip)
+	{
+		float xScale = (float)sprintJuice / sprintJuiceMax;//# betwenn 0 and 1
+
+		if(flip)
+		{
+			//Vector3 newV = xScale * sprintMinScale;
+			//sprintBar.transform.localScale = new Vector3(newV.x, sprintBar.transform.localScale.y, sprintBar.transform.localScale.z);
+		}
+		else
+		{
+			Vector3 newV = xScale * sprintScale;
+			sprintBar.transform.localScale = new Vector3(newV.x, sprintBar.transform.localScale.y, sprintBar.transform.localScale.z);
+		}
+	}
 	
 	//physics must be done here
 	void FixedUpdate()
@@ -367,6 +472,43 @@ public class PlayerController : MonoBehaviour {
 
 		float newX = Mathf.Clamp ((myBody.velocity.x + xInput) * kineticFriction, -maxSpeed, maxSpeed);
 		myBody.velocity = new Vector2 (newX, myBody.velocity.y);
+
+		if(XBox.SprintPressed() && sprintJuice > 0)
+		{
+			sprintJuice--;
+
+			if(sprintJuice == 0)
+			{
+				exhausted = true;
+			}
+		}
+		else if(!exhausted && sprintJuice > 0)
+		{
+			if(giveSprintBack % 3 == 0)
+			{
+				sprintJuice++;
+
+				if(sprintJuice > sprintJuiceMax)
+					sprintJuice = sprintJuiceMax;
+			}
+		}
+		else if(exhausted)
+		{
+			exhausedResetTimer--;
+
+			if(exhausedResetTimer == 0)
+			{
+				exhausedResetTimer = exhaustedResetMax;
+				exhausted = false;
+				sprintJuice = 1;
+			}
+		}
+
+		//for giving sprint back slowly
+		giveSprintBack++;
+
+		if (giveSprintBack == 1000)
+			giveSprintBack = 0;
 
 		if (Mathf.Abs (xInput) > .1f && isGrounded)
 			WalkingSounds ();
@@ -776,17 +918,43 @@ public class PlayerController : MonoBehaviour {
 	{
 		animator.SetBool ("Walking", false);
 		animator.SetBool ("InAir", false);
+		animator.SetFloat ("Speed", 0);
+		hasStickyBomb = false;
+		bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
+		sprintJuice = sprintJuiceMax;
+		exhausedResetTimer = exhaustedResetMax;
+		exhausted = false;
+		giveSprintBack = 0;
+		CalculateSprintScale (false);
 
 		if(GetComponent<BigBoy>() != null)
 		{
 			GetComponent<BigBoy>().alreadyHit = false;
 			transform.FindChild("BigBoyStatus").GetComponent<SpriteRenderer>().enabled = true;
 		}
+		else if(GetComponent<Scientist>() != null)
+		{
+			abs.ability_ready = true;
+			abs.UpdateReady();
+		}
+		else if(GetComponent<ThiefAbility>() != null)
+		{
+			GetComponent<ThiefAbility>().LOCAL_Reset();
+			abs.ability_ready = true;
+			abs.UpdateReady();
+		}
+		else if(GetComponent<GhostAbility>() != null)
+		{
+			GetComponent<GhostAbility>().LOCAL_Reset();
+			abs.ability_ready = true;
+			abs.UpdateReady();
+		}
 	}
 
 	public void LOCAL_SetPlayerNumber(int id)
 	{
 		Color c = playerMaterials [id - 1].color;
+		playercolor = c;
 		playerID = id;
 		myStats = new Scorecard (id);
 		XBox = new Xbox360Controller (id);
@@ -806,7 +974,7 @@ public class PlayerController : MonoBehaviour {
 					transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
 				}
 			}
-			nametag.color = c;
+			//nametag.color = c;
 			nametag.text = "P" + id.ToString ();
 		}
 	}

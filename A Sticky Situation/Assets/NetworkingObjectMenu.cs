@@ -52,7 +52,7 @@ public class NetworkingObjectMenu : Photon.PunBehaviour {
 
 		string levelString = "TestScene";
 		if(levelChoose.captionText.text.Equals("Boxlands"))
-			Application.LoadLevel ("TestScene");
+			Application.LoadLevel ("The Cottage");
 		else
 			Application.LoadLevel ("Level2");
 	}

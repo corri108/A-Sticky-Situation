@@ -58,6 +58,14 @@ public class LocalStickyBomb : MonoBehaviour {
 			
 			if(countdownTimer == 0)
 			{
+				bool lastBomb = true;
+				
+				StickyBomb[] allStickys = GameObject.FindObjectsOfType<StickyBomb>();
+				if(allStickys.Length > 1)
+					lastBomb = false;
+				if(PlayerController.SomeoneHasSticky())
+					lastBomb = false;
+
 				Blowup();
 				GameObject.Destroy(this.gameObject);
 				
@@ -85,7 +93,8 @@ public class LocalStickyBomb : MonoBehaviour {
 				}
 				else
 				{
-					DisplayKill(stuckPlayer.playerID, gotKillPlayer.playerID);
+					if(stuckPlayer != null && gotKillPlayer != null)
+						DisplayKill(stuckPlayer.playerID, gotKillPlayer.playerID);
 				}
 				
 				//check to see if we should spawn a crate
@@ -95,7 +104,7 @@ public class LocalStickyBomb : MonoBehaviour {
 					//dont spawn crate
 					Debug.Log("DIDNT SPAWN CRATE BECAUSE ONLY ONE PLAYER!");
 				}
-				else
+				else if(lastBomb)
 				{
 					//spawn crate
 					GameObject crate = (GameObject)GameObject.Instantiate (localCratePrefab, 
@@ -136,6 +145,8 @@ public class LocalStickyBomb : MonoBehaviour {
 
 				StickyBomb[] allStickys = GameObject.FindObjectsOfType<StickyBomb>();
 				if(allStickys.Length > 1)
+					lastBomb = false;
+				if(PlayerController.SomeoneHasSticky())
 					lastBomb = false;
 
 				Blowup();
@@ -310,7 +321,7 @@ public class LocalStickyBomb : MonoBehaviour {
 				PopText.Create ("P" + deadPlayers[0].playerID.ToString () + " killed himself.", Color.white, 250, 
 				                new Vector3(0, 4, 1));
 				
-				if(players.Length == 0)
+				if(players.Length == 0 || players.Length == 1)
 				{
 					//PopText.Create ("ROUND OVER - Tie!", Color.white, 250, 
 					//new Vector3(0, 4, 1));

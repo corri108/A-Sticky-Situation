@@ -138,7 +138,7 @@ public class ButtonScript : MonoBehaviour {
 			switch(GlobalProperties.LEVEL)
 			{
 			case "Boxlands":
-				Application.LoadLevel("TestScene");
+				Application.LoadLevel("The Cottage");
 				break;
 			case  "Plains":
 				Application.LoadLevel("Level2");

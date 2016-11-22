@@ -40,4 +40,15 @@ public class Xbox360Controller
 	{
 		return Input.GetButtonDown ("Start" + id.ToString ());
 	}
+
+	public bool SprintPressed()
+	{
+		Debug.Log ("TRIG: " + Input.GetAxis ("Sprint" + id.ToString ()));
+		return Input.GetAxis ("Sprint" + id.ToString ()) < 0f;// + id.ToString ());
+	}
+
+	public bool CrouchPressed()
+	{
+		return Input.GetButtonDown ("Crouch" + id.ToString ());
+	}
 }
