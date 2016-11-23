@@ -11,7 +11,9 @@ public enum CharacterType
 
 public enum LevelType
 {
-	Boxlands,
-	Plains,
-	TwoRooms
+	Cottage,
+	Mines,
+	Galaxy,
+	Ruins,
+	Warehouse
 }

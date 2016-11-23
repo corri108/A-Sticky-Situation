@@ -66,19 +66,6 @@ public class Cursor : MonoBehaviour {
 			}
 		}
 
-		if(colliding != null)
-		{
-			if(x3.PressedJump())
-			{
-				CharacterType character = colliding.ct;
-				GlobalProperties.PLAYERCHOICE[ID - 1] = character.ToString();
-				select.transform.GetChild(2).GetComponent<Image>().sprite = GameObject.FindObjectOfType<CharacterDictionary>().GetByText(character.ToString());
-				select.transform.GetChild (1).GetComponent<Text> ().text = "\n" + character.ToString();
-				select.transform.GetChild (1).GetComponent<Text> ().alignment = TextAnchor.UpperRight; 	
-				AudioSource.PlayClipAtPoint(colliding.noise, GameObject.FindGameObjectWithTag("MainCamera").transform.position);
-			}
-		}
-
 		if (collidingLevel != null) 
 		{
 			if(x3.PressedJump())
@@ -86,7 +73,7 @@ public class Cursor : MonoBehaviour {
 				LevelType level = collidingLevel.lt;
 				GlobalProperties.LEVEL = level.ToString();
 				collidingLevel.GetComponent<SpriteRenderer>().color = Color.red;
-				AudioSource.PlayClipAtPoint(colliding.noise, GameObject.FindGameObjectWithTag("MainCamera").transform.position);
+				AudioSource.PlayClipAtPoint(collidingLevel.noise, GameObject.FindGameObjectWithTag("MainCamera").transform.position);
 
 				if(prevCollidingLevel == null || prevCollidingLevel == collidingLevel)
 				{
@@ -97,6 +84,18 @@ public class Cursor : MonoBehaviour {
 					prevCollidingLevel.GetComponent<SpriteRenderer>().color = Color.white;
 					prevCollidingLevel = collidingLevel;
 				}
+			}
+		}
+		else if(colliding != null)
+		{
+			if(x3.PressedJump())
+			{
+				CharacterType character = colliding.ct;
+				GlobalProperties.PLAYERCHOICE[ID - 1] = character.ToString();
+				select.transform.GetChild(2).GetComponent<Image>().sprite = GameObject.FindObjectOfType<CharacterDictionary>().GetByText(character.ToString());
+				select.transform.GetChild (1).GetComponent<Text> ().text = "\n" + character.ToString();
+				select.transform.GetChild (1).GetComponent<Text> ().alignment = TextAnchor.UpperRight; 	
+				AudioSource.PlayClipAtPoint(colliding.noise, GameObject.FindGameObjectWithTag("MainCamera").transform.position);
 			}
 		}
 	}

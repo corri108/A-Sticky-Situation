@@ -137,17 +137,24 @@ public class ButtonScript : MonoBehaviour {
 		{
 			switch(GlobalProperties.LEVEL)
 			{
-			case "Boxlands":
+			case "Cottage":
 				Application.LoadLevel("The Cottage");
 				break;
-			case  "Plains":
-				Application.LoadLevel("Level2");
+			case  "Mines":
+				Application.LoadLevel("The Mines");
 				break;
-			case  "TwoRooms":
-				Application.LoadLevel("Level3");
+			case  "Galaxy":
+				Application.LoadLevel("The Galaxy");
+				break;
+			case  "Ruins":
+				Application.LoadLevel("The Ruins");
+				break;
+			case  "Warehouse":
+				Application.LoadLevel("The Warehouse");
 				break;
 			}
 		}
+
 		AudioSource.PlayClipAtPoint (GetComponent<NetworkingObjectMenu>().click, GameObject.FindGameObjectWithTag("MainCamera").transform.position);
 	}
 
