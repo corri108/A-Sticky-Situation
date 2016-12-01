@@ -6,7 +6,7 @@ public class StickyBomb : MonoBehaviour {
 	[HideInInspector]
 	public int ownerID;
 	[HideInInspector]
-	public int stuckID;
+	public int stuckID = -1;
 	[HideInInspector]
 	public bool isStuck = false;
 	[HideInInspector]

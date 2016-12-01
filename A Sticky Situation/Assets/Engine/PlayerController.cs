@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour {
 	private bool isGrounded = false;
 	private bool wasGrounded = false;
 	private float groundedRadius = .2f;
-	private Transform[] raycastObjects;
+	[HideInInspector]
+	public Transform[] raycastObjects;
 	private Vector3 scale;
 	private Vector3 minScale;
 
@@ -68,15 +69,22 @@ public class PlayerController : MonoBehaviour {
 	private SpriteRenderer sprintBar;
 	private Vector3 sprintScale;
 	private Vector3 sprintMinScale;
+	private bool isSprinting = false;
 	private int sprintJuice = 60 * 4;
 	private int sprintJuiceMax = 60 * 4;
-	private bool exhausted = false;
+	public bool exhausted = false;
 	private int exhaustedResetMax = 60 * 3;
 	private int exhausedResetTimer = 60 * 3;
 	private int giveSprintBack = 0;
 	private Color playercolor;
 	//for keeping movement
-	float xInput = 0;
+	[HideInInspector]
+	public float xInput = 0;
+
+	//AI and pathfinding
+	private AIComponent AI;
+	[HideInInspector]
+	public AIP lastPoint;
 	// Use this for initialization
 	void Start () 
 	{
@@ -117,6 +125,47 @@ public class PlayerController : MonoBehaviour {
 			//tell camera we have joined
 			GameObject.FindObjectOfType<GameCamera> ().MyPlayerHasJoined ();
 		}
+		//this will be null forever if you are player controller player instead of AI
+		AI = GetComponent<AIComponent> ();
+	}
+
+	public static PlayerController GetByPlayerID (int id)
+	{
+		PlayerController[] allPlayers = GameObject.FindObjectsOfType<PlayerController>();
+
+		foreach(var p in allPlayers)
+		{
+			if(p.playerID == id)
+				return p;
+		}
+
+		return null;
+	}
+
+	public static PlayerController GetStuckPlayer ()
+	{
+		PlayerController[] allPlayers = GameObject.FindObjectsOfType<PlayerController>();
+		
+		foreach(var p in allPlayers)
+		{
+			if(p.isStuck)
+				return p;
+		}
+		
+		return null;
+	}
+
+	public static PlayerController GetPlayerWithBomb ()
+	{
+		PlayerController[] allPlayers = GameObject.FindObjectsOfType<PlayerController>();
+		
+		foreach(var p in allPlayers)
+		{
+			if(p.hasStickyBomb)
+				return p;
+		}
+		
+		return null;
 	}
 
 	void SpecialCharacterMovesNetwork()
@@ -130,28 +179,51 @@ public class PlayerController : MonoBehaviour {
 
 	void SpecialCharacterMovesLocal()
 	{
-		if (XBox.PressedSpecial()) 
+		if(AI == null)
 		{
-			if(GetComponent<GhostAbility>() != null && abs.ability_ready)
+			if (XBox.PressedSpecial()) 
 			{
-				GetComponent<GhostAbility>().LOCAL_Disappear();
-				GetComponent<GhostAbility>().SetABS(abs);
-				abs.ability_ready = false;
-				abs.UpdateReady();
-				AudioSource.PlayClipAtPoint(specialNoise, GameObject.FindObjectOfType<GameCamera>().transform.position);
-				GameObject.Destroy (GameObject.Instantiate (specialParticleEffect, this.transform.position, Quaternion.identity), 5f);
-			}
-			else if(GetComponent<ThiefAbility>() != null && abs.ability_ready)
-			{
-				GetComponent<ThiefAbility>().abilityAvailable = true;
-				GetComponent<ThiefAbility>().LOCAL_Steal();
-				GetComponent<ThiefAbility>().SetABS(abs);
-				abs.ability_ready = false;
-				abs.UpdateReady();
-				AudioSource.PlayClipAtPoint(specialNoise, GameObject.FindObjectOfType<GameCamera>().transform.position);
-				GameObject.Destroy (GameObject.Instantiate (specialParticleEffect, this.transform.position, Quaternion.identity), 5f);
+				COMMAND_SpecialMoves ();
 			}
 		}
+	}
+
+	public float SprintRatio ()
+	{
+		return (float)sprintJuice / sprintJuiceMax;
+	}
+
+	public void SetAIGroundedRadius()
+	{
+		groundedRadius = .05f;
+	}
+
+	public void COMMAND_SpecialMoves ()
+	{
+		if (GetComponent<GhostAbility> () != null && abs.ability_ready) 
+		{
+			GetComponent<GhostAbility> ().LOCAL_Disappear ();
+			GetComponent<GhostAbility> ().SetABS (abs);
+			abs.ability_ready = false;
+			abs.UpdateReady ();
+			AudioSource.PlayClipAtPoint (specialNoise, GameObject.FindObjectOfType<GameCamera> ().transform.position);
+			GameObject.Destroy (GameObject.Instantiate (specialParticleEffect, this.transform.position, Quaternion.identity), 5f);
+		}
+		else if (GetComponent<ThiefAbility> () != null && abs.ability_ready) 
+		{
+			GetComponent<ThiefAbility> ().abilityAvailable = true;
+			GetComponent<ThiefAbility> ().LOCAL_Steal ();
+			GetComponent<ThiefAbility> ().SetABS (abs);
+			abs.ability_ready = false;
+			abs.UpdateReady ();
+			AudioSource.PlayClipAtPoint (specialNoise, GameObject.FindObjectOfType<GameCamera> ().transform.position);
+			GameObject.Destroy (GameObject.Instantiate (specialParticleEffect, this.transform.position, Quaternion.identity), 5f);
+		}
+	}
+
+	public bool IsGrounded()
+	{
+		return isGrounded;
 	}
 	
 	//input and logic goes here
@@ -168,20 +240,19 @@ public class PlayerController : MonoBehaviour {
 		}
 		else
 		{
-			xInput = XBox.HorizontalAxis ();
-			xInput *= accelerationSpeed;
+			if(AI == null)
+			{
+				xInput = XBox.HorizontalAxis ();
+				xInput *= accelerationSpeed;
 
-			if(XBox.SprintPressed() && !exhausted)
-			{
-				xInput *= sprintSpeed;
-				animator.SetFloat("Speed" , 1f);
-				GameObject sp = (GameObject)GameObject.Instantiate(sprintParticle, footTransform.position, Quaternion.identity);
-				sp.GetComponent<ParticleSystem>().startColor = playercolor;
-				GameObject.Destroy(sp, 3.5f);
-			}
-			else
-			{
-				animator.SetFloat("Speed" , 0f);
+				if(XBox.SprintPressed() && xInput != 0 && !exhausted)
+				{
+					COMMAND_Sprint();
+				}
+				else
+				{
+					COMMAND_DontSprint();
+				}
 			}
 		}
 
@@ -235,14 +306,12 @@ public class PlayerController : MonoBehaviour {
 			}
 			else
 			{
-				if(XBox.PressedJump())
+				if(AI == null)
 				{
-					isGrounded = false;
-					animator.SetBool("Grounded", false);
-					animator.SetBool("Jumped", true);
-					myBody.AddForce(Vector2.up * jumpForce);
-					AudioSource.PlayClipAtPoint(jump, this.transform.position);
-					animator.SetBool ("InAir", true);
+					if(XBox.PressedJump())
+					{
+						COMMAND_Jump ();
+					}
 				}
 			}
 
@@ -263,6 +332,11 @@ public class PlayerController : MonoBehaviour {
 			{
 				myBody.velocity = new Vector2(0, myBody.velocity.y);
 				xInput = 0;
+
+				if(AI != null)
+				{
+					AI.BlockCollide(true);
+				}
 			}
 		}
 		else if(xInput < 0)
@@ -272,23 +346,57 @@ public class PlayerController : MonoBehaviour {
 			{
 				myBody.velocity = new Vector2(0, myBody.velocity.y);
 				xInput = 0;
+
+				if(AI != null)
+				{
+					AI.BlockCollide(false);
+				}
 			}
 		}
 
 		if(hasStickyBomb)
 		{
-			if(GlobalProperties.IS_NETWORKED && Input.GetMouseButtonDown(0))
+			if(AI == null)
 			{
-				NetworkThrowBomb();
+				if(GlobalProperties.IS_NETWORKED && Input.GetMouseButtonDown(0))
+				{
+					NetworkThrowBomb();
+				}
+				else if(!GlobalProperties.IS_NETWORKED && XBox.PressedThrow())
+				{
+					COMMAND_LocalThrowBomb();
+				}
 			}
-			else if(!GlobalProperties.IS_NETWORKED && XBox.PressedThrow())
-			{
-				LocalThrowBomb();
-			}
-
 		}
 
 		wasGrounded = isGrounded;
+	}
+
+	public void COMMAND_Sprint()
+	{
+		xInput *= sprintSpeed;
+		animator.SetFloat("Speed" , 1f);
+		GameObject sp = (GameObject)GameObject.Instantiate(sprintParticle, footTransform.position, Quaternion.identity);
+		sp.GetComponent<ParticleSystem>().startColor = playercolor;
+		GameObject.Destroy(sp, 3.5f);
+		isSprinting = true;
+	}
+
+	public void COMMAND_DontSprint()
+	{
+		animator.SetFloat("Speed" , 0f);
+		isSprinting = false;
+	}
+
+	public void COMMAND_Jump ()
+	{
+		isGrounded = false;
+		animator.SetBool ("Grounded", false);
+		animator.SetBool ("Jumped", true);
+		myBody.velocity = new Vector2 (myBody.velocity.x, 0);
+		myBody.AddForce (Vector2.up * jumpForce);
+		AudioSource.PlayClipAtPoint (jump, this.transform.position);
+		animator.SetBool ("InAir", true);
 	}
 
 	void NetworkThrowBomb ()
@@ -358,7 +466,7 @@ public class PlayerController : MonoBehaviour {
 		return false;
 	}
 
-	private void LocalThrowBomb()
+	public void COMMAND_LocalThrowBomb()
 	{
 		//WAIT if you are the scientist, let us throw two instead!
 		if(GetComponent<Scientist>() != null && abs.ability_ready)
@@ -448,6 +556,12 @@ public class PlayerController : MonoBehaviour {
 		return false;
 	}
 
+	public bool SprintOverAmount(float amt)
+	{
+		return false;
+		//return amt <= (float)sprintJuice / sprintJuiceMax;
+	}
+
 	void CalculateSprintScale(bool flip)
 	{
 		float xScale = (float)sprintJuice / sprintJuiceMax;//# betwenn 0 and 1
@@ -473,13 +587,14 @@ public class PlayerController : MonoBehaviour {
 		float newX = Mathf.Clamp ((myBody.velocity.x + xInput) * kineticFriction, -maxSpeed, maxSpeed);
 		myBody.velocity = new Vector2 (newX, myBody.velocity.y);
 
-		if(XBox.SprintPressed() && sprintJuice > 0)
+		if(isSprinting && sprintJuice > 0)
 		{
 			sprintJuice--;
 
 			if(sprintJuice == 0)
 			{
 				exhausted = true;
+				isSprinting = false;
 			}
 		}
 		else if(!exhausted && sprintJuice > 0)
@@ -542,6 +657,10 @@ public class PlayerController : MonoBehaviour {
 		{
 			//youre dead
 			GameObject.FindObjectOfType<GameCamera>().PlayerFellLocal(this);
+		}
+		if(c.GetComponent<AIP>() != null)
+		{
+			lastPoint = c.GetComponent<AIP>();
 		}
 	}
 
@@ -811,6 +930,7 @@ public class PlayerController : MonoBehaviour {
 			theSticky.transform.position = stuckPos;
 			theSticky.GetComponent<Rigidbody2D>().isKinematic = true;
 			theSticky.isStuck = true;
+			theSticky.GetComponent<LocalStickyBomb>().TransferBomb();
 			theSticky.GetComponent<StickyBomb>().stuckID = playerID;
 			PopText.Create("STUCK!", Color.white, 120, this.transform.position + Vector3.up * .5f);
 			Debug.Log("Current stuck: " + currentStuck.name);
@@ -909,6 +1029,7 @@ public class PlayerController : MonoBehaviour {
 			}
 			nametag.color = c;
 			nametag.text = "P" + id.ToString ();
+
 		}
 
 		GameObject.FindObjectOfType<GameCamera> ().playerList.Add (this);
@@ -926,6 +1047,11 @@ public class PlayerController : MonoBehaviour {
 		exhausted = false;
 		giveSprintBack = 0;
 		CalculateSprintScale (false);
+
+		if(AI != null)
+		{
+			AI.Reset();
+		}
 
 		if(GetComponent<BigBoy>() != null)
 		{
@@ -976,6 +1102,12 @@ public class PlayerController : MonoBehaviour {
 			}
 			//nametag.color = c;
 			nametag.text = "P" + id.ToString ();
+
+			AI = GetComponent<AIComponent>();
+			if(AI != null)
+			{
+				nametag.text = "CP" + id.ToString ();
+			}
 		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 
 public class GlobalProperties : MonoBehaviour {
@@ -6,12 +7,12 @@ public class GlobalProperties : MonoBehaviour {
 	public static bool IS_NETWORKED = false;
 	public static string LEVEL = "Boxlands";
 	public static float GravityScale = 2f;
-	public static string VERSION = "Beta v1.3";
+	public static string VERSION = "Beta v1.5";
 	/// <summary>
 	/// NA = no player, Scientist, Big Boy, Thief, Ghost
 	/// </summary>
-	public static string[] PLAYERCHOICE = new string[]{"Ghost", "BigBoy", "NA", "NA"};
-	public static bool[] PLAYERCTRL = new bool[]{true,false,false,false};
+	public static string[] PLAYERCHOICE = new string[]{"Ghost", "Thief", "NA", "NA"};
+	public static bool[] PLAYERCTRL = new bool[]{true,true,true,true};
 	// Use this for initialization
 	void Start () {
 	

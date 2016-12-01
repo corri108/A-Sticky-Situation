@@ -76,6 +76,7 @@ public class GameCamera : MonoBehaviour {
 				}
 				else
 				{
+					bool isAI = !GlobalProperties.PLAYERCTRL[i];
 					//make a new player
 					if(GlobalProperties.PLAYERCHOICE[i].Equals("Scientist"))
 					{
@@ -84,6 +85,10 @@ public class GameCamera : MonoBehaviour {
 						player.playerID = i + 1;
 						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();
 						myBody.gravityScale = GlobalProperties.GravityScale;
+						if(isAI)
+						{
+							player.gameObject.AddComponent<AIComponent>();
+						}
 						player.LOCAL_SetPlayerNumber(player.playerID);
 						playerList.Add(player);
 					}
@@ -94,6 +99,10 @@ public class GameCamera : MonoBehaviour {
 						player.playerID = i + 1;
 						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();
 						myBody.gravityScale = GlobalProperties.GravityScale;
+						if(isAI)
+						{
+							player.gameObject.AddComponent<AIComponent>();
+						}
 						player.LOCAL_SetPlayerNumber(player.playerID);
 						playerList.Add(player);
 					}
@@ -104,6 +113,10 @@ public class GameCamera : MonoBehaviour {
 						player.playerID = i + 1;
 						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();
 						myBody.gravityScale = GlobalProperties.GravityScale;
+						if(isAI)
+						{
+							player.gameObject.AddComponent<AIComponent>();
+						}
 						player.LOCAL_SetPlayerNumber(player.playerID);
 						playerList.Add(player);
 					}
@@ -114,6 +127,10 @@ public class GameCamera : MonoBehaviour {
 						player.playerID = i + 1;
 						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();
 						myBody.gravityScale = GlobalProperties.GravityScale;
+						if(isAI)
+						{
+							player.gameObject.AddComponent<AIComponent>();
+						}
 						player.LOCAL_SetPlayerNumber(player.playerID);
 						playerList.Add(player);
 					}

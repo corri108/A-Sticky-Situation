@@ -41,6 +41,18 @@ public class LocalStickyBomb : MonoBehaviour {
 	{
 
 	}
+
+	public int GetTimerInSeconds(bool grounded)
+	{
+		if(!grounded)
+		{
+			return countdownTimer / 60;
+		}
+		else
+		{
+			return groundedTimer / 60;
+		}
+	}
 	
 	void FixedUpdate()
 	{
@@ -49,6 +61,7 @@ public class LocalStickyBomb : MonoBehaviour {
 		
 		if(sb.isStuck)
 		{
+			PopText.Create("o", Color.cyan, 30, this.transform.position);
 			countdownTimer--;
 			
 			if(countdownTimer % 60 == 0)
@@ -197,6 +210,10 @@ public class LocalStickyBomb : MonoBehaviour {
 					                                                       GameObject.FindObjectOfType<GameCamera>().GetRandomSpawnPoint(), Quaternion.identity);
 				}
 			}
+		}
+		else if(!sb.hitGround)
+		{
+			PopText.Create("o", Color.cyan, 30, this.transform.position);
 		}
 	}
 
