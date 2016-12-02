@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Photon;
+using UnityEngine.UI;
 
 public class GhostAbility : PunBehaviour {
 
@@ -13,8 +14,14 @@ public class GhostAbility : PunBehaviour {
 	public AbilityStatus abs = null;
 	bool used;
 
+	bool startSlider;
+	public int abilityCD = 8 * 60;
+	int sliderTimer;
+	public GameObject abilitySlider;
+
 	float timer;
 	Color tempColor;
+
 
 	public int wait = 5;
 
@@ -22,6 +29,10 @@ public class GhostAbility : PunBehaviour {
 	{
 		mainMaterial = transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material;
 		abilityAvailable = true;
+
+		int id = GetComponent<PlayerController>().playerID;
+		abilitySlider = GameObject.FindGameObjectWithTag ("P" + id + "Slider");
+		abilitySlider.GetComponent<Slider>().value = abilitySlider.GetComponent<Slider>().maxValue;
 	}
 
 	// Update is called once per frame
@@ -39,6 +50,7 @@ public class GhostAbility : PunBehaviour {
 
 		if (used) 
 		{
+			abilitySlider.GetComponent<Slider> ().value = 0;
 			if (timer < wait) 
 			{
 				transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = ghostMaterial;
@@ -79,9 +91,23 @@ public class GhostAbility : PunBehaviour {
 				timer = 0;
 				used = false;
 				abilityAvailable = true;
+				startSlider = true;
 			}
 		}
+	}
 
+	void FixedUpdate()
+	{
+		if (startSlider) 
+		{
+			sliderTimer++;
+			abilitySlider.GetComponent<Slider> ().value = sliderTimer/60.0f;
+			if (sliderTimer >= abilityCD) 
+			{
+				sliderTimer = 0;
+				startSlider = false;
+			}
+		}
 	}
 
 	public void SetABS(AbilityStatus abs)

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -34,6 +35,9 @@ public class PlayerController : MonoBehaviour {
 	public StickyBomb currentStuck = null;
 	[HideInInspector]
 	public Scorecard myStats;
+
+
+	public GameObject sprintSlider;
 
 	//public vars
 	public string playerName = "Bob";
@@ -88,6 +92,8 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		sprintSlider = GameObject.Find ("P" + playerID + "SprintSlider");
+		sprintSlider.GetComponent<Slider> ().value = sprintSlider.GetComponent<Slider> ().maxValue;
 		Diagnostics.DrawDebugOn = true;
 		myBody = GetComponent<Rigidbody2D> ();
 		animator = this.transform.GetChild (0).GetComponent<Animator> ();
@@ -590,6 +596,7 @@ public class PlayerController : MonoBehaviour {
 		if(isSprinting && sprintJuice > 0)
 		{
 			sprintJuice--;
+			sprintSlider.GetComponent<Slider> ().value = (sprintJuice / 60.0f);
 
 			if(sprintJuice == 0)
 			{
@@ -602,6 +609,7 @@ public class PlayerController : MonoBehaviour {
 			if(giveSprintBack % 3 == 0)
 			{
 				sprintJuice++;
+				sprintSlider.GetComponent<Slider> ().value = (sprintJuice / 60.0f);
 
 				if(sprintJuice > sprintJuiceMax)
 					sprintJuice = sprintJuiceMax;

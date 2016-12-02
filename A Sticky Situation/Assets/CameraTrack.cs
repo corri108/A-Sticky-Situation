@@ -57,7 +57,7 @@ public class CameraTrack : MonoBehaviour
 		
 		averagePos.y = transform.position.y;
 		
-		m_DesiredPosition = new Vector3(averagePos.x, averagePos.y, -10);
+		m_DesiredPosition = new Vector3(averagePos.x, averagePos.y, -200);
 	}
 	
 	

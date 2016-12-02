@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Photon;
+using UnityEngine.UI;
 
 public class ThiefAbility : PunBehaviour {
 
@@ -15,9 +16,18 @@ public class ThiefAbility : PunBehaviour {
 	private int stealTimer = 30;
 	private int stealTimerReset = 30;
 
+	bool startSlider;
+	public int abilityCD = 510;
+	int sliderTimer;
+	public GameObject abilitySlider;
+
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		int id = GetComponent<PlayerController>().playerID;
+		abilitySlider = GameObject.FindGameObjectWithTag ("P" + id + "Slider");
+		abilitySlider.GetComponent<Slider>().maxValue = 8.5f;
+		abilitySlider.GetComponent<Slider>().value = abilitySlider.GetComponent<Slider>().maxValue;
 	}
 	
 	// Update is called once per frame
@@ -52,11 +62,21 @@ public class ThiefAbility : PunBehaviour {
 		{
 			//countdown until steal no longer works
 			stealTimer--;
-
 			if(stealTimer == 0)
 			{
 				stealTimer = stealTimerReset;
 				trySteal = false;
+			}
+		}
+		if (startSlider) 
+		{
+			Debug.Log (sliderTimer);
+			sliderTimer++;
+			abilitySlider.GetComponent<Slider> ().value = sliderTimer/60.0f;
+			if (sliderTimer >= abilityCD) 
+			{
+				sliderTimer = 0;
+				startSlider = false;
 			}
 		}
 	}
@@ -71,6 +91,7 @@ public class ThiefAbility : PunBehaviour {
 	public void LOCAL_Steal()
 	{
 		trySteal = true;
+		startSlider = true;
 	}
 
 	public void SetABS(AbilityStatus abs)
