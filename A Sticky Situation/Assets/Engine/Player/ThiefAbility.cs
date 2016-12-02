@@ -21,6 +21,9 @@ public class ThiefAbility : PunBehaviour {
 	int sliderTimer;
 	public GameObject abilitySlider;
 
+	public GameObject abilityImage;
+	public Sprite ThiefSprite;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -28,6 +31,10 @@ public class ThiefAbility : PunBehaviour {
 		abilitySlider = GameObject.FindGameObjectWithTag ("P" + id + "Slider");
 		abilitySlider.GetComponent<Slider>().maxValue = 8.5f;
 		abilitySlider.GetComponent<Slider>().value = abilitySlider.GetComponent<Slider>().maxValue;
+
+		abilityImage = GameObject.Find ("P" + id + "AbilityImage");
+		abilityImage.GetComponent<Image> ().sprite = ThiefSprite;
+		abilityImage.GetComponent<Image> ().color = Color.black;
 	}
 	
 	// Update is called once per frame
@@ -70,13 +77,13 @@ public class ThiefAbility : PunBehaviour {
 		}
 		if (startSlider) 
 		{
-			Debug.Log (sliderTimer);
 			sliderTimer++;
 			abilitySlider.GetComponent<Slider> ().value = sliderTimer/60.0f;
 			if (sliderTimer >= abilityCD) 
 			{
 				sliderTimer = 0;
 				startSlider = false;
+				abilityImage.SetActive (true);
 			}
 		}
 	}
@@ -92,6 +99,7 @@ public class ThiefAbility : PunBehaviour {
 	{
 		trySteal = true;
 		startSlider = true;
+		abilityImage.SetActive (false);
 	}
 
 	public void SetABS(AbilityStatus abs)

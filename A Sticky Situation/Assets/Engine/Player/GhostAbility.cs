@@ -19,6 +19,8 @@ public class GhostAbility : PunBehaviour {
 	int sliderTimer;
 	public GameObject abilitySlider;
 
+	public GameObject abilityImage;
+	public Sprite ghostSprite;
 	float timer;
 	Color tempColor;
 
@@ -33,6 +35,9 @@ public class GhostAbility : PunBehaviour {
 		int id = GetComponent<PlayerController>().playerID;
 		abilitySlider = GameObject.FindGameObjectWithTag ("P" + id + "Slider");
 		abilitySlider.GetComponent<Slider>().value = abilitySlider.GetComponent<Slider>().maxValue;
+		abilityImage = GameObject.Find ("P" + id + "AbilityImage");
+		abilityImage.GetComponent<Image> ().sprite = ghostSprite;
+		abilityImage.GetComponent<Image> ().color = Color.black;
 	}
 
 	// Update is called once per frame
@@ -91,6 +96,7 @@ public class GhostAbility : PunBehaviour {
 				timer = 0;
 				used = false;
 				abilityAvailable = true;
+				abilityImage.SetActive (true);
 				startSlider = true;
 			}
 		}
@@ -144,6 +150,7 @@ public class GhostAbility : PunBehaviour {
 		{
 			used = true;
 			abilityAvailable = false;
+			abilityImage.SetActive (false);
 		}
 		else
 		{

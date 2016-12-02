@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour {
 
 
 	public GameObject sprintSlider;
+	public GameObject bombImage;
 
 	//public vars
 	public string playerName = "Bob";
@@ -94,6 +95,11 @@ public class PlayerController : MonoBehaviour {
 	{
 		sprintSlider = GameObject.Find ("P" + playerID + "SprintSlider");
 		sprintSlider.GetComponent<Slider> ().value = sprintSlider.GetComponent<Slider> ().maxValue;
+
+		bombImage = GameObject.Find("P" + playerID + "BombImage");
+		bombImage.GetComponent<Image> ().color = Color.white;
+		bombImage.SetActive (false);
+
 		Diagnostics.DrawDebugOn = true;
 		myBody = GetComponent<Rigidbody2D> ();
 		animator = this.transform.GetChild (0).GetComponent<Animator> ();
@@ -360,19 +366,29 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 
-		if(hasStickyBomb)
+		if (hasStickyBomb) 
 		{
-			if(AI == null)
+			if (AI == null) 
 			{
-				if(GlobalProperties.IS_NETWORKED && Input.GetMouseButtonDown(0))
+				bombImage.SetActive (true);
+				if (GlobalProperties.IS_NETWORKED && Input.GetMouseButtonDown (0))
 				{
-					NetworkThrowBomb();
-				}
-				else if(!GlobalProperties.IS_NETWORKED && XBox.PressedThrow())
+					NetworkThrowBomb ();
+				} 
+				else if (!GlobalProperties.IS_NETWORKED && XBox.PressedThrow ()) 
 				{
-					COMMAND_LocalThrowBomb();
+					COMMAND_LocalThrowBomb ();
 				}
 			}
+		} 
+		else if (isStuck) 
+		{
+			bombImage.SetActive (true);
+			bombImage.GetComponent<Image> ().color = Color.red;
+		}
+		else 
+		{
+			bombImage.SetActive (false);
 		}
 
 		wasGrounded = isGrounded;
@@ -465,7 +481,7 @@ public class PlayerController : MonoBehaviour {
 
 		foreach(var p in pcs)
 		{
-			if(p.hasStickyBomb)
+			if (p.hasStickyBomb)
 				return true;
 		}
 
@@ -474,12 +490,18 @@ public class PlayerController : MonoBehaviour {
 
 	public void COMMAND_LocalThrowBomb()
 	{
+
 		//WAIT if you are the scientist, let us throw two instead!
 		if(GetComponent<Scientist>() != null && abs.ability_ready)
 		{
 			//throw bomb
 			hasStickyBomb = false;
 			bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
+
+			if (abs.ability_ready) 
+			{
+				GetComponent<Scientist> ().bombsThrown = true;
+			}
 			abs.ability_ready = false;
 			abs.UpdateReady();
 			
@@ -928,7 +950,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		isStuck = true;
 		stuckPosition = stuckPos;
-		
+
 		if(theSticky != null)
 		{
 			AudioSource.PlayClipAtPoint(getStuck, GameObject.FindObjectOfType<GameCamera>().transform.position);
@@ -1049,6 +1071,10 @@ public class PlayerController : MonoBehaviour {
 		animator.SetBool ("InAir", false);
 		animator.SetFloat ("Speed", 0);
 		hasStickyBomb = false;
+
+		bombImage.SetActive (false);
+		bombImage.GetComponent<Image> ().color = Color.white;
+
 		bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
 		sprintJuice = sprintJuiceMax;
 		exhausedResetTimer = exhaustedResetMax;
