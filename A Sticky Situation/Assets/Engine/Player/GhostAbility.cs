@@ -52,52 +52,54 @@ public class GhostAbility : PunBehaviour {
 			abilityAvailable = true;
 			used = false;
 		}
-
-		if (used) 
+		if (!GetComponent<PlayerController> ().isPaused)
 		{
-			abilitySlider.GetComponent<Slider> ().value = 0;
-			if (timer < wait) 
+			if (used)
 			{
-				transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = ghostMaterial;
-				//5
-				for(int i = 0; i < 5; ++i)
+				abilitySlider.GetComponent<Slider> ().value = 0;
+				if (timer < wait)
 				{
-					transform.GetChild (0).GetChild (0).GetChild (i).GetComponent<SpriteRenderer> ().material = ghostMaterial;
-					if(i != 4)
+					transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = ghostMaterial;
+					//5
+					for (int i = 0; i < 5; ++i)
 					{
-						transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetComponent<SpriteRenderer> ().material = ghostMaterial;
-						transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material = ghostMaterial;
+						transform.GetChild (0).GetChild (0).GetChild (i).GetComponent<SpriteRenderer> ().material = ghostMaterial;
+						if (i != 4)
+						{
+							transform.GetChild (0).GetChild (0).GetChild (i).GetChild (0).GetComponent<SpriteRenderer> ().material = ghostMaterial;
+							transform.GetChild (0).GetChild (0).GetChild (i).GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = ghostMaterial;
+						}
 					}
-				}
-				foreach(var ho in hideObjects)
-				{
-					ho.SetActive (false);
-				}
-				timer += Time.deltaTime;
-			} 
-			else 
-			{
-				foreach(var ho in hideObjects)
-				{
-					ho.SetActive (true);
-				}
-				transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = mainMaterial;
-				//5
-				for(int i = 0; i < 5; ++i)
-				{
-					transform.GetChild (0).GetChild (0).GetChild (i).GetComponent<SpriteRenderer> ().material = mainMaterial;
-					if(i != 4)
+					foreach (var ho in hideObjects)
 					{
-						transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetComponent<SpriteRenderer> ().material = mainMaterial;
-						transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material = mainMaterial;
+						ho.SetActive (false);
 					}
+					timer += Time.deltaTime;
 				}
+				else
+				{
+					foreach (var ho in hideObjects)
+					{
+						ho.SetActive (true);
+					}
+					transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = mainMaterial;
+					//5
+					for (int i = 0; i < 5; ++i)
+					{
+						transform.GetChild (0).GetChild (0).GetChild (i).GetComponent<SpriteRenderer> ().material = mainMaterial;
+						if (i != 4)
+						{
+							transform.GetChild (0).GetChild (0).GetChild (i).GetChild (0).GetComponent<SpriteRenderer> ().material = mainMaterial;
+							transform.GetChild (0).GetChild (0).GetChild (i).GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = mainMaterial;
+						}
+					}
 
-				timer = 0;
-				used = false;
-				abilityAvailable = true;
-				abilityImage.SetActive (true);
-				startSlider = true;
+					timer = 0;
+					used = false;
+					abilityAvailable = true;
+					abilityImage.SetActive (true);
+					startSlider = true;
+				}
 			}
 		}
 	}

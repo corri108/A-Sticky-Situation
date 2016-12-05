@@ -90,6 +90,10 @@ public class PlayerController : MonoBehaviour {
 	private AIComponent AI;
 	[HideInInspector]
 	public AIP lastPoint;
+
+	public bool isPaused;
+
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -241,157 +245,175 @@ public class PlayerController : MonoBehaviour {
 	//input and logic goes here
 	void Update () 
 	{
-		if (!canMove)
-			return;
-
-		//get horizontal movement
-		if(GlobalProperties.IS_NETWORKED)
+		if (!isPaused)
 		{
-		    xInput = Input.GetAxis ("Horizontal");
-			xInput *= accelerationSpeed;
-		}
-		else
-		{
-			if(AI == null)
+			if (XBox.StartPressed ())
 			{
-				xInput = XBox.HorizontalAxis ();
+				isPaused = true;
+				Camera.main.GetComponent<PauseButtons>().pauseScreen.SetActive (true);
+				Camera.main.GetComponent<PauseButtons>().mainCanvas.SetActive (false);
+
+				PlayerController[] allPlayers = GameObject.FindObjectsOfType<PlayerController>();
+
+				foreach(var p in allPlayers)
+				{
+					p.GetComponent<PlayerController> ().isPaused = true;
+				}
+			}
+
+			if (!canMove)
+				return;
+
+			//get horizontal movement
+			if (GlobalProperties.IS_NETWORKED)
+			{
+				xInput = Input.GetAxis ("Horizontal");
 				xInput *= accelerationSpeed;
-
-				if(XBox.SprintPressed() && xInput != 0 && !exhausted)
-				{
-					COMMAND_Sprint();
-				}
-				else
-				{
-					COMMAND_DontSprint();
-				}
-			}
-		}
-
-		if(GlobalProperties.IS_NETWORKED)
-		{
-			SpecialCharacterMovesNetwork ();
-		}
-		else
-		{
-			SpecialCharacterMovesLocal();
-		}
-
-		CalculateSprintScale (false/*xInput > 0*/);
-
-		if (xInput > 0 || xInput < 0)
-		{
-			animator.SetBool ("Walking", true);
-
-			if(xInput > 0)
-			{
-				this.transform.localScale = scale;
-				nametag.transform.localScale = nametagScale;
-				abs.transform.localScale = absScale;
 			}
 			else
 			{
-				this.transform.localScale = minScale;
-				nametag.transform.localScale = nametagMinScale;
-				abs.transform.localScale = absMinScale;
-			}
-		}
-		else
-			animator.SetBool ("Walking", false);
-
-		isGrounded = Physics2D.OverlapCircle(footTransform.position, groundedRadius, whatIsGround);
-		animator.SetBool ("Grounded", isGrounded);
-
-		if(isGrounded)
-		{
-			if(GlobalProperties.IS_NETWORKED)
-			{
-				if(Input.GetButtonDown("Jump"))
+				if (AI == null)
 				{
-					isGrounded = false;
-					animator.SetBool("Grounded", false);
-					animator.SetBool("Jumped", true);
-					myBody.AddForce(Vector2.up * jumpForce);
-					AudioSource.PlayClipAtPoint(jump, this.transform.position);
-					animator.SetBool ("InAir", true);
-				}
-			}
-			else
-			{
-				if(AI == null)
-				{
-					if(XBox.PressedJump())
+					xInput = XBox.HorizontalAxis ();
+					xInput *= accelerationSpeed;
+
+					if (XBox.SprintPressed () && xInput != 0 && !exhausted)
 					{
-						COMMAND_Jump ();
+						COMMAND_Sprint ();
+					}
+					else
+					{
+						COMMAND_DontSprint ();
 					}
 				}
 			}
 
-			if(!wasGrounded)
+			if (GlobalProperties.IS_NETWORKED)
 			{
-				AudioSource.PlayClipAtPoint(land, this.transform.position);
-				animator.SetBool ("InAir", false);
+				SpecialCharacterMovesNetwork ();
 			}
-		}
-		else animator.SetBool ("InAir", true);
-
-		float raycastD = .55f;
-		//check raycasting for objects to the left and right of player
-		if(xInput > 0)
-		{
-			//right
-			if(RaycastCollision(true, raycastD))
+			else
 			{
-				myBody.velocity = new Vector2(0, myBody.velocity.y);
-				xInput = 0;
+				SpecialCharacterMovesLocal ();
+			}
 
-				if(AI != null)
+			CalculateSprintScale (false/*xInput > 0*/);
+
+			if (xInput > 0 || xInput < 0)
+			{
+				animator.SetBool ("Walking", true);
+
+				if (xInput > 0)
 				{
-					AI.BlockCollide(true);
+					this.transform.localScale = scale;
+					nametag.transform.localScale = nametagScale;
+					abs.transform.localScale = absScale;
+				}
+				else
+				{
+					this.transform.localScale = minScale;
+					nametag.transform.localScale = nametagMinScale;
+					abs.transform.localScale = absMinScale;
 				}
 			}
-		}
-		else if(xInput < 0)
-		{
-			//left
-			if(RaycastCollision(false, raycastD))
-			{
-				myBody.velocity = new Vector2(0, myBody.velocity.y);
-				xInput = 0;
+			else
+				animator.SetBool ("Walking", false);
 
-				if(AI != null)
+			isGrounded = Physics2D.OverlapCircle (footTransform.position, groundedRadius, whatIsGround);
+			animator.SetBool ("Grounded", isGrounded);
+
+			if (isGrounded)
+			{
+				if (GlobalProperties.IS_NETWORKED)
 				{
-					AI.BlockCollide(false);
+					if (Input.GetButtonDown ("Jump"))
+					{
+						isGrounded = false;
+						animator.SetBool ("Grounded", false);
+						animator.SetBool ("Jumped", true);
+						myBody.AddForce (Vector2.up * jumpForce);
+						AudioSource.PlayClipAtPoint (jump, this.transform.position);
+						animator.SetBool ("InAir", true);
+					}
+				}
+				else
+				{
+					if (AI == null)
+					{
+						if (XBox.PressedJump ())
+						{
+							COMMAND_Jump ();
+						}
+					}
+				}
+
+				if (!wasGrounded)
+				{
+					AudioSource.PlayClipAtPoint (land, this.transform.position);
+					animator.SetBool ("InAir", false);
 				}
 			}
-		}
+			else
+				animator.SetBool ("InAir", true);
 
-		if (hasStickyBomb) 
-		{
-			if (AI == null) 
+			float raycastD = .55f;
+			//check raycasting for objects to the left and right of player
+			if (xInput > 0)
+			{
+				//right
+				if (RaycastCollision (true, raycastD))
+				{
+					myBody.velocity = new Vector2 (0, myBody.velocity.y);
+					xInput = 0;
+
+					if (AI != null)
+					{
+						AI.BlockCollide (true);
+					}
+				}
+			}
+			else if (xInput < 0)
+			{
+				//left
+				if (RaycastCollision (false, raycastD))
+				{
+					myBody.velocity = new Vector2 (0, myBody.velocity.y);
+					xInput = 0;
+
+					if (AI != null)
+					{
+						AI.BlockCollide (false);
+					}
+				}
+			}
+
+			if (hasStickyBomb)
+			{
+				if (AI == null)
+				{
+					bombImage.SetActive (true);
+					if (GlobalProperties.IS_NETWORKED && Input.GetMouseButtonDown (0))
+					{
+						NetworkThrowBomb ();
+					}
+					else if (!GlobalProperties.IS_NETWORKED && XBox.PressedThrow ())
+					{
+						COMMAND_LocalThrowBomb ();
+					}
+				}
+			}
+			else if (isStuck)
 			{
 				bombImage.SetActive (true);
-				if (GlobalProperties.IS_NETWORKED && Input.GetMouseButtonDown (0))
-				{
-					NetworkThrowBomb ();
-				} 
-				else if (!GlobalProperties.IS_NETWORKED && XBox.PressedThrow ()) 
-				{
-					COMMAND_LocalThrowBomb ();
-				}
+				bombImage.GetComponent<Image> ().color = Color.red;
 			}
-		} 
-		else if (isStuck) 
-		{
-			bombImage.SetActive (true);
-			bombImage.GetComponent<Image> ().color = Color.red;
-		}
-		else 
-		{
-			bombImage.SetActive (false);
-		}
+			else
+			{
+				bombImage.SetActive (false);
+			}
 
-		wasGrounded = isGrounded;
+			wasGrounded = isGrounded;
+		}
 	}
 
 	public void COMMAND_Sprint()
@@ -490,73 +512,76 @@ public class PlayerController : MonoBehaviour {
 
 	public void COMMAND_LocalThrowBomb()
 	{
-
-		//WAIT if you are the scientist, let us throw two instead!
-		if(GetComponent<Scientist>() != null && abs.ability_ready)
+		if (!XBox.StartPressed ())
 		{
-			//throw bomb
-			hasStickyBomb = false;
-			bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
 
-			if (abs.ability_ready) 
+			//WAIT if you are the scientist, let us throw two instead!
+			if (GetComponent<Scientist> () != null && abs.ability_ready)
 			{
-				GetComponent<Scientist> ().bombsThrown = true;
-			}
-			abs.ability_ready = false;
-			abs.UpdateReady();
+				//throw bomb
+				hasStickyBomb = false;
+				bombStatus.GetComponent<SpriteRenderer> ().sprite = noBombSprite;
+
+				if (abs.ability_ready)
+				{
+					GetComponent<Scientist> ().bombsThrown = true;
+				}
+				abs.ability_ready = false;
+				abs.UpdateReady ();
 			
-			GameObject localStickyPrefab = Resources.Load<GameObject>("LocalStickyBomb");
-			GameObject theBomb = (GameObject)GameObject.Instantiate(localStickyPrefab, this.transform.position, Quaternion.identity);
-			StickyBomb sb = theBomb.GetComponent<StickyBomb>();
-			sb.ownerID = playerID;
-			AudioSource.PlayClipAtPoint(threwBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
-			GameObject.Destroy (GameObject.Instantiate (specialParticleEffect, this.transform.position, Quaternion.identity), 5f);
+				GameObject localStickyPrefab = Resources.Load<GameObject> ("LocalStickyBomb");
+				GameObject theBomb = (GameObject)GameObject.Instantiate (localStickyPrefab, this.transform.position, Quaternion.identity);
+				StickyBomb sb = theBomb.GetComponent<StickyBomb> ();
+				sb.ownerID = playerID;
+				AudioSource.PlayClipAtPoint (threwBomb, GameObject.FindObjectOfType<GameCamera> ().transform.position);
+				GameObject.Destroy (GameObject.Instantiate (specialParticleEffect, this.transform.position, Quaternion.identity), 5f);
 			
-			if(transform.localScale.x > 0)
-			{
-				//throw to right
-				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(600,-75));
-			}
-			else
-			{
-				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-600,-75));
-			}
+				if (transform.localScale.x > 0)
+				{
+					//throw to right
+					theBomb.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (600, -75));
+				}
+				else
+				{
+					theBomb.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (-600, -75));
+				}
 			
-			//throw another
-			GameObject secondBomb = (GameObject)GameObject.Instantiate(localStickyPrefab, this.transform.position, Quaternion.identity);
-			StickyBomb sb2 = secondBomb.GetComponent<StickyBomb>();
-			sb2.ownerID = playerID;
+				//throw another
+				GameObject secondBomb = (GameObject)GameObject.Instantiate (localStickyPrefab, this.transform.position, Quaternion.identity);
+				StickyBomb sb2 = secondBomb.GetComponent<StickyBomb> ();
+				sb2.ownerID = playerID;
 			
-			if(transform.localScale.x > 0)
-			{
-				//throw to right
-				secondBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(600,75));
-			}
-			else
-			{
-				secondBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-600,75));
-			}
-		}
-		else
-		{
-			//throw bomb
-			hasStickyBomb = false;
-			bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
-			
-			GameObject localStickyPrefab = Resources.Load<GameObject>("LocalStickyBomb");
-			GameObject theBomb = (GameObject)GameObject.Instantiate(localStickyPrefab, this.transform.position, Quaternion.identity);
-			StickyBomb sb = theBomb.GetComponent<StickyBomb>();
-			sb.ownerID = playerID;
-			AudioSource.PlayClipAtPoint(threwBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
-			
-			if(transform.localScale.x > 0)
-			{
-				//throw to right
-				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(600,-50));
+				if (transform.localScale.x > 0)
+				{
+					//throw to right
+					secondBomb.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (600, 75));
+				}
+				else
+				{
+					secondBomb.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (-600, 75));
+				}
 			}
 			else
 			{
-				theBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-600,-50));
+				//throw bomb
+				hasStickyBomb = false;
+				bombStatus.GetComponent<SpriteRenderer> ().sprite = noBombSprite;
+			
+				GameObject localStickyPrefab = Resources.Load<GameObject> ("LocalStickyBomb");
+				GameObject theBomb = (GameObject)GameObject.Instantiate (localStickyPrefab, this.transform.position, Quaternion.identity);
+				StickyBomb sb = theBomb.GetComponent<StickyBomb> ();
+				sb.ownerID = playerID;
+				AudioSource.PlayClipAtPoint (threwBomb, GameObject.FindObjectOfType<GameCamera> ().transform.position);
+			
+				if (transform.localScale.x > 0)
+				{
+					//throw to right
+					theBomb.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (600, -50));
+				}
+				else
+				{
+					theBomb.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (-600, -50));
+				}
 			}
 		}
 	}
@@ -609,56 +634,59 @@ public class PlayerController : MonoBehaviour {
 	//physics must be done here
 	void FixedUpdate()
 	{
-		if (!canMove)
-			return;
-
-		float newX = Mathf.Clamp ((myBody.velocity.x + xInput) * kineticFriction, -maxSpeed, maxSpeed);
-		myBody.velocity = new Vector2 (newX, myBody.velocity.y);
-
-		if(isSprinting && sprintJuice > 0)
+		if (!XBox.StartPressed ())
 		{
-			sprintJuice--;
-			sprintSlider.GetComponent<Slider> ().value = (sprintJuice / 60.0f);
+			if (!canMove)
+				return;
 
-			if(sprintJuice == 0)
+			float newX = Mathf.Clamp ((myBody.velocity.x + xInput) * kineticFriction, -maxSpeed, maxSpeed);
+			myBody.velocity = new Vector2 (newX, myBody.velocity.y);
+
+			if (isSprinting && sprintJuice > 0)
 			{
-				exhausted = true;
-				isSprinting = false;
-			}
-		}
-		else if(!exhausted && sprintJuice > 0)
-		{
-			if(giveSprintBack % 3 == 0)
-			{
-				sprintJuice++;
+				sprintJuice--;
 				sprintSlider.GetComponent<Slider> ().value = (sprintJuice / 60.0f);
 
-				if(sprintJuice > sprintJuiceMax)
-					sprintJuice = sprintJuiceMax;
+				if (sprintJuice == 0)
+				{
+					exhausted = true;
+					isSprinting = false;
+				}
 			}
-		}
-		else if(exhausted)
-		{
-			exhausedResetTimer--;
-
-			if(exhausedResetTimer == 0)
+			else if (!exhausted && sprintJuice > 0)
 			{
-				exhausedResetTimer = exhaustedResetMax;
-				exhausted = false;
-				sprintJuice = 1;
+				if (giveSprintBack % 3 == 0)
+				{
+					sprintJuice++;
+					sprintSlider.GetComponent<Slider> ().value = (sprintJuice / 60.0f);
+
+					if (sprintJuice > sprintJuiceMax)
+						sprintJuice = sprintJuiceMax;
+				}
 			}
+			else if (exhausted)
+			{
+				exhausedResetTimer--;
+
+				if (exhausedResetTimer == 0)
+				{
+					exhausedResetTimer = exhaustedResetMax;
+					exhausted = false;
+					sprintJuice = 1;
+				}
+			}
+
+			//for giving sprint back slowly
+			giveSprintBack++;
+
+			if (giveSprintBack == 1000)
+				giveSprintBack = 0;
+
+			if (Mathf.Abs (xInput) > .1f && isGrounded)
+				WalkingSounds ();
+			else
+				walkingTimer = 0;
 		}
-
-		//for giving sprint back slowly
-		giveSprintBack++;
-
-		if (giveSprintBack == 1000)
-			giveSprintBack = 0;
-
-		if (Mathf.Abs (xInput) > .1f && isGrounded)
-			WalkingSounds ();
-		else
-			walkingTimer = 0;
 	}
 
 	void OnCollisionEnter2D(Collision2D c)
@@ -953,17 +981,25 @@ public class PlayerController : MonoBehaviour {
 
 		if(theSticky != null)
 		{
-			AudioSource.PlayClipAtPoint(getStuck, GameObject.FindObjectOfType<GameCamera>().transform.position);
-			currentStuck = theSticky.GetComponent<StickyBomb>();
-			theSticky.transform.SetParent(this.transform);
-			theSticky.transform.localScale = scale * 9;
-			theSticky.transform.position = stuckPos;
-			theSticky.GetComponent<Rigidbody2D>().isKinematic = true;
-			theSticky.isStuck = true;
-			theSticky.GetComponent<LocalStickyBomb>().TransferBomb();
-			theSticky.GetComponent<StickyBomb>().stuckID = playerID;
-			PopText.Create("STUCK!", Color.white, 120, this.transform.position + Vector3.up * .5f);
-			Debug.Log("Current stuck: " + currentStuck.name);
+			if (!isPaused)
+			{
+				theSticky.GetComponent<LocalStickyBomb> ().gamePaused = false;
+				AudioSource.PlayClipAtPoint (getStuck, GameObject.FindObjectOfType<GameCamera> ().transform.position);
+				currentStuck = theSticky.GetComponent<StickyBomb> ();
+				theSticky.transform.SetParent (this.transform);
+				theSticky.transform.localScale = scale * 9;
+				theSticky.transform.position = stuckPos;
+				theSticky.GetComponent<Rigidbody2D> ().isKinematic = true;
+				theSticky.isStuck = true;
+				theSticky.GetComponent<LocalStickyBomb> ().TransferBomb ();
+				theSticky.GetComponent<StickyBomb> ().stuckID = playerID;
+				PopText.Create ("STUCK!", Color.white, 120, this.transform.position + Vector3.up * .5f);
+				Debug.Log ("Current stuck: " + currentStuck.name);
+			}
+			else
+			{
+				theSticky.GetComponent<LocalStickyBomb> ().gamePaused = true;
+			}
 		}
 	}
 

@@ -65,25 +65,28 @@ public class ThiefAbility : PunBehaviour {
 
 	void FixedUpdate()
 	{
-		if(trySteal)
+		if (!GetComponent<PlayerController> ().isPaused)
 		{
-			//countdown until steal no longer works
-			stealTimer--;
-			if(stealTimer == 0)
+			if (trySteal)
 			{
-				stealTimer = stealTimerReset;
-				trySteal = false;
+				//countdown until steal no longer works
+				stealTimer--;
+				if (stealTimer == 0)
+				{
+					stealTimer = stealTimerReset;
+					trySteal = false;
+				}
 			}
-		}
-		if (startSlider) 
-		{
-			sliderTimer++;
-			abilitySlider.GetComponent<Slider> ().value = sliderTimer/60.0f;
-			if (sliderTimer >= abilityCD) 
+			if (startSlider)
 			{
-				sliderTimer = 0;
-				startSlider = false;
-				abilityImage.SetActive (true);
+				sliderTimer++;
+				abilitySlider.GetComponent<Slider> ().value = sliderTimer / 60.0f;
+				if (sliderTimer >= abilityCD)
+				{
+					sliderTimer = 0;
+					startSlider = false;
+					abilityImage.SetActive (true);
+				}
 			}
 		}
 	}
