@@ -16,7 +16,7 @@ public class AbilityStatus : MonoBehaviour {
 	void Start () 
 	{
 		pc = this.transform.root.GetComponent<PlayerController> ();
-		this.GetComponent<SpriteRenderer> ().color = this.transform.root.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material.color;
+		this.GetComponent<SpriteRenderer> ().color = this.transform.root.FindChild("SprintStatus").GetComponent<SpriteRenderer> ().material.color;
 	}
 	
 	// Update is called once per frame

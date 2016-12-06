@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: 9e84477726d173549ac1ee29bc80bf7c
+timeCreated: 1480926368
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BigBoySeperated_0
+    21300002: BigBoySeperated_1
+    21300004: BigBoySeperated_2
+    21300006: BigBoySeperated_3
+    21300008: BigBoySeperated_4
+    21300010: BigBoySeperated_5
+    21300012: BigBoySeperated_6
+    21300014: BigBoySeperated_7
+    21300016: BigBoySeperated_8
+    21300018: BigBoySeperated_9
+    21300020: BigBoySeperated_10
+    21300022: BigBoySeperated_11
+    21300024: BigBoySeperated_12
+    21300026: BigBoySeperated_13
+    21300028: BigBoySeperated_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BigBoySeperated_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 779
+        width: 188
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_1
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 856
+        width: 73
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 579
+        width: 93
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_3
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 478
+        width: 229
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_4
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 576
+        width: 107
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_5
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 415
+        width: 129
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_6
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 257
+        width: 88
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_7
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 268
+        width: 89
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_8
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 377
+        width: 57
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_9
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 267
+        width: 92
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_10
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 125
+        width: 83
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_11
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 224
+        width: 65
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_12
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 8
+        width: 85
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_13
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 20
+        width: 115
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BigBoySeperated_14
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 40
+        width: 115
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -127,6 +127,11 @@ public class PlayerController : MonoBehaviour {
 		}
 		//this will be null forever if you are player controller player instead of AI
 		AI = GetComponent<AIComponent> ();
+
+		if(XBox == null)
+		{
+			LOCAL_SetPlayerNumber(playerID);
+		}
 	}
 
 	public static PlayerController GetByPlayerID (int id)
@@ -188,6 +193,15 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	int celebrateTimer = 30;
+	int celebrateTimerReset = 30;
+	bool celebrating = false;
+	void Celebrate()
+	{
+		celebrating = true;
+		animator.SetTrigger ("Celebrate");
+	}
+
 	public float SprintRatio ()
 	{
 		return (float)sprintJuice / sprintJuiceMax;
@@ -230,6 +244,9 @@ public class PlayerController : MonoBehaviour {
 	void Update () 
 	{
 		if (!canMove)
+			return;
+
+		if (celebrating)
 			return;
 
 		//get horizontal movement
@@ -322,6 +339,14 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 		else animator.SetBool ("InAir", true);
+
+		if(XBox.CelebratePressed())
+		{
+			if(!celebrating)
+			{
+				Celebrate();
+			}
+		}
 
 		float raycastD = .55f;
 		//check raycasting for objects to the left and right of player
@@ -476,6 +501,7 @@ public class PlayerController : MonoBehaviour {
 			bombStatus.GetComponent<SpriteRenderer>().sprite = noBombSprite;
 			abs.ability_ready = false;
 			abs.UpdateReady();
+			animator.SetTrigger("Throw");
 			
 			GameObject localStickyPrefab = Resources.Load<GameObject>("LocalStickyBomb");
 			GameObject theBomb = (GameObject)GameObject.Instantiate(localStickyPrefab, this.transform.position, Quaternion.identity);
@@ -520,6 +546,7 @@ public class PlayerController : MonoBehaviour {
 			StickyBomb sb = theBomb.GetComponent<StickyBomb>();
 			sb.ownerID = playerID;
 			AudioSource.PlayClipAtPoint(threwBomb, GameObject.FindObjectOfType<GameCamera>().transform.position);
+			animator.SetTrigger("Throw");
 			
 			if(transform.localScale.x > 0)
 			{
@@ -583,6 +610,18 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (!canMove)
 			return;
+
+		if(celebrating)
+		{
+			celebrateTimer--;
+			if(celebrateTimer == 0)
+			{
+				celebrateTimer = celebrateTimerReset;
+				celebrating = false;
+			}
+
+			return;
+		}
 
 		float newX = Mathf.Clamp ((myBody.velocity.x + xInput) * kineticFriction, -maxSpeed, maxSpeed);
 		myBody.velocity = new Vector2 (newX, myBody.velocity.y);
@@ -1089,15 +1128,15 @@ public class PlayerController : MonoBehaviour {
 			nametag = transform.FindChild ("Nametag").GetComponent<TextMesh> ();
 			//change player to dif color
 			//body
-			transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
+			//transform.GetChild (0).GetChild (0).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
 			//5
 			for(int i = 0; i < 5; ++i)
 			{
-				transform.GetChild (0).GetChild (0).GetChild (i).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
+				//transform.GetChild (0).GetChild (0).GetChild (i).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
 				if(i != 4)
 				{
-					transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
-					transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
+					//transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
+					//transform.GetChild (0).GetChild (0).GetChild (i).GetChild(0).GetChild(0).GetComponent<SpriteRenderer> ().material = playerMaterials[id - 1];
 				}
 			}
 			//nametag.color = c;

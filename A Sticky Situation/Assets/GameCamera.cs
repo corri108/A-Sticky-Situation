@@ -80,7 +80,7 @@ public class GameCamera : MonoBehaviour {
 					//make a new player
 					if(GlobalProperties.PLAYERCHOICE[i].Equals("Scientist"))
 					{
-						GameObject scientistPref = Resources.Load<GameObject>("LOCAL_Scientist");
+						GameObject scientistPref = Resources.Load<GameObject>("FINAL_Scientist");
 						PlayerController player = ((GameObject)GameObject.Instantiate(scientistPref, Vector3.zero, Quaternion.identity)).GetComponent<PlayerController>();
 						player.playerID = i + 1;
 						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();
@@ -94,7 +94,7 @@ public class GameCamera : MonoBehaviour {
 					}
 					else if(GlobalProperties.PLAYERCHOICE[i].Equals("BigBoy"))
 					{
-						GameObject scientistPref = Resources.Load<GameObject>("LOCAL_BigBoy");
+						GameObject scientistPref = Resources.Load<GameObject>("FINAL_BigBoy");
 						PlayerController player = ((GameObject)GameObject.Instantiate(scientistPref, Vector3.zero, Quaternion.identity)).GetComponent<PlayerController>();
 						player.playerID = i + 1;
 						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();
@@ -108,7 +108,7 @@ public class GameCamera : MonoBehaviour {
 					}
 					else if(GlobalProperties.PLAYERCHOICE[i].Equals("Thief"))
 					{
-						GameObject scientistPref = Resources.Load<GameObject>("LOCAL_Thief");
+						GameObject scientistPref = Resources.Load<GameObject>("FINAL_Thief");
 						PlayerController player = ((GameObject)GameObject.Instantiate(scientistPref, Vector3.zero, Quaternion.identity)).GetComponent<PlayerController>();
 						player.playerID = i + 1;
 						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();
@@ -122,7 +122,7 @@ public class GameCamera : MonoBehaviour {
 					}
 					else if(GlobalProperties.PLAYERCHOICE[i].Equals("Ghost"))
 					{
-						GameObject scientistPref = Resources.Load<GameObject>("LOCAL_Ghost");
+						GameObject scientistPref = Resources.Load<GameObject>("FINAL_Ghost");
 						PlayerController player = ((GameObject)GameObject.Instantiate(scientistPref, Vector3.zero, Quaternion.identity)).GetComponent<PlayerController>();
 						player.playerID = i + 1;
 						Rigidbody2D myBody = player.GetComponent<Rigidbody2D> ();

@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: 4293d9e1c13e9a7409134d444a74a1ad
+timeCreated: 1480924982
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: GhostSeperated_0
+    21300002: GhostSeperated_1
+    21300004: GhostSeperated_2
+    21300006: GhostSeperated_3
+    21300008: GhostSeperated_4
+    21300010: GhostSeperated_5
+    21300012: GhostSeperated_6
+    21300014: GhostSeperated_7
+    21300016: GhostSeperated_8
+    21300018: GhostSeperated_9
+    21300020: GhostSeperated_10
+    21300022: GhostSeperated_11
+    21300024: GhostSeperated_12
+    21300026: GhostSeperated_13
+    21300028: GhostSeperated_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: GhostSeperated_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 783
+        width: 238
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_1
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 870
+        width: 73
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_2
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 571
+        width: 93
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_3
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 469
+        width: 229
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_4
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 624
+        width: 107
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_5
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 401
+        width: 127
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_6
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 274
+        width: 80
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_7
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 455
+        width: 57
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 281
+        width: 90
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_9
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 120
+        width: 81
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_10
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 247
+        width: 80
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_11
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 149
+        width: 81
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_12
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 304
+        width: 65
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_13
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 37
+        width: 121
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GhostSeperated_14
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 49
+        width: 121
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
