@@ -11,7 +11,7 @@ public class GlobalProperties : MonoBehaviour {
 	/// <summary>
 	/// NA = no player, Scientist, Big Boy, Thief, Ghost
 	/// </summary>
-	public static string[] PLAYERCHOICE = new string[]{"Scientist", "Thief", "BigBoy", "Ghost"};
+	public static string[] PLAYERCHOICE = new string[]{"NA", "NA", "NA", "NA"};
 	public static bool[] PLAYERCTRL = new bool[]{true,true,true,true};
 	// Use this for initialization
 	void Start () {

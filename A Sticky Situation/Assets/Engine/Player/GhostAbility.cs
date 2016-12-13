@@ -97,7 +97,6 @@ public class GhostAbility : PunBehaviour {
 					timer = 0;
 					used = false;
 					abilityAvailable = true;
-					abilityImage.SetActive (true);
 					startSlider = true;
 				}
 			}
@@ -114,6 +113,7 @@ public class GhostAbility : PunBehaviour {
 			{
 				sliderTimer = 0;
 				startSlider = false;
+				abilityImage.SetActive (true);
 			}
 		}
 	}
