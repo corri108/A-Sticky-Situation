@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour {
 		sprintSlider = GameObject.Find ("P" + playerID + "SprintSlider");
 		sprintSlider.GetComponent<Slider> ().value = sprintSlider.GetComponent<Slider> ().maxValue;
 
-		bombImage = GameObject.Find("Canvas").transform.FindChild("P" + playerID.ToString() + "UI").FindChild("P" + playerID + "BombImage").gameObject;
+		bombImage = GameObject.Find("Canvas").transform.FindChild("P" + playerID + "UI").FindChild("P" + playerID + "BombImage").gameObject;
 		bombImage.GetComponent<Image> ().color = Color.white;
 		bombImage.SetActive (false);
 
@@ -285,7 +285,7 @@ public class PlayerController : MonoBehaviour {
 
 				foreach(var p in allPlayers)
 				{
-					p.GetComponent<PlayerController> ().isPaused = true;
+					p.isPaused = true;
 				}
 			}
 
